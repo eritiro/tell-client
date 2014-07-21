@@ -4,26 +4,18 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <meta name="msapplication-tap-highlight" content="no" />
-        <title>Tell</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
+
     <body>
-        <div class="app">
-            <h1>Tell</h1>
-        </div>
-		<script src="js/app.js"></script>
-        <script type="text/javascript">
-			console.log("Esperando");
-        	
-			var launch = function() {
-				console.log("Corriendo");
-			};
-			
-        	document.addEventListener('deviceready', launch, false);
-        </script>
-		<div class="view-container">
-			<div ng-view class="view-frame"></div>
-		</div>
+
+    <p>
+    <button id="startScan">Start Scan</button>
+    </p>
+
+    <div id="results"></div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
