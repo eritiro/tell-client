@@ -1,9 +1,9 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('tell', [
   'ngRoute',
-  'myApp.controllers'
+  'tell.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'Home'});
@@ -12,7 +12,7 @@ config(['$routeProvider', function($routeProvider) {
 }]);
 
 /* Controllers */
-angular.module('myApp.controllers', [])
+angular.module('tell.controllers', [])
   .controller('Home', ['$scope', function($scope) {
 
   }])
