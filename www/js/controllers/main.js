@@ -27,3 +27,8 @@ angular.module('tell.controllers', [])
 		}
 	);
   }]);
+
+document.addEventListener("deviceready", function() {
+  document.getElementById('loading').style.display = 'none';
+  angular.bootstrap(document, ['tell']);
+}, false);
