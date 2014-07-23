@@ -1,0 +1,2 @@
+- arrancar con el device ready, no de una
+- ver el click en el back button del device
