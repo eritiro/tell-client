@@ -10,9 +10,11 @@ var cordova = cordova || {
 
 
 document.onreadystatechange = function (){
-  var event;
-  event = document.createEvent("HTMLEvents");
-  event.initEvent("deviceready", true, true);
-  event.eventName = "deviceready";
-  document.dispatchEvent(event);
+  if (document.readyState == 'complete') {
+    var event;
+    event = document.createEvent("HTMLEvents");
+    event.initEvent("deviceready", false, true);
+    event.eventName = "deviceready";
+    document.dispatchEvent(event);
+  }
 }
