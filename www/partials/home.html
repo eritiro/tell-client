@@ -1,17 +1,18 @@
 <div class="container-fluid">
   <h1>Bienvenido a Tell</h1>
   <p>todas las opiniones desde el celular!</p>
-  <form class="form-horizontal" role="form">
+  
+  <form class="form-horizontal" role="form" ng-submit="submit()">
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <input ng-model="userEmail" type="email" class="form-control" id="inputEmail3" placeholder="Email">
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input ng-model="userPass" type="password" class="form-control" id="inputPassword3" placeholder="Password">
       </div>
     </div>
     <div class="form-group">
