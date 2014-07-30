@@ -26,7 +26,7 @@ angular.module('tell.controllers', ['Devise'])
   .config(function(AuthProvider) {
     AuthProvider.loginPath(config.serverUrl);
   })
-  .controller('Home', function(Auth, $scope) {
+  .controller('Home', function(Auth, $scope, $location) {
     $scope.userEmail = 'test@test.com';
     $scope.userPass = 'test';
     
@@ -38,12 +38,11 @@ angular.module('tell.controllers', ['Devise'])
       
       Auth.login(credentials).then(function(user) {
         console.log("Todo ok");
+        $location.path("/scan");
       }, function(error) {
         console.log("Caca");
       });
     }
-  })
-  .controller('Login', function(Auth, $scope) {
   })
   .controller('Scan', ['$scope', function($scope) {
   	// TODO mover a algún lado (servicios?)
