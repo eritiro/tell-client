@@ -18,6 +18,7 @@ angular.module('tell', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'Home'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'Scan'});
+  $routeProvider.when('/register', {templateUrl: 'partials/location.html', controller: 'Scan'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
@@ -29,13 +30,13 @@ angular.module('tell.controllers', ['Devise'])
   .controller('Home', function(Auth, $scope, $location) {
     $scope.userEmail = 'test@test.com';
     $scope.userPass = 'test';
-    
+
     $scope.submit = function() {
       var credentials = {
         email: $scope.userEmail,
         password: $scope.userPass
       };
-      
+
       Auth.login(credentials).then(function(user) {
         console.log("Todo ok");
         $location.path("/scan");
@@ -49,7 +50,7 @@ angular.module('tell.controllers', ['Devise'])
 	  cordova.plugins.barcodeScanner.scan(
 		  function (result) {
 			  $scope.result = result.text;
-		  }, 
+		  },
 		  function (error) {
 			  $scope.result = "Falló el scan: " + error;
 		  }
