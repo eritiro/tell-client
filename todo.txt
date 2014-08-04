@@ -1,6 +1,7 @@
 - dar estilos copados (chusmear bootstrap)
-- hacer repositorio para datos de usuario
 - hacer pantallita de login (login/register)
+- resolver el problema de login fallido. no se llama al callback de error
+- hacer repositorio para datos de usuario
 - si ya estás logeado vas a otra pantalla con opciones scan y logout (por ahora)
 - hacer llamada de login al server y guardar cosa de sesion
 - hacer llamada de codigo qr al server

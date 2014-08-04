@@ -16,7 +16,8 @@ angular.module('tell', [
   'tell.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'partials/home.html', controller: 'Home'});
+  $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'Index'});
+  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'Home'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'Scan'});
   $routeProvider.when('/register', {templateUrl: 'partials/location.html', controller: 'Scan'});
   $routeProvider.otherwise({redirectTo: '/'});
@@ -27,9 +28,15 @@ angular.module('tell.controllers', ['Devise'])
   .config(function(AuthProvider) {
     AuthProvider.loginPath(config.serverUrl);
   })
-  .controller('Home', function(Auth, $scope, $location) {
+  .controller('Index', function(Auth, $scope, $location) {
+    if (Auth.isAuthenticated()) {
+      $location.path("/home");
+      return;
+    }
+    
     $scope.userEmail = 'test@test.com';
     $scope.userPass = 'test';
+    $scope.error = false;
 
     $scope.submit = function() {
       var credentials = {
@@ -38,11 +45,19 @@ angular.module('tell.controllers', ['Devise'])
       };
 
       Auth.login(credentials).then(function(user) {
-        console.log("Todo ok");
-        $location.path("/scan");
+        $location.path("/home");
       }, function(error) {
-        console.log("Caca");
+        // TODO ver qué hacer con error de auth
+        $scope.error = true;
+        $scope.userEmail = 'HOLIS';
       });
+    }
+  })
+  .controller('Home', function($scope, $location) {
+    $scope.prueba = 'asdfasdfa';
+    
+    $scope.scan = function() {
+      $location.path("/scan");
     }
   })
   .controller('Scan', ['$scope', function($scope) {
@@ -57,7 +72,9 @@ angular.module('tell.controllers', ['Devise'])
 	  );
   }]);
 
+// Lanzar angular cuando se recibe el deviceready
 document.addEventListener("deviceready", function() {
   document.getElementById('loading').style.display = 'none';
   angular.bootstrap(document, ['tell']);
 }, false);
+
