@@ -10,7 +10,7 @@ var POMELO = {
 
 var config = POSTA;
 
-// Declare app level module which depends on filters, and services
+angular.module('tell.repos', []);
 angular.module('tell', [
   'ngRoute',
   'tell.controllers'
@@ -22,6 +22,17 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/register', {templateUrl: 'partials/location.html', controller: 'Scan'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
+
+// TODO mover a un modulo de angular
+var repo = {
+  key: 'tell.user.data',
+  storeData: function(userData) {
+    localStorage.setItem(this.key, angular.toJson(userData));
+  },
+  getData: function() {
+    return angular.fromJson(localStorage.getItem(this.key));
+  }
+};
 
 /* Controllers */
 angular.module('tell.controllers', ['Devise'])
@@ -45,6 +56,7 @@ angular.module('tell.controllers', ['Devise'])
       };
 
       Auth.login(credentials).then(function(user) {
+        repo.storeData(user);
         $location.path("/home");
       }, function(error) {
         // TODO ver qué hacer con error de auth
