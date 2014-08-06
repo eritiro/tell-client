@@ -19,11 +19,12 @@ angular.module('tell', [
   'tell.services'
 ])
 .config(function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'Index'});
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'Home'});
-  $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'Scan'});
-  $routeProvider.when('/register', {templateUrl: 'partials/location.html', controller: 'Scan'});
-  $routeProvider.otherwise({redirectTo: '/'});
+  $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'AuthController'});
+  $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'AuthController'});
+  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
+  $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
+  $routeProvider.when('/location', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){
   AuthProvider.loginPath(config.serverUrl);
