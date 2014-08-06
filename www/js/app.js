@@ -17,14 +17,17 @@ angular.module('tell', [
   'ngRoute',
   'tell.controllers',
   'tell.services'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+.config(function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'Index'});
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'Home'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'Scan'});
   $routeProvider.when('/register', {templateUrl: 'partials/location.html', controller: 'Scan'});
   $routeProvider.otherwise({redirectTo: '/'});
-}]);
+})
+.config(function(AuthProvider){
+  AuthProvider.loginPath(config.serverUrl);
+});
 
 // Angular bootstrap
 document.addEventListener("deviceready", function() {

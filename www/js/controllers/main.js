@@ -1,9 +1,6 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .config(function(AuthProvider) {
-    AuthProvider.loginPath(config.serverUrl);
-  })
   .controller('Index', function(Auth, $scope, $location, userStorageService) {
     if (Auth.isAuthenticated()) {
       $location.path("/home");
