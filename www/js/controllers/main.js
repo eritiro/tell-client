@@ -10,10 +10,11 @@ var POMELO = {
 
 var config = POSTA;
 
-angular.module('tell.repos', []);
+angular.module('tell.services', []);
 angular.module('tell', [
   'ngRoute',
-  'tell.controllers'
+  'tell.controllers',
+  'tell.services'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'Index'});
@@ -23,28 +24,16 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
-// TODO mover a un modulo de angular
-var repo = {
-  key: 'tell.user.data',
-  storeData: function(userData) {
-    localStorage.setItem(this.key, angular.toJson(userData));
-  },
-  getData: function() {
-    return angular.fromJson(localStorage.getItem(this.key));
-  }
-};
-
-/* Controllers */
-angular.module('tell.controllers', ['Devise'])
+angular.module('tell.controllers', ['Devise', 'tell.services'])
   .config(function(AuthProvider) {
     AuthProvider.loginPath(config.serverUrl);
   })
-  .controller('Index', function(Auth, $scope, $location) {
+  .controller('Index', function(Auth, $scope, $location, userStorageService) {
     if (Auth.isAuthenticated()) {
       $location.path("/home");
       return;
     }
-    
+
     $scope.userEmail = 'test@test.com';
     $scope.userPass = 'test';
     $scope.error = false;
@@ -56,7 +45,7 @@ angular.module('tell.controllers', ['Devise'])
       };
 
       Auth.login(credentials).then(function(user) {
-        repo.storeData(user);
+        userStorageService.storeData(user);
         $location.path("/home");
       }, function(error) {
         // TODO ver qué hacer con error de auth
@@ -67,7 +56,7 @@ angular.module('tell.controllers', ['Devise'])
   })
   .controller('Home', function($scope, $location) {
     $scope.prueba = 'asdfasdfa';
-    
+
     $scope.scan = function() {
       $location.path("/scan");
     }
