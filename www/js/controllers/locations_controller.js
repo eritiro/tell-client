@@ -1,6 +1,10 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsController', function($scope, $routeParams) {
-    $scope.location = { name: 'Jarro Café', id: $routeParams.locationId };
+  .controller('LocationsController', function($scope, $routeParams, $resource) {
+    var Location = $resource(config.serverUrl + '/locations/:locationId.json?username=eritiro',
+      {locationId: "@id"});
+    Location.get({locationId: $routeParams.locationId}, function(location) {
+       $scope.location = location
+     });
   });

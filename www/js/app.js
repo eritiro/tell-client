@@ -1,17 +1,17 @@
 'use strict';
 
 var POSTA = {
-  serverUrl: 'http://tell.startmeapps.com/users/sign_in.json'
+  serverUrl: 'http://tell.startmeapps.com'
 };
 
 var POMELO = {
-  serverUrl: 'http://192.168.0.6/users/sign_in.json'
+  serverUrl: 'http://192.168.1.104'
 };
 
 var config = POSTA;
 
 angular.module('tell.services', []);
-angular.module('tell.controllers', ['Devise', 'tell.services']);
+angular.module('tell.controllers', ['Devise', 'ngResource', 'tell.services']);
 
 angular.module('tell', [
   'ngRoute',
@@ -27,7 +27,7 @@ angular.module('tell', [
   $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){
-  AuthProvider.loginPath(config.serverUrl);
+  AuthProvider.loginPath(config.serverUrl + '/users/sign_in.json');
 });
 
 // Angular bootstrap

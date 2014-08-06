@@ -8,3 +8,6 @@
 - pantalla de resultados
 - pantalla para comentar
 - ver el click en el back button del device
+
+- desjardcodear config
+- escribir bien desjardcodear
