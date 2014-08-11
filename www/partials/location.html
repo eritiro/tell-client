@@ -1,24 +1,17 @@
 &nbsp;
 <img class="location-image" src="https://www.universalorlando.com/Images/HRCExterior_tcm13-13662.JPG" />
 <div class="location-body">
-  <h1>{{location.name}} {{location.id}}</h1>
+  <h1>{{ location.name }}</h1>
   <p>
-  Hard Rock Cafe es una cadena de restaurantes fundada en 1971 por Isaac Tigrett y Peter Morton. Todos los establecimientos están decorados con objetos de culto del rock como guitarras de grupos famosos, y mientras se sirve comida típica estadounidense se visualizan videoclips de bandas pertenecientes al género.
+  {{ location.address | lowercase }}
   </p>
   <h2>Comentarios:</h2>
-  <p>
-    El Hard Rock es similar a los que podes visitar en Estados Unidos. La comida es buena y bastante cara. El ambiente es espectacular. Eso si, sino te gusta la musica fuerte no vayas al Hard Rock. La moza que nos atendió fue ESPECTACULAR de amable. Volveremos... pero cuiden los precios.
-    <br/>
-    <i>- Gabito</i>
-  </p>
-  <p>
-    Esta muy bien ambientado y se escucha muy buena musica. En mi caso fui a ver la banda de un amigo que tocaba ahi. La comida esta bien. Todos pedimos hamburguesas y la verdad que pagar casi 120 pesos cada una me parecio una locura. Mas teniendo en cuenta que era una hamburguesa normal (con un puñado de papas). Sacando los precios excesivos es un gran lugar para ir y disfrutar de todas las guitarras, cuadros y del ambiente en general
-    <br/>
-    <i>- Corona_master</i>
-  </p>
-  <p>
-    Excelente lugar para pasarla bien con amigos. Delicioso el Jumbo Combo, un popurrí de entradas espectacular para compartir entre tres por lo menos. Riquísimas las fajitas!!! Capítulo aparte: la buena onda de todo el personal. Excelente atención. Muy buena la banda en vivo. Volveremos!!!!!
-    <br/>
-    <i>- adriana_deangelis</i>
-  </p>
+  <div ng-repeat="comment in location.comments">
+    <img ng-src="{{ relative(comment.author.picture) }}" />
+    <p>
+      {{ comment.text }}
+      <br/>
+      <i>- {{ comment.author.username }}</i>
+    </p>
+  </div>
 </div>

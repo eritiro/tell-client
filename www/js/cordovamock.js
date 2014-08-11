@@ -2,7 +2,7 @@ var cordova = cordova || {
 	plugins: {
 		barcodeScanner: {
 			scan: function (success, error) {
-				success({ text: 'urlafip' });
+				success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDY0MjU0MDUwMV1bdGlwb2RvbWljaWxpbz0xXVtzZWN1ZW5jaWE9MV19' });
 			}
 		}
 	}
