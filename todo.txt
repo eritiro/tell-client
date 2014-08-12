@@ -8,6 +8,6 @@
 - pantalla de resultados
 - pantalla para comentar
 - ver el click en el back button del device
-
+- que el server devuelva la url completa de las imágenes
 - desjardcodear config
 - escribir bien desjardcodear

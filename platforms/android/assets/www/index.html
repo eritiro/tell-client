@@ -4,18 +4,45 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="http://bootswatch.com/amelia/bootstrap.min.css" />
     </head>
 
     <body>
 
-    <p>
-    <button id="startScan">Start Scan</button>
-    </p>
+    	<div id="loading">
+    		<img src="img/loading.gif" style="height:100%;width:100%" />
+    	</div>
 
-    <div id="results"></div>
+    	<div id="wrapper">
+        <div class="navbar navbar-fixed-top">
+          <img src="img/logo.png" class="logo" />
+          <h1 class="pull-right">Tell</h1>
+        </div>
+    		<div ng-view></div>
+		  </div>
+		  
+		  <div id="debug">
+		  </div>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+    <!--<script type="text/javascript" src="js/cordovamock.js"></script>-->
+		<script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-devise/lib/devise-min.js"></script>
+
+    <!-- app -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- services -->
+    <script type="text/javascript" src="js/services/user_storage_service.js"></script>
+
+    <!-- controllers -->
+    <script type="text/javascript" src="js/controllers/auth_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/home_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/locations_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/scan_controller.js"></script>
+
     </body>
 </html>

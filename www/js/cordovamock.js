@@ -8,6 +8,7 @@ var cordova = cordova || {
 	}
 }
 
+window.plugins = cordova.plugins;
 
 document.onreadystatechange = function (){
   if (document.readyState == 'complete') {

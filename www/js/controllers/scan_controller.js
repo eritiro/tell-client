@@ -12,13 +12,15 @@ angular.module('tell.controllers')
         
         if (!parsed) {
           $scope.result = "Valor escaneado inválido: " + scanned;
-          return;
+        } else {
+          $location.path("/locations/" + parsed);
         }
         
-        $location.path("/locations/" + parsed);
+        $scope.$apply(); // Hack to make angular work with corodva barcode plugin
       },
       function (error) {
         $scope.result = "Falló el scan: " + error;
+        $scope.$apply(); // Hack to make angular work with corodva barcode plugin
       }
     );
   });

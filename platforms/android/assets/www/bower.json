@@ -10,8 +10,13 @@
     "tests"
   ],
   "dependencies": {
-	"angular": "1.2.19",
-    "bootstrap": "~3.1.1"
+    "angular": "1.2.19",
+    "angular-resource": "~1.2.0",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "bootstrap": "~3.1.1",
+    "angular-devise": "~0.5.0"
   },
   "homepage": "https://github.com/Pomeeelo/tell-poc",
   "authors": [
