@@ -10,4 +10,4 @@
 - que el server devuelva la url completa de las imágenes
 - deshardcodear config
 - hacer un modo sin conexión.
-- la redirección a login no deja salir de la app (home -> login (back button) -> home)
+- mejorar el ciclo de redirects entre login y home (mucha ida y vuelta, queda raro el backbutton)

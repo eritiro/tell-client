@@ -10,4 +10,8 @@ angular.module('tell.controllers')
     $scope.scan = function() {
       $location.path("/scan");
     }
+    
+    $scope.exit = function() {
+      navigator.app.exitApp();
+    };
   });

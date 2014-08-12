@@ -10,6 +10,14 @@ var cordova = cordova || {
 
 window.plugins = cordova.plugins;
 
+if (!navigator.app) {
+  navigator.app = { 
+    exitApp: function() { 
+      alert("Saliste de la app"); 
+    } 
+  }
+}
+
 document.onreadystatechange = function (){
   if (document.readyState == 'complete') {
     var event;
