@@ -2,12 +2,12 @@
 - hacer pantallita de login (login/register)
 - resolver el problema de login fallido. no se llama al callback de error
 - hacer repositorio para datos de usuario
-- si ya estás logeado vas a otra pantalla con opciones scan y logout (por ahora)
-- hacer llamada de login al server y guardar cosa de sesion
+- agregar logout
 - hacer llamada de codigo qr al server
 - pantalla de resultados
 - pantalla para comentar
 - ver el click en el back button del device
 - que el server devuelva la url completa de las imágenes
-- desjardcodear config
-- escribir bien desjardcodear
+- deshardcodear config
+- hacer un modo sin conexión.
+- la redirección a login no deja salir de la app (home -> login (back button) -> home)
