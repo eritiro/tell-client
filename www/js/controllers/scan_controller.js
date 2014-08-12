@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('ScanController', function($scope, $location) {
+  .controller('ScanController', function($scope, $location, $rootScope) {
     // TODO mover a algún lado (servicios?)
     
     cordova.plugins.barcodeScanner.scan(
@@ -16,11 +16,17 @@ angular.module('tell.controllers')
           $location.path("/locations/" + parsed);
         }
         
-        $scope.$apply(); // Hack to make angular work with corodva barcode plugin
+        // Hack to make angular work with corodva barcode plugin
+        if (!$rootScope.$$phase) {
+          $scope.$apply();
+        }
       },
       function (error) {
         $scope.result = "Falló el scan: " + error;
-        $scope.$apply(); // Hack to make angular work with corodva barcode plugin
+        // Hack to make angular work with corodva barcode plugin
+        if (!$rootScope.$$phase) {
+          $scope.$apply();
+        }
       }
     );
   });
