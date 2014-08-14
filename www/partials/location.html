@@ -2,16 +2,45 @@
 <img class="location-image" src="https://www.universalorlando.com/Images/HRCExterior_tcm13-13662.JPG" />
 <div class="location-body">
   <h1>{{ location.name }}</h1>
-  <p>
-  {{ location.address | lowercase }}
-  </p>
-  <h2>Comentarios:</h2>
+  <div class='location-section' >
+    <img src='img/address.png' />
+    <div>
+      {{ location.address | lowercase }}
+    </div>
+  </div>
+
+  <div class='location-section'>
+    <img class='icon' src='img/phone.png' />
+    <div>
+      <a href="tel://{{ location.phone }}">
+        {{ location.phone }}
+      </a>
+    </div>
+  </div>
+  <hr></hr>
   <div ng-repeat="comment in location.comments">
-    <img ng-src="{{ relative(comment.author.picture) }}" />
+    <div>
+      <span data-ng-repeat="i in [1,2,3,4,5]" >
+        <span ng-if="$index < comment.score">
+            &#x2605;
+        </span>
+        <span ng-if="$index >= comment.score">
+            &#x2606;
+        </span>
+      </span>
+    </div>
     <p>
       {{ comment.text }}
       <br/>
       <i>- {{ comment.author.username }}</i>
     </p>
+    <hr></hr>
   </div>
+
+</div>
+<div class="navbar actionbar navbar-fixed-bottom">
+  <div class="rating">
+    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+  </div>
+  <img class="add-comment" src="img/comment.png" />
 </div>

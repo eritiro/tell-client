@@ -11,19 +11,21 @@ var POMELO = {
 var config = POSTA;
 
 angular.module('tell.services', []);
-angular.module('tell.controllers', ['Devise', 'ngResource', 'tell.services']);
+angular.module('tell.resources', ['ngResource', 'tell.services']);
+angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']);
 
 angular.module('tell', [
   'ngRoute',
   'tell.controllers',
-  'tell.services'
+  'tell.services',
+  'tell.resources'
 ])
 .config(function($routeProvider) {
   $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'AuthController'});
   $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'AuthController'});
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
-  $routeProvider.when('/locations/:afipReq', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
+  $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
   $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){

@@ -1,21 +1,23 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('ScanController', function($scope, $location, $rootScope) {
+  .controller('ScanController', function($scope, $location, $rootScope, Location) {
     // TODO mover a algún lado (servicios?)
-    
+
     cordova.plugins.barcodeScanner.scan(
       function (result) {
         var scanned = result.text;
-        
+
         var parsed = getParameterByName(scanned, "req");
-        
+
         if (!parsed) {
           $scope.result = "Valor escaneado inválido: " + scanned;
         } else {
-          $location.path("/locations/" + parsed);
+          Location.getByAfipReq({ req: parsed }, function(location){
+            $location.path("/locations/" + location.id);
+          });
         }
-        
+
         // Hack to make angular work with corodva barcode plugin
         if (!$rootScope.$$phase) {
           $scope.$apply();
@@ -30,7 +32,7 @@ angular.module('tell.controllers')
       }
     );
   });
-  
+
 function getParameterByName(url, name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
