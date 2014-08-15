@@ -2,6 +2,9 @@
 <img class="location-image" src="https://www.universalorlando.com/Images/HRCExterior_tcm13-13662.JPG" />
 <div class="location-body">
   <h1>{{ location.name }}</h1>
+  <div class="total-rating" >
+    <div class='stars' style='width:{{ location.score * 46 }}px'></div>
+  </div>
   <div class='location-section' >
     <img src='img/address.png' />
     <div>
@@ -32,7 +35,9 @@
     <p>
       {{ comment.text }}
       <br/>
-      <i>- {{ comment.author.username }}</i>
+      <div style='text-align:right'>
+        <i>- {{ comment.author.username }}</i>
+      </div>
     </p>
     <hr></hr>
   </div>
@@ -41,12 +46,8 @@
 <div class="navbar actionbar navbar-fixed-bottom">
   <div class="rating" >
     <span ng-repeat="i in [1,2,3,4,5]" ng-click='addComment($index)'>
-      <p ng-if="$index < score">
-          &#x2605;
-      </p>
-      <p ng-if="$index >= score">
-          &#x2606;
-      </p>
+      <img ng-if="$index < score" src="img/white-star.png" />
+      <img ng-if="$index >= score" src="img/black-star-2.png" />
     </span>
   </div>
 </div>

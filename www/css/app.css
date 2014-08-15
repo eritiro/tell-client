@@ -58,14 +58,25 @@ body { padding-top: 60px; }
 }
 
 .rating {
-  unicode-bidi: bidi-override;
-  font-size: 45px;
-  display: block;
-  color: blue;
+  display: inline-block;
   text-align: center;
 }
 .rating > span {
   display: inline-block;
   position: relative;
-  width: 1.1em;
+}
+
+.total-rating {
+  background-image: url('../img/black-star.png');
+  background-size: 46px 40px;
+  height: 40px;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.total-rating .stars {
+  background-image: url('../img/white-star.png');
+  background-size: 46px 40px;
+  height: 40px;
 }
