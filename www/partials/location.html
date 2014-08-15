@@ -20,7 +20,7 @@
   <hr></hr>
   <div ng-repeat="comment in location.comments">
     <div>
-      <span data-ng-repeat="i in [1,2,3,4,5]" >
+      <span ng-repeat="i in [1,2,3,4,5]" >
         <span ng-if="$index < comment.score">
             &#x2605;
         </span>
@@ -39,8 +39,14 @@
 
 </div>
 <div class="navbar actionbar navbar-fixed-bottom">
-  <div class="rating">
-    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+  <div class="rating" >
+    <span ng-repeat="i in [1,2,3,4,5]" ng-click='addComment($index)'>
+      <p ng-if="$index < score">
+          &#x2605;
+      </p>
+      <p ng-if="$index >= score">
+          &#x2606;
+      </p>
+    </span>
   </div>
-  <img class="add-comment" src="img/comment.png" />
 </div>
