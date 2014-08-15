@@ -3,7 +3,7 @@
 angular.module('tell.resources')
   .factory('Location', function($resource, userStorageService, $cacheFactory){
     var userData = userStorageService.getData();
-    Location = $resource(config.serverUrl +'/locations/:id.json?username=:username:query:req',
+    var Location = $resource(config.serverUrl +'/locations/:id.json?username=:username:query:req',
       { username: userData.username }, {
         get: {
           cache: true,

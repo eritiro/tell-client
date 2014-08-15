@@ -1,4 +1,4 @@
-- registración con FB
+- registración y login con FB
 - pantalla para comentar
 - dar estilos copados (chusmear bootstrap)
 - hacer pantallita de register
