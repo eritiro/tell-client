@@ -34,9 +34,11 @@ angular.module('tell', [
 })
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';
-  var user = angular.fromJson(localStorage.getItem('tell.user.data'))
-  $httpProvider.defaults.headers.common['User-Id'] = user.id;
-  $httpProvider.defaults.headers.common['User-Token'] = user.authentication_token;
+})
+.run(function(userStorageService, $http){
+  var user = userStorageService.getData();
+  $http.defaults.headers.common['User-Id'] = user.id;
+  $http.defaults.headers.common['User-Token'] = user.authentication_token;
 });
 
 // Angular bootstrap

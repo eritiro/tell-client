@@ -11,14 +11,14 @@ angular.module('tell.resources')
         getByAfipReqPrivate: {
           method: 'GET',
           params: {
-            query: '&req='
+            query: 'req='
           }
         }
     });
     // Wraps getByAfipReq function to update the cache by id:
     Location.getByAfipReq = function(hash, result){
       this.getByAfipReqPrivate(hash, function(location){
-        $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id, location);
+        $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id + "?", location);
         result(location);
       });
     };
