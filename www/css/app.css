@@ -24,6 +24,7 @@ body { padding-top: 60px; }
   margin-left: -3px;
   margin-top: -10px;
   height: 212px;
+  width: 100%;
 }
 
 .location-body{
