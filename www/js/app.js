@@ -26,6 +26,7 @@ angular.module('tell', [
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
+  $routeProvider.when('/comment/:id', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
   $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){
