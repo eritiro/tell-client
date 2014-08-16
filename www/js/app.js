@@ -29,7 +29,10 @@ angular.module('tell', [
   $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){
-  AuthProvider.loginPath(config.serverUrl + '/users/sign_in.json');
+  AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
+})
+.config(function($httpProvider){
+  $httpProvider.defaults.headers.common['Accept'] = 'application/json';
 });
 
 // Angular bootstrap
