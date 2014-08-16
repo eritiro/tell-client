@@ -14,13 +14,13 @@ var cordova = cordova || {
 }
 
 window.plugins = cordova.plugins;
-facebookConnectPlugin = facebookConnectPlugin || cordova.plugins.facebookConnectPlugin;
+var facebookConnectPlugin = cordova.plugins.facebookConnectPlugin;
 
 if (!navigator.app) {
-  navigator.app = { 
-    exitApp: function() { 
-      alert("Saliste de la app"); 
-    } 
+  navigator.app = {
+    exitApp: function() {
+      alert("Saliste de la app");
+    }
   }
 }
 
