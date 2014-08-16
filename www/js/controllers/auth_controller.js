@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('AuthController', function(Auth, $scope, $location, userStorageService) {
+  .controller('AuthController', function(Auth, $scope, $location, userStorageService, facebookService) {
   
     var tryLogin = function(credentials) {
       Auth.login(credentials).then(function(user) {
@@ -35,6 +35,10 @@ angular.module('tell.controllers')
       };
       
       tryLogin(credentials);
+    };
+    
+    $scope.fbLogin = function() {
+      facebookService.login();
     };
   });
 
