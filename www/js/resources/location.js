@@ -1,10 +1,9 @@
 'use strict';
 
 angular.module('tell.resources')
-  .factory('Location', function($resource, userStorageService, $cacheFactory){
-    var userData = userStorageService.getData();
-    var Location = $resource(config.serverUrl +'/locations/:id?username=:username:query:req',
-      { username: userData.username }, {
+  .factory('Location', function($resource, $cacheFactory){
+    var Location = $resource(config.serverUrl +'/locations/:id?:query:req',
+      { }, {
         get: {
           cache: true,
           method: 'GET'
@@ -19,7 +18,7 @@ angular.module('tell.resources')
     // Wraps getByAfipReq function to update the cache by id:
     Location.getByAfipReq = function(hash, result){
       this.getByAfipReqPrivate(hash, function(location){
-        $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id + "?username=" + userData.username, location);
+        $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id, location);
         result(location);
       });
     };
