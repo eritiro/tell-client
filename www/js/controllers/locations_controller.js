@@ -5,6 +5,7 @@ angular.module('tell.controllers')
     Location.get({ id: $routeParams.id }, function(location) {
        $scope.location = location;
        $scope.relative = function(src) { return config.serverUrl + src; };
+       $scope.ready = true;
      });
     $scope.score = 0;
     $scope.addComment = function(score){
