@@ -1,3 +1,9 @@
+# view AndroidManifest.xml #generated:31
+-keep class com.facebook.LoginActivity { <init>(...); }
+
+# view res/layout/com_facebook_usersettingsfragment.xml #generated:48
+-keep class com.facebook.widget.LoginButton { <init>(...); }
+
 # view AndroidManifest.xml #generated:12
 -keep class com.google.zxing.client.android.CaptureActivity { <init>(...); }
 

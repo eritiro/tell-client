@@ -15,6 +15,9 @@
         },
         getData: function() {
           return angular.fromJson(localStorage.getItem(this.key));
+        },
+        cleardata: function() {
+          localStorage.removeItem(this.key, angular.toJson(userData));
         }
       };
     }];

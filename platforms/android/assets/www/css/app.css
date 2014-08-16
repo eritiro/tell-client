@@ -1,10 +1,10 @@
 /* layout */
-.logo { width: 50px; height: 50px; }
-.navbar {
+.topbar {
   background-color: white;
-  border-bottom: 10px solid #707070 !important;
+  background-image: url('../img/logo-small.png');
+  background-repeat: no-repeat;
 }
-.navbar h1 { color: black; margin: 5px; }
+.topbar h1 { color: black; margin: 5px; float: right; }
 body { padding-top: 60px; }
 
 
@@ -14,10 +14,69 @@ body { padding-top: 60px; }
   position: fixed;
   z-index: -100;
   margin-left: -3px;
+  margin-top: -10px;
+  height: 212px;
 }
 
 .location-body{
   padding-top: 2px;
   background-color: #108a93;
-  margin-top: 282px;
+  margin-top: 182px;
+  margin-bottom: 45px;
+}
+
+.location-body h1{
+  font-family: "Cabin",Arial,sans-serif;
+  font-size: 30px;
+  margin: 3px;
+}
+.location-section{
+  min-height: 37px;
+  position: relative;
+}
+
+.location-section a{
+  color: white;
+}
+
+.location-section div{
+  display: block;
+  margin-left: 29px;
+  height: 100%;
+  vertical-align: middle;
+  min-height: 37px;
+}
+
+.location-section img {
+  position: absolute;
+  top: 3px;
+}
+
+.actionbar{
+  background-color: white;
+  text-align: center;
+}
+
+.rating {
+  display: inline-block;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+}
+
+.total-rating {
+  background-image: url('../img/black-star.png');
+  background-size: 46px 40px;
+  height: 40px;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.total-rating .stars {
+  background-image: url('../img/white-star.png');
+  background-size: 46px 40px;
+  height: 40px;
 }
