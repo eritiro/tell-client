@@ -1,22 +1,17 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function(Auth, $scope, $location, userStorageService) {
-    if (!Auth.isAuthenticated()) {
-      $location.path("/login");
-      return;
-    }
+  .controller('HomeController', function($scope, $location, userSession) {
 
     $scope.scan = function() {
       $location.path("/scan");
     }
-    
+
     $scope.logout = function() {
-      //Auth.logout();
-      userStorageService.clearData();
+      userSession.logout();
       $location.path("/login");
     }
-    
+
     $scope.exit = function() {
       navigator.app.exitApp();
     };
