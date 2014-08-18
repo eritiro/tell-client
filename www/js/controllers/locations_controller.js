@@ -4,7 +4,6 @@ angular.module('tell.controllers')
   .controller('LocationsController', function($scope, $routeParams, Location, $location) {
     Location.get({ id: $routeParams.id }, function(location) {
        $scope.location = location;
-       $scope.relative = function(src) { return config.serverUrl + src; };
        $scope.ready = true;
      });
     $scope.score = 0;
