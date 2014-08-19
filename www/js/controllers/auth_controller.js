@@ -5,8 +5,6 @@ angular.module('tell.controllers')
 
     var tryLogin = function(credentials) {
       Auth.login(credentials).then(function(user) {
-        user.password = credentials.password;
-
         userSession.storeUser(user);
         $location.path("/home");
       }, function(error) {
