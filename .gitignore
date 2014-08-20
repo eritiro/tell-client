@@ -1,3 +1,2 @@
-www/bower_components/
-platforms/android/
-platforms/android/ant-build/
+www/bower_components
+platforms/android
