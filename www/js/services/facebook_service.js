@@ -11,9 +11,11 @@ angular.module('tell.services').service('facebookService', function() {
           s(data.authrensponse);
         }, function(data){
           document.querySelector("#debug").innerHTML = "Falló login FB " + JSON.stringify(data);
+          f(data);
         });
     } catch (e) {
       document.querySelector("#debug").innerHTML = "Error> " + e;
+      f(data);
     }
   }
 });

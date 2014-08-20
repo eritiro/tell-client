@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('CommentsController', function($scope) {
-    $scope.test = 0;
+  .controller('CommentsController', function($scope, $routeParams) {
+    var id = $routeParams.locationId;
+    var score = $routeParams.score;
+    
+    $scope.score = score;
+    
     $scope.send = function(){
-      alert(1);
+      alert(id);
     }
   });
