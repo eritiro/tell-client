@@ -1,9 +1,9 @@
+<img ng-if="!ready" class='loading' src="img/loading.gif" />
 <div class="container-fluid">
   <h1>Bienvenido a Tell</h1>
   <p>¡Todas las opiniones desde el celular!</p>
 
   <form class="form-horizontal" role="form" ng-submit="submit()">
-    <div ng-show="error">Falló el login, embellecer este mensaje</div>
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
@@ -16,6 +16,11 @@
         <input ng-model="userPass" type="password" class="form-control" id="inputPassword3" placeholder="Password">
       </div>
     </div>
+
+    <div class="form-group">
+      <div class="error col-sm-offset-2 col-sm-10" ng-show="error">{{ error }}</div>
+    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default btn-large center-block">¡Ingresar!</button>
