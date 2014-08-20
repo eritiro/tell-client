@@ -21,20 +21,23 @@ angular.module('tell', [
   'tell.resources'
 ])
 .config(function($routeProvider) {
+  $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
   $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'AuthController'});
   $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'AuthController'});
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
   $routeProvider.when('/comment/:id', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
-  $routeProvider.otherwise({redirectTo: '/home'});
 })
 .config(function(AuthProvider){
-  AuthProvider.loginPath(config.serverUrl + '/users/sign_in.json');
+  AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
+})
+.config(function($httpProvider){
+  $httpProvider.defaults.headers.common['Accept'] = 'application/json';
 });
 
 // Angular bootstrap
 document.addEventListener("deviceready", function() {
-  document.getElementById('loading').style.display = 'none';
+ // document.getElementById('loading').style.display = 'none';
   angular.bootstrap(document, ['tell']);
 }, false);

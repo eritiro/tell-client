@@ -7,6 +7,14 @@
 .topbar h1 { color: black; margin: 5px; float: right; }
 body { padding-top: 60px; }
 
+.loading {
+  height: 50px;
+  left:50%;
+  top:50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: absolute;
+}
 
 /* location */
 
@@ -15,7 +23,8 @@ body { padding-top: 60px; }
   z-index: -100;
   margin-left: -3px;
   margin-top: -10px;
-  height: 212px;
+  height: 200px;
+  width: 100%;
 }
 
 .location-body{
