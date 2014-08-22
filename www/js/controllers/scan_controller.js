@@ -1,41 +1,37 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('ScanController', function($scope, $location, $rootScope, Location) {
-    // TODO mover a algún lado (servicios?)
-
-    cordova.plugins.barcodeScanner.scan(
-      function (result) {
-        var scanned = result.text;
-
-        var parsed = getParameterByName(scanned, "req");
-
-        if (!parsed) {
+  .controller('ScanController', function($scope, $location, $rootScope, Location, scanService, afipParser) {
+    var that = this;
+    
+    this._processScannedCode = function(scanResult) {
+      afipParser.parse(scanResult.text, function(parseResult) {
+        if (!parseResult.success) {
+          // No es un código válido para nuestra app. Ejemplo: un código de barras.
           $scope.result = "Valor escaneado inválido: " + scanned;
         } else {
-          Location.getByAfipReq({ req: parsed }, function(location){
+          Location.getByAfipReq({ req: parseResult.req }, function(location){
+            // Éxito. Voy a la location
             $location.path("/locations/" + location.id);
           });
         }
-
-        // Hack to make angular work with corodva barcode plugin
-        if (!$rootScope.$$phase) {
-          $scope.$apply();
-        }
-      },
-      function (error) {
-        $scope.result = "Falló el scan: " + error;
-        // Hack to make angular work with corodva barcode plugin
-        if (!$rootScope.$$phase) {
-          $scope.$apply();
-        }
+        
+        that._cordobaHack();
+      });
+    }
+    
+    this._cordobaHack = function() {
+      // Hack horrible para que angular no se rompa con los plugins de cordova
+      if (!$rootScope.$$phase) {
+        $scope.$apply();
       }
-    );
-  });
+    }
+    
+    scanService.scan(function(scanResult){
+      that._processScannedCode(scanResult);
+    }, function(error) {
+      alert(error);
+    });
+  }
+);
 
-function getParameterByName(url, name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(url);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
