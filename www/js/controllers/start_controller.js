@@ -5,6 +5,6 @@ angular.module('tell.controllers')
     if (currentUser)
       $location.path("/home");
     else {
-      $location.path("/login");
+      $location.path("/users/sign_up");
     }
   });

@@ -9,7 +9,7 @@ angular.module('tell.controllers')
 
     $scope.logout = function() {
       userSession.logout();
-      $location.path("/login");
+      $location.path("/users/sign_in");
     }
 
     $scope.exit = function() {

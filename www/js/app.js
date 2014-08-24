@@ -22,15 +22,16 @@ angular.module('tell', [
 ])
 .config(function($routeProvider) {
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
-  $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'AuthController'});
-  $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'AuthController'});
+  $routeProvider.when('/users/sign_in', {templateUrl: 'partials/users/sign_in.html', controller: 'UsersController'});
+  $routeProvider.when('/users/sign_up', {templateUrl: 'partials/users/sign_up.html', controller: 'UsersController'});
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
-  $routeProvider.when('/locations/:locationId/comment/:score', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
+  $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 })
 .config(function(AuthProvider){
   AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
+  AuthProvider.registerPath(config.serverUrl + '/users');
 })
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';

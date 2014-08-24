@@ -3,17 +3,17 @@
   <h1>Bienvenido a Tell</h1>
   <p>¡Todas las opiniones desde el celular!</p>
 
-  <form class="form-horizontal" role="form" ng-submit="submit()">
+  <form class="form-horizontal" role="form" ng-submit="signIn()">
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
-        <input ng-model="userEmail" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <input ng-model="user.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
       <div class="col-sm-10">
-        <input ng-model="userPass" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input ng-model="user.password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
       </div>
     </div>
 
@@ -34,6 +34,6 @@
   </form>
   <p>
     ¿No estás registrado?
-    <a href="#/register" class="btn btn-link">¡Registrate!</a>
+    <a href="#/users/sign_up" class="btn btn-link">¡Registrate!</a>
   </p>
 </div>

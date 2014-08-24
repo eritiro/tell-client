@@ -22,5 +22,9 @@ angular.module('tell.resources')
         result(location);
       });
     };
+    Location.stale = function(id){
+      $cacheFactory.get('$http').remove(config.serverUrl + "/locations/" + id + "?");
+    };
+
     return Location;
   });

@@ -3,8 +3,10 @@
   background-color: white;
   background-image: url('../img/logo-small.png');
   background-repeat: no-repeat;
+  margin-bottom: 0px;
+  height: 50px;
 }
-.topbar h1 { color: black; margin: 5px; float: right; }
+.topbar h1 { color: black; margin: 4px; float: right; }
 body { padding-top: 60px; }
 
 .loading {
@@ -26,8 +28,10 @@ body { padding-top: 60px; }
 .location-image {
   position: fixed;
   z-index: -100;
-  margin-left: -3px;
-  margin-top: -10px;
+  left: 0px;
+  top: 50px;
+  margin: 0px;
+  padding: 0px;
   height: 200px;
   width: 100%;
 }
@@ -35,7 +39,7 @@ body { padding-top: 60px; }
 .location-body{
   padding-top: 2px;
   background-color: #108a93;
-  margin-top: 182px;
+  margin-top: 170px;
   margin-bottom: 45px;
 }
 
