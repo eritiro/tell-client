@@ -3,13 +3,10 @@
 <div class="container-fluid">
 
   <form class="form-horizontal" role="form" ng-submit="signIn()">
-    <div class="form-errors" ng-show="user.errors">
+    <div class="form-errors" ng-show="error">
       <h3>Ups...</h3>
       <ul>
-        <li ng-repeat="(key, value) in user.errors">
-          {{ key }}
-          {{ value[0] }}
-        </li>
+        <li>{{ error }}</li>
       </ul>
     </div>
     <div class="form-group">

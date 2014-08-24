@@ -8,7 +8,7 @@ angular.module('tell.controllers')
       Auth.login($scope.user).then(function(user) {
         userSession.storeUser(user);
         $location.path("/home");
-      }, function(error) {
+      }, function(response) {
         $scope.ready = true;
         $scope.error = "email o password incorrecto.";
       });

@@ -33,6 +33,7 @@ angular.module('tell', [
 .config(function(AuthProvider){
   AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
   AuthProvider.registerPath(config.serverUrl + '/users');
+  AuthProvider.ignoreAuth(true);
 })
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';
