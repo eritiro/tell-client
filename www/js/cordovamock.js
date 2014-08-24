@@ -6,7 +6,7 @@ var cordova = cordova || {
 			}
 		},
 		facebookConnectPlugin: {
-		  login: function(success, error) {
+		  login: function(permissions, success, error) {
 		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAAE4ajksdbflkajsfkabjsd" } });
 		  }
 		}

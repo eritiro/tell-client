@@ -7,15 +7,12 @@ angular.module('tell.services').service('facebookService', function() {
       facebookConnectPlugin.login(
         permissions, 
         function(data) {
-          document.querySelector("#debug").innerHTML = "Login con FB!!! " + JSON.stringify(data);
-          s(data.authrensponse);
+          s(data.authResponse);
         }, function(data){
-          document.querySelector("#debug").innerHTML = "Falló login FB " + JSON.stringify(data);
           f(data);
         });
     } catch (e) {
-      document.querySelector("#debug").innerHTML = "Error> " + e;
-      f(data);
+      f(e);
     }
   }
 });
