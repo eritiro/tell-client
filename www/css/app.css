@@ -1,3 +1,9 @@
+/* general */
+
+.btn-secondary { background-color: #ca483b; color: white; }
+.btn-secondary:hover { color: white; background-color: #a5382d; }
+
+
 /* layout */
 .topbar {
   background-color: white;
@@ -98,3 +104,7 @@ body { padding-top: 60px; }
   background-size: 46px 40px;
   height: 40px;
 }
+
+/* users */
+
+.facebook{ width: 180px; }

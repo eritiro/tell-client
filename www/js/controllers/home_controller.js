@@ -41,7 +41,7 @@ angular.module('tell.controllers')
 
     $scope.logout = function() {
       userSession.logout();
-      $location.path("/users/sign_in");
+      $location.path("/users/sign_up_selection");
     }
 
     $scope.exit = function() {
