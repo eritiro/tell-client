@@ -15,12 +15,13 @@ angular.module('tell.controllers')
     };
 
     $scope.signUp = function() {
+      $scope.ready = false;
       Auth.register($scope.user).then(function(user) {
         userSession.storeUser(user);
         $location.path("/home");
-      }, function(error) {
+      }, function(response) {
         $scope.ready = true;
-        $scope.error = error;
+        $scope.user.errors = response.data.errors;
       });
     };
 

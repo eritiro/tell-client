@@ -1,30 +1,30 @@
 <img ng-if="!ready" class='loading' src="img/loading.gif" />
+<h1>Registración</h1>
 <div class="container-fluid">
-  <h1>Registración</h1>
 
   <form class="form-horizontal" role="form" ng-submit="signUp()">
-    <div class="form-group">
-      <label for="inputEmail3" class="col-sm-2 control-label">Nombre de usuario</label>
-      <div class="col-sm-10">
-        <input ng-model="user.username" class="form-control" id="inputEmail3" placeholder="Nombre">
-      </div>
+    <div class="form-errors" ng-show="error">
+      <h3>Ups...</h3>
+      <ul>
+        <li>{{ error }}</li>
+      </ul>
     </div>
     <div class="form-group">
       <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10">
-        <input ng-model="user.email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <input ng-model="user.email" type="email" required class="form-control" placeholder="Email">
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
       <div class="col-sm-10">
-        <input ng-model="user.password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input ng-model="user.password" type="password" required class="form-control" placeholder="Password">
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Repet&iacute; el Password</label>
       <div class="col-sm-10">
-        <input ng-model="user.password_confirmation" type="password" class="form-control" id="inputPassword3" placeholder="Repetir Password">
+        <input ng-model="user.password_confirmation" type="password" required class="form-control" placeholder="Repetir Password">
       </div>
     </div>
     <div class="form-group">

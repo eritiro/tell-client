@@ -3,6 +3,28 @@
 .btn-secondary { background-color: #ca483b; color: white; }
 .btn-secondary:hover { color: white; background-color: #a5382d; }
 
+h1 {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 7px;
+  margin-top: 3px;
+}
+
+/* error */
+
+.form-errors{
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.form-errors h3{
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 3px;
+}
+
+.form-errors li{
+  list-style-type: none;
+  color: white;
+}
 
 /* layout */
 .topbar {
@@ -12,7 +34,7 @@
   margin-bottom: 0px;
   height: 50px;
 }
-.topbar h1 { color: black; margin: 4px; float: right; }
+.topbar h1 { color: black; margin: 4px; float: right; background-color: transparent; }
 body { padding-top: 60px; }
 
 .loading {
@@ -40,10 +62,10 @@ body { padding-top: 60px; }
   padding: 0px;
   height: 200px;
   width: 100%;
+  border: none;
 }
 
 .location-body{
-  padding-top: 2px;
   background-color: #108a93;
   margin-top: 170px;
   margin-bottom: 45px;
@@ -52,7 +74,8 @@ body { padding-top: 60px; }
 .location-body h1{
   font-family: "Cabin",Arial,sans-serif;
   font-size: 30px;
-  margin: 3px;
+  margin-bottom: 3px;
+  margin-top: 0px;
 }
 .location-section{
   min-height: 37px;
