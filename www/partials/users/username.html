@@ -1,0 +1,27 @@
+<img ng-if="!ready" class='loading' src="img/loading.gif" />
+<h1>Elegí tu nombre de usuario</h1>
+<div class="container-fluid">
+
+  <form class="form-horizontal" role="form" ng-submit="setUsername()">
+    <div class="form-errors" ng-show="user.errors">
+      <h3>Ups...</h3>
+      <ul>
+        <li ng-repeat="(key, value) in user.errors">
+          El campo {{ key }} {{ value[0] }}
+        </li>
+      </ul>
+    </div>
+    <p>Por último te pedimos que elijas el nombre con el que van a aparecer tus comentarios</p>
+    <div class="form-group">
+      <label for="username" class="col-sm-2 control-label">Nombre de usuario</label>
+      <div class="col-sm-10">
+        <input ng-model="user.username" required class="form-control" id="username" placeholder="Nombre de usuario">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success btn-large center-block">¡Listo!</button>
+      </div>
+    </div>
+  </form>
+</div>

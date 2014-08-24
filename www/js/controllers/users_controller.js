@@ -3,11 +3,19 @@
 angular.module('tell.controllers')
   .controller('UsersController', function(Auth, $scope, $location, userSession, facebookService, $rootScope) {
 
+
+    function nextStep(user){
+      if(user.username)
+        $location.path("/home");
+      else
+        $location.path("/users/username");
+    }
+
     $scope.signIn = function() {
       $scope.ready = false;
       Auth.login($scope.user).then(function(user) {
         userSession.storeUser(user);
-        $location.path("/home");
+        nextStep(user);
       }, function(response) {
         $scope.ready = true;
         $scope.error = "email o password incorrecto.";
@@ -17,6 +25,17 @@ angular.module('tell.controllers')
     $scope.signUp = function() {
       $scope.ready = false;
       Auth.register($scope.user).then(function(user) {
+        userSession.storeUser(user);
+        nextStep(user);
+      }, function(response) {
+        $scope.ready = true;
+        $scope.user.errors = response.data.errors;
+      });
+    };
+
+    $scope.setUsername = function() {
+      $scope.ready = false;
+      userSession.updateUser($scope.user).then(function(user) {
         userSession.storeUser(user);
         $location.path("/home");
       }, function(response) {
@@ -45,7 +64,7 @@ angular.module('tell.controllers')
           };
 
           userSession.storeUser(user);
-          $location.path("/home");
+          nextStep(user);
 
           // Hack to make angular work with corodva barcode plugin
           if (!$rootScope.$$phase) {

@@ -22,9 +22,12 @@ angular.module('tell', [
 ])
 .config(function($routeProvider) {
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
+
   $routeProvider.when('/users/sign_up_selection', {templateUrl: 'partials/users/sign_up_selection.html', controller: 'UsersController'});
   $routeProvider.when('/users/email_sign_in', {templateUrl: 'partials/users/email_sign_in.html', controller: 'UsersController'});
   $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
+  $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
+
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});

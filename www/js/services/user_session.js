@@ -13,6 +13,10 @@ angular.module('tell.services')
       delete $http.defaults.headers.common['User-Id'];
       delete $http.defaults.headers.common['User-Token'];
     };
+
+    this.updateUser = function(user) {
+      return $http.put(config.serverUrl + "/users", user);
+    }
   })
   .provider('currentUser', function(){
     this.$get = function(){ return angular.fromJson(localStorage.getItem('tell.user.data')); }
