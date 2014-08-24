@@ -2,7 +2,7 @@
 
 angular.module('tell.controllers')
   .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService, afipParser) {
-  
+
     var scannear = function() {
       var cordobaHack = function() {
         // Hack horrible para que angular no se rompa con los plugins de cordova
@@ -10,7 +10,7 @@ angular.module('tell.controllers')
           $scope.$apply();
         }
       }
-      
+
       var processScannedCode = function(scanResult) {
         afipParser.parse(scanResult.text, function(parseResult) {
           if (!parseResult.success) {
@@ -23,11 +23,11 @@ angular.module('tell.controllers')
               $location.path("/locations/" + location.id);
             });
           }
-          
+
           cordobaHack();
         });
       }
-      
+
       scanService.scan(function(scanResult){
         processScannedCode(scanResult);
       }, function(error) {
