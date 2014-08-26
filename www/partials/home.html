@@ -1,12 +1,13 @@
 <h1>Menú principal</h1>
 
 <div class="container-fluid">
+  <div class="row">
+    <div class="btn-group-vertical  col-xs-offset-4 col-xs-4">
+      <button type="button" class="btn btn btn-success btn-lg" data-toggle="dropdown" ng-click="scan()">Escanear</button>
 
-  <div class="btn-group-vertical">
-    <button type="button" class="btn btn btn-success btn-lg" data-toggle="dropdown" ng-click="scan()">Escanear</button>
+      <button type="button" class="btn btn btn-warning btn-lg" data-toggle="dropdown" ng-click="logout()">Logout</button>
 
-    <button type="button" class="btn btn btn-warning btn-lg" data-toggle="dropdown" ng-click="logout()">Logout</button>
-
-    <button type="button" class="btn btn btn-danger btn-lg" data-toggle="dropdown" ng-click="exit()">Salir</button>
+      <button type="button" class="btn btn btn-danger btn-lg" data-toggle="dropdown" ng-click="exit()">Salir</button>
+    </div>
   </div>
 </div>
