@@ -3,7 +3,6 @@
 angular.module('tell.controllers')
   .controller('UsersController', function(Auth, $scope, $location, userSession, facebookService, $rootScope) {
 
-
     function nextStep(user){
       if(user.username)
         $location.path("/home");
