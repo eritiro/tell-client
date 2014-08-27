@@ -30,7 +30,12 @@ angular.module('tell.controllers')
         nextStep(user);
       }, function(response) {
         $scope.ready = true;
-        $scope.user.errors = response.data.errors;
+        $scope.user.errors = [];
+        var errors = response.data.errors;
+        for(var key in errors) {
+          name = $("label[for=" + key + "]").text();
+          $scope.user.errors.push(name + " " + errors[key][0]);
+        }
       });
     };
 
