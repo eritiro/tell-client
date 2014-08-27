@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('UsersController', function(Auth, $scope, $location, userSession, facebookService, $rootScope) {
+  .controller('UsersController', function(Auth, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
 
-    $scope.user = {}
+    $scope.user = formHelper.model;
 
     function nextStep(user){
       if(user.username)
@@ -26,22 +26,19 @@ angular.module('tell.controllers')
     $scope.signUp = function() {
       $scope.ready = false;
       Auth.register($scope.user).then(function(user) {
+        $scope.user.errors = [];
         userSession.storeUser(user);
         nextStep(user);
       }, function(response) {
         $scope.ready = true;
-        $scope.user.errors = [];
-        var errors = response.data.errors;
-        for(var key in errors) {
-          name = $("label[for=" + key + "]").text();
-          $scope.user.errors.push(name + " " + errors[key][0]);
-        }
+        formHelper.showErrors(response);
       });
     };
 
     $scope.setUsername = function() {
       $scope.ready = false;
       userSession.updateUser($scope.user).then(function(user) {
+        $scope.user.errors = [];
         userSession.storeUser(user);
         $location.path("/home");
       }, function(response) {
