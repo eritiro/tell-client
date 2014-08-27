@@ -3,6 +3,7 @@
 angular.module('tell.controllers')
   .controller('UsersController', function(Auth, $scope, $location, userSession, facebookService, $rootScope) {
 
+    $scope.user = {}
 
     function nextStep(user){
       if(user.username)
