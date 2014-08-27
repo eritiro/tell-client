@@ -1,6 +1,6 @@
 - registración y login con FB
 - dar estilos copados (chusmear bootstrap)
-- hacer pantallita de register
+- pantalla de locales recientes
 - metricas
 - logo
 - subir fotos del local
