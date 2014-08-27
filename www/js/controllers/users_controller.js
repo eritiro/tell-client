@@ -13,38 +13,28 @@ angular.module('tell.controllers')
     }
 
     $scope.signIn = function() {
-      $scope.ready = false;
       Auth.login($scope.user).then(function(user) {
         userSession.storeUser(user);
         nextStep(user);
       }, function(response) {
-        $scope.ready = true;
         $scope.error = "email o password incorrecto.";
       });
     };
 
     $scope.signUp = function() {
-      $scope.ready = false;
       Auth.register($scope.user).then(function(user) {
         $scope.user.errors = [];
         userSession.storeUser(user);
         nextStep(user);
-      }, function(response) {
-        $scope.ready = true;
-        formHelper.showErrors(response);
-      });
+      }, formHelper.showErrors);
     };
 
     $scope.setUsername = function() {
-      $scope.ready = false;
       userSession.updateUser($scope.user).then(function(user) {
         $scope.user.errors = [];
         userSession.storeUser(user);
         $location.path("/home");
-      }, function(response) {
-        $scope.ready = true;
-        $scope.user.errors = response.data.errors;
-      });
+      }, formHelper.showErrors);
     };
 
     $scope.fbLogin = function() {
@@ -79,7 +69,5 @@ angular.module('tell.controllers')
         }
       );
     };
-
-    $scope.ready = true;
   });
 

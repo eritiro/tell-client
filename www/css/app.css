@@ -39,18 +39,29 @@ h1 {
 .topbar h1 { color: black; margin: 4px; float: right; background-color: transparent; }
 body { padding-top: 60px; }
 
-.loading {
-  height: 50px;
-  left:50%;
-  top:50%;
-  margin-left: -25px;
-  margin-top: -25px;
-  position: absolute;
-  z-index: 1000;
-}
-
 .error {
   color: #660022;
+}
+
+#loaderDiv {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1100;
+   background-color: rgba(22,22,22,0.1);
+   display: none;
+}
+
+.ajax-loader {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -25px;
+   margin-top: -25px;
+   display: block;
+   height: 50px;
 }
 
 /* location */
