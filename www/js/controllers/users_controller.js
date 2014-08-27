@@ -14,6 +14,7 @@ angular.module('tell.controllers')
 
     $scope.signIn = function() {
       Auth.login($scope.user).then(function(user) {
+        $scope.user.errors = [];
         userSession.storeUser(user);
         nextStep(user);
       }, function(response) {
