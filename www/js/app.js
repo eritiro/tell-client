@@ -29,7 +29,7 @@ angular.module('tell', [
   $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
 
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
-  $routeProvider.when('/scan', {templateUrl: 'partials/scan.html', controller: 'ScanController'});
+  $routeProvider.when('/history', {templateUrl: 'partials/history.html', controller: 'HistoryController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 })

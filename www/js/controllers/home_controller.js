@@ -38,6 +38,10 @@ angular.module('tell.controllers')
     $scope.scan = function() {
       scannear();
     }
+    
+    $scope.recents = function() {
+      $location.path("/history");
+    }
 
     $scope.logout = function() {
       userSession.logout();
