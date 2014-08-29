@@ -14,7 +14,6 @@ angular.module('tell.controllers')
 
     $scope.signIn = function() {
       Auth.login($scope.user).then(function(user) {
-        $scope.user.errors = [];
         userSession.storeUser(user);
         nextStep(user);
       }, function(response) {
@@ -24,16 +23,13 @@ angular.module('tell.controllers')
 
     $scope.signUp = function() {
       Auth.register($scope.user).then(function(user) {
-        $scope.user.errors = [];
         userSession.storeUser(user);
         nextStep(user);
       }, formHelper.showErrors);
     };
 
     $scope.setUsername = function() {
-      userSession.updateUser($scope.user).then(function(user) {
-        $scope.user.errors = [];
-        userSession.storeUser(user);
+      userSession.updateUser($scope.user).then(function() {
         $location.path("/home");
       }, formHelper.showErrors);
     };
