@@ -17,7 +17,7 @@ angular.module('tell.services')
     };
 
     this.updateUser = function(user) {
-      return $http.put(config.serverUrl + "/users", user);
+      return $http.put(config.serverUrl + "/users", { user: user });
     }
   })
   .provider('currentUser', function(){
