@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsController', function($scope, $routeParams, Location) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, historyService) {
     Location.get({ id: $routeParams.id }, function(location) {
       $scope.location = location;
-      $scope.ready = true;
+      historyService.log(location);
     });
 
     $scope.score = 0;
   });
+

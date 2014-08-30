@@ -5,10 +5,10 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://localhost:3000'
+  serverUrl: 'http://192.168.1.104:3000'
 };
 
-var config = POSTA;
+var config = POMELO;
 
 angular.module('tell.services', []);
 angular.module('tell.resources', ['ngResource', 'tell.services']);
@@ -28,9 +28,10 @@ angular.module('tell', [
   $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
   $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
 
+  $routeProvider.when('/locations/history', {templateUrl: 'partials/locations/history.html', controller: 'LocationsHistoryController'});
+  $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
+
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
-  $routeProvider.when('/history', {templateUrl: 'partials/history.html', controller: 'HistoryController'});
-  $routeProvider.when('/locations/:id', {templateUrl: 'partials/location.html', controller: 'LocationsController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 })
 .config(function(AuthProvider){
@@ -41,9 +42,11 @@ angular.module('tell', [
 .directive("loader", function ($rootScope) {
     return function ($scope, element, attrs) {
         $scope.$on("loader_show", function () {
+            $scope.ready = false;
             return element.show();
         });
         return $scope.$on("loader_hide", function () {
+            $scope.ready = true;
             return element.hide();
         });
     };
