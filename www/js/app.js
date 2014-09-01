@@ -57,6 +57,9 @@ angular.module('tell', [
 
 // Angular bootstrap
 document.addEventListener("deviceready", function() {
- // document.getElementById('loading').style.display = 'none';
-  angular.bootstrap(document, ['tell']);
+ try {
+   angular.bootstrap(document, ['tell']);
+ } catch (error) {
+   console.log(error);
+ }
 }, false);

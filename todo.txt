@@ -1,6 +1,7 @@
 - registración y login con FB
-- dar estilos copados (chusmear bootstrap)
 - pantalla de locales recientes
+- subir imágenes desde el cel
+- geolocalización
 - metricas
 - logo
 - subir fotos del local
@@ -9,10 +10,8 @@
 - fue util este comentario?
 - ordenar comentarios por "utilidad"
 - invitar usuarios para puntos extra
-- resolver el problema de login fallido. no se llama al callback de error
 - que el server devuelva la url completa de las imágenes
-- agregar logout
-- mejorar el ciclo de redirects entre login y home (mucha ida y vuelta, queda raro el backbutton)
 - ver el click en el back button del device
 - deshardcodear config
 - hacer un modo sin conexión.
+- splashscreen

@@ -33,3 +33,11 @@ document.onreadystatechange = function (){
     document.dispatchEvent(event);
   }
 }
+
+document.backbutton = function (){
+  var event;
+  event = document.createEvent("HTMLEvents");
+  event.initEvent("backbutton", false, true);
+  event.eventName = "backbutton";
+  document.dispatchEvent(event);
+}
