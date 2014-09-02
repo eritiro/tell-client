@@ -3,6 +3,10 @@
 angular.module('tell.controllers')
   .controller('UsersController', function(Auth, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
 
+    $scope.$on("back_button", function() {
+      navigator.app.exitApp();
+    });
+    
     $scope.user = formHelper.model;
 
     function nextStep(user){
