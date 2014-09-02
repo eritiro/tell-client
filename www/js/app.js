@@ -53,6 +53,11 @@ angular.module('tell', [
 })
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';
+})
+.run(function($rootScope) {
+  document.addEventListener("backbutton", function() {
+    $rootScope.$broadcast('back_button');
+  }, false);
 });
 
 // Angular bootstrap

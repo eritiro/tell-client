@@ -1,10 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('StartController', function(currentUser, $location, $rootScope) {
-  document.addEventListener("backbutton", function() {
-    $rootScope.$broadcast('back_button');
-  }, false);
-
+angular.module('tell.controllers').controller('StartController', function(currentUser, $location) {
   if (currentUser)
     $location.path("/home");
   else {
