@@ -54,9 +54,14 @@ angular.module('tell', [
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';
 })
-.run(function($rootScope) {
+.run(function($location, $window) {
   document.addEventListener("backbutton", function() {
-    $rootScope.$broadcast('back_button');
+    var currentPath = $location.path();
+    if (currentPath === '/' || currentPath === '/home' || currentPath.indexOf('/users') === 0) {
+      navigator.app.exitApp();
+    } else {
+      $window.history.back();
+    }
   }, false);
 });
 

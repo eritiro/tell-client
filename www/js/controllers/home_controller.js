@@ -3,10 +3,6 @@
 angular.module('tell.controllers')
   .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService) {
     
-    var salir = function() {
-      navigator.app.exitApp();
-    };
-
     var scannear = function() {
       // Hack horrible para que angular no se rompa con los plugins de cordova
       var cordobaHack = function() {
@@ -43,10 +39,6 @@ angular.module('tell.controllers')
     }
 
     $scope.exit = function() {
-      salir();
+      navigator.app.exitApp();
     };
-    
-    $scope.$on("back_button", function() {
-      salir();
-    });
   });
