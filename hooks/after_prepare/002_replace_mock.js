@@ -11,10 +11,10 @@ function replace_string_in_file(filename, to_replace, replace_with) {
     var result = data.replace(new RegExp(to_replace, "g"), replace_with);
     fs.writeFileSync(filename, result, 'utf8');
 }
-
+ 
 if (rootdir) {
     var filestoreplace = [
-        "www/index.html",
+        "platforms/android/assets/www/index.html",
     ];
     
     filestoreplace.forEach(function(val, index, array) {
@@ -23,8 +23,8 @@ if (rootdir) {
         
         if (fs.existsSync(fullfilename)) {
             replace_string_in_file(fullfilename, 
-                "cordova\.js",
-                "js/cordovamock.js");
+                "js\/cordovamock\.js",
+                "cordova.js");
             console.log("Reemplazado");
         } else {
             console.log("No reemplacé porque no existe");
