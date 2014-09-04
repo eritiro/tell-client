@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('UsersController', function(Auth, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
+  .controller('UsersController', function(Auth, User, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
 
-    $scope.user = formHelper.model;
+    $scope.user = new formHelper.Model();
 
     function nextStep(user){
       if(user.username)
@@ -25,36 +25,22 @@ angular.module('tell.controllers')
       Auth.register($scope.user).then(function(user) {
         userSession.storeUser(user);
         nextStep(user);
-      }, formHelper.showErrors);
+      }, $scope.user.showErrors);
     };
 
     $scope.setUsername = function() {
-      userSession.updateUser($scope.user).then(function() {
+      User.update({ user: $scope.user }, function() {
         $location.path("/home");
-      }, formHelper.showErrors);
+      }, $scope.user.showErrors);
     };
 
     $scope.fbLogin = function() {
       facebookService.login(
         function(fbUserData) { // FB login ok
-          document.querySelector("#debug").innerHTML = "Login con FB!!! " + JSON.stringify(fbUserData);
-
-          // TODO pegarle al server y obtener user
-          var user = {
-             "id":3,
-             "username":"test",
-             "email":"test@test.com",
-             "created_at":"2014-07-29T23:05:11.000Z",
-             "updated_at":"2014-08-20T01:01:19.717Z",
-             "picture_file_name":null,
-             "picture_content_type":null,
-             "picture_file_size":null,
-             "picture_updated_at":null,
-             "authentication_token":"28x9DULhkWn4Nsw-v_d2"
-          };
-
-          userSession.storeUser(user);
-          nextStep(user);
+          User.facebook({token: fbUserData.accessToken}, function(user) {
+            userSession.storeUser(user);
+            nextStep(user);
+          });
 
           // Hack to make angular work with corodva barcode plugin
           if (!$rootScope.$$phase) {

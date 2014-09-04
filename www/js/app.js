@@ -8,7 +8,7 @@ var POMELO = {
   serverUrl: 'http://192.168.1.104:3000'
 };
 
-var config = POSTA;
+var config = POMELO;
 
 angular.module('tell.services', []);
 angular.module('tell.resources', ['ngResource', 'tell.services']);

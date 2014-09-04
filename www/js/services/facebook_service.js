@@ -1,11 +1,11 @@
 angular.module('tell.services').service('facebookService', function() {
 
   var permissions = ["public_profile", "email"];
-  
+
   this.login = function(s, f) {
     try {
       facebookConnectPlugin.login(
-        permissions, 
+        permissions,
         function(data) {
           s(data.authResponse);
         }, function(data){
