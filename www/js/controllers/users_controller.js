@@ -4,12 +4,15 @@ angular.module('tell.controllers')
   .controller('UsersController', function(Auth, User, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
 
     $scope.user = new formHelper.Model();
+    $scope.user.username = $location.search()["guessed_username"]
 
     function nextStep(user){
       if(user.username)
         $location.path("/home");
-      else
+      else {
+        $location.search("guessed_username", user.guessed_username)
         $location.path("/users/username");
+      }
     }
 
     $scope.signIn = function() {
@@ -30,7 +33,7 @@ angular.module('tell.controllers')
 
     $scope.setUsername = function() {
       User.update({ user: $scope.user }, function() {
-        $location.path("/home");
+        $location.url("/home");
       }, $scope.user.showErrors);
     };
 
