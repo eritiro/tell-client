@@ -2,25 +2,24 @@
   "use strict";
 
   angular.module('tell.controllers')
-    .controller('CommentsController', function ($scope, $routeParams, Location, Comment, $window, $location) {
-      var locationId = $routeParams.locationId,
-        score = $routeParams.score;
+    .controller('CommentsController', function ($scope, $routeParams, Location, Comment, $window, $location, formHelper) {
 
-      $scope.score = score;
-      $scope.text = '';
+      var locationId = $routeParams.locationId
+      $scope.comment = new Comment();
+      $scope.comment.locationId = locationId;
+      $scope.comment.score = $routeParams.score;
+      $scope.comment.text = ""; // initialization just to avoid bad requests when empty.
 
       $scope.setScore = function(index) {
-        $scope.score = index+1;
+        $scope.comment.score = index+1;
       }
 
       $scope.send = function() {
-        var comment = new Comment({ locationId: locationId });
-        comment['text'] = $scope.text;
-        comment['score'] = $scope.score;
-
-        comment.$save(function (){
+        $scope.comment.$save(function (){
           Location.stale(locationId);
           $window.history.back();
+        }, function(){
+          $scope.comment.errors = true;
         });
       }
     });

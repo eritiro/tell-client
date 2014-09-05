@@ -144,6 +144,26 @@ body { padding-top: 60px; }
   height: 40px;
 }
 
+.no-comments {
+  border-style: dotted;
+  border-width: 5px;
+  padding: 10px 15px;
+  border-color: #AAAAAA;
+  margin: 10px 30px;
+  font-size: 19px;
+  line-height: 28px;
+  color: white;
+}
+
+.no-comments em{
+  color: #FFFF00;
+  font-size: 23px;
+}
+
+.no-comments-anchor:hover{
+  text-decoration:none;
+}
+
 /* users */
 
 .facebook{ width: 180px; }

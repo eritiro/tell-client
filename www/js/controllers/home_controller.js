@@ -2,7 +2,7 @@
 
 angular.module('tell.controllers')
   .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService) {
-    
+
     var scannear = function() {
       // Hack horrible para que angular no se rompa con los plugins de cordova
       var cordobaHack = function() {
@@ -14,6 +14,8 @@ angular.module('tell.controllers')
       var processScannedCode = function(scanResult) {
         Location.scan({ url: scanResult.text }, function(location){
           $location.path("/locations/" + location.id);
+        }, function(error){
+          alert("El código QR escaneado no es un código válido. Contiene lo siguiente: " + scanResult.text)
         });
         cordobaHack();
       }
