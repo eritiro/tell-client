@@ -27,5 +27,8 @@
   "moduleType": [
     "globals"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "resolutions": {
+    "angular": "1.2.23"
+  }
 }
