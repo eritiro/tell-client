@@ -571,7 +571,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<string name=\"fb_app_name\">TestApp</string>",
+                            "xml": "<string name=\"fb_app_name\">Tell</string>",
                             "count": 1
                         }
                     ]
@@ -585,7 +585,7 @@
         },
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "343451689135742",
-            "APP_NAME": "TestApp",
+            "APP_NAME": "Tell",
             "PACKAGE_NAME": "com.pomelo.tell"
         }
     },

@@ -1,0 +1,29 @@
+<h1>Inicio de sesión</h1>
+<div class="container-fluid">
+
+  <form class="form-horizontal" role="form" ng-submit="signIn()">
+    <div class="form-errors" ng-show="error">
+      <h3>Ups...</h3>
+      <ul>
+        <li>{{ error }}</li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input ng-model="user.email" type="email" required class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-10">
+        <input ng-model="user.password" type="password" required class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default btn-large center-block">¡Ingresar!</button>
+      </div>
+    </div>
+  </form>
+</div>

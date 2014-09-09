@@ -1,2 +1,25 @@
 www/bower_components
-platforms/android
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files - android project subfolder
+android/bin/
+android/gen/
+android/assets/
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+build.prop

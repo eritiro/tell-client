@@ -1,0 +1,62 @@
+&nbsp;
+<img ng-if="ready" class="location-image" style='background-image: url("{{ location.photo_url }}")' />
+<div ng-if="ready" class="location-body">
+  <h1>{{ location.name }}</h1>
+  <div class="total-rating" >
+    <div class='stars' style='width:{{ location.score * 46 }}px'></div>
+  </div>
+  <div class='location-section' ng-if="location.address" >
+    <img src='img/address.png' />
+    <div>
+      {{ location.address | lowercase }}
+    </div>
+  </div>
+
+  <div class='location-section' ng-if="location.phone" >
+    <img class='icon' src='img/phone.png' />
+    <div>
+      <a href="tel://{{ location.phone }}">
+        {{ location.phone }}
+      </a>
+    </div>
+  </div>
+  <hr></hr>
+  <a href="#/locations/{{location.id}}/comments/new" ng-if="!location.comments.length" class="no-comments-anchor">
+    <div class="no-comments">
+        Aún nadie ha escrito una crítica para este negocio.
+        <br/>
+        <em>¡Se el primero!</em>
+    </div>
+  </a>
+  <div ng-repeat="comment in location.comments">
+    <div>
+      <span ng-repeat="i in [1,2,3,4,5]" >
+        <span ng-if="$index < comment.score">
+            &#x2605;
+        </span>
+        <span ng-if="$index >= comment.score">
+            &#x2606;
+        </span>
+      </span>
+    </div>
+    <p>
+      {{ comment.text }}
+      <br/>
+      <div style='text-align:right'>
+        <i>- {{ comment.author.username }}</i>
+      </div>
+    </p>
+    <hr></hr>
+  </div>
+</div>
+
+<div class="navbar actionbar navbar-fixed-bottom">
+  <div class="rating" >
+    <span ng-repeat="i in [1,2,3,4,5]" >
+      <a href="#/locations/{{location.id}}/comments/new?score={{$index + 1}}" >
+        <img ng-if="$index < score" src="img/white-star-2.png" />
+        <img ng-if="$index >= score" src="img/black-star-2.png" />
+      </a>
+    </span>
+  </div>
+</div>
