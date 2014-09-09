@@ -6,7 +6,7 @@ ant clean
 cd FacebookLib
 ant clean
 ant release
-cd ../../www
+cd ../../../www
 bower install
 cd ..
 cordova build android
