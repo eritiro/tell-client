@@ -23,3 +23,7 @@ gen/
 local.properties
 
 build.prop
+ant-build/
+ant-gen/
+platforms/android/assets
+platforms/android/project.properties
