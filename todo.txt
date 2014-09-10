@@ -2,6 +2,7 @@
 - subir imágenes desde el cel
 - geolocalización
 - compartir comentario en facebook
+- no hay olvidé mi passwords
 - fue util este comentario?
 - ordenar comentarios por "utilidad"
 - invitar usuarios para puntos extra
