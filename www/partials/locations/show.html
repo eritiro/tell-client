@@ -29,23 +29,25 @@
     </div>
   </a>
   <div ng-repeat="comment in location.comments">
-    <div>
-      <span ng-repeat="i in [1,2,3,4,5]" >
-        <span ng-if="$index < comment.score">
-            &#x2605;
+    <div class="comment">
+      <div>
+        <span ng-repeat="i in [1,2,3,4,5]" >
+          <span ng-if="$index < comment.score">
+              &#x2605;
+          </span>
+          <span ng-if="$index >= comment.score">
+              &#x2606;
+          </span>
         </span>
-        <span ng-if="$index >= comment.score">
-            &#x2606;
-        </span>
-      </span>
-    </div>
-    <p>
-      {{ comment.text }}
-      <br/>
-      <div style='text-align:right'>
-        <i>- {{ comment.author.username }}</i>
       </div>
-    </p>
+      <p>
+        {{ comment.text }}
+        <br/>
+        <div style='text-align:right'>
+          <i>- {{ comment.author.username }}</i>
+        </div>
+      </p>
+    </div>
     <hr></hr>
   </div>
 </div>
