@@ -1,0 +1,11 @@
+.facebook{ width: 180px; }
+
+.sign-up-or-sign-in{
+  text-align: center;
+  line-height: 62px;
+}
+
+.sign-up-or-sign-in .btn {
+  min-width: 200px;
+  margin: 0 15px;
+}

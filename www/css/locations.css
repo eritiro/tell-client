@@ -1,0 +1,101 @@
+.location-image {
+  position: fixed;
+  z-index: -100;
+  left: 0px;
+  top: 50px;
+  margin: 0px;
+  padding: 0px;
+  height: 206px;
+  width: 100%;
+  border: none;
+}
+
+.location-body{
+  background-color: #108a93;
+  margin-top: 170px;
+  margin-bottom: 45px;
+}
+
+.location-body hr { margin: 10px 0px; }
+.location-body h1{
+  font-family: "Cabin",Arial,sans-serif;
+  font-size: 30px;
+  margin-bottom: 3px;
+  margin-top: 0px;
+}
+.location-section{
+  min-height: 37px;
+  position: relative;
+}
+
+.location-section a{
+  color: white;
+}
+
+.location-section div{
+  display: block;
+  margin-left: 29px;
+  height: 100%;
+  vertical-align: middle;
+  min-height: 37px;
+}
+
+.location-section img {
+  position: absolute;
+  top: 3px;
+}
+
+.actionbar{
+  background-color: white;
+  text-align: center;
+}
+
+.rating {
+  display: inline-block;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+}
+
+.total-rating {
+  background-image: url('../img/black-star.png');
+  background-size: 46px 40px;
+  height: 40px;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.total-rating .stars {
+  background-image: url('../img/white-star.png');
+  background-size: 46px 40px;
+  height: 40px;
+}
+
+.comment {
+  margin: 0px 5px;
+}
+
+.no-comments {
+  border-style: dotted;
+  border-width: 5px;
+  padding: 10px 15px;
+  border-color: #AAAAAA;
+  margin: 0px 30px 60px;
+  font-size: 18px;
+  line-height: 24px;
+  color: white;
+}
+
+.no-comments em{
+  color: #FFFF00;
+  font-size: 23px;
+}
+
+.no-comments-anchor:hover{
+  text-decoration:none;
+}
