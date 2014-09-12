@@ -1,11 +1,29 @@
-.facebook{ width: 180px; }
-
-.sign-up-or-sign-in{
-  text-align: center;
-  line-height: 62px;
+.login-icon{
+  width: 60px;
+  height: 60px;
+  margin-right: 6px;
+  display: inline-block;
 }
 
-.sign-up-or-sign-in .btn {
-  min-width: 200px;
+.login-options{
+  text-align: center;
+  line-height: 120px;
+  margin: 10px 0px 10px;
+}
+
+.btn-signup {
+  width: 300px;
   margin: 0 15px;
+  font-size: 1.25em;
+  text-align: left;
+}
+
+.btn-signin {
+  width: 300px;
+  margin: 0 15px;
+  font-size: 1.25em;
+}
+
+.login-hr {
+  margin: 30px 0px 10px;
 }
