@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService) {
+  .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService, Auth) {
 
     var scannear = function() {
       // Hack horrible para que angular no se rompa con los plugins de cordova
@@ -36,8 +36,10 @@ angular.module('tell.controllers')
     }
 
     $scope.logout = function() {
-      userSession.logout();
-      $location.path("/users/sign_up_selection");
+      Auth.logout().then(function(oldUser) {
+        userSession.logout();
+        $location.path("/users/sign_up_selection");
+      });
     }
 
     $scope.exit = function() {

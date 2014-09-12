@@ -5,3 +5,4 @@ Versión 0.0.2
 - Corrección de imagenes faltante en la pantalla inicial en Android 2.3
 - Corrección de fuentes para Android 2.3
 - Corrección del boton volver durante la registración
+- Corrección de seguridad en el cierre de sesión

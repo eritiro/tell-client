@@ -36,6 +36,7 @@ angular.module('tell', [
 })
 .config(function(AuthProvider){
   AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
+  AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
   AuthProvider.registerPath(config.serverUrl + '/users');
   AuthProvider.ignoreAuth(true);
 })
