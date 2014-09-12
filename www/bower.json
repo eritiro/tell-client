@@ -10,11 +10,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.2.19",
-    "angular-resource": "~1.2.0",
+    "angular": "1.2.24",
+    "angular-resource": "1.2.x",
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
+    "angular-mocks": "1.2.x",
     "angular-devise": "~0.5.0",
     "moment": "~2.8.2",
     "jquery": "~2.1"
@@ -27,8 +27,5 @@
   "moduleType": [
     "globals"
   ],
-  "license": "MIT",
-  "resolutions": {
-    "angular": "1.2.23"
-  }
+  "license": "MIT"
 }

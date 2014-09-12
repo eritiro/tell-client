@@ -1,1 +1,7 @@
-- Se corrigieron algunos textos
+Versión 0.0.2
+
+- Mejoras esteticas en la pantalla de locales
+- Mejoras en el icono de la app
+- Corrección de imagenes faltante en la pantalla inicial en Android 2.3
+- Corrección de fuentes para Android 2.3
+- Corrección del boton volver durante la registración

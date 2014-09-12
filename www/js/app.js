@@ -57,7 +57,8 @@ angular.module('tell', [
 .run(function($location, $window) {
   document.addEventListener("backbutton", function() {
     var currentPath = $location.path();
-    if (currentPath === '/' || currentPath === '/home' || currentPath.indexOf('/users') === 0) {
+    var noReturn = ['/', '/home', '/users/sign_up_selection'];
+    if (noReturn.indexOf(currentPath) != -1) {
       navigator.app.exitApp();
     } else {
       $window.history.back();
