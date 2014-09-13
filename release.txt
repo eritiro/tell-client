@@ -1,5 +1,6 @@
 Versión 0.0.2
 
+- Nueva pantalla de ingreso
 - Mejoras esteticas en la pantalla de locales
 - Mejoras en el icono de la app
 - Corrección de imagenes faltante en la pantalla inicial en Android 2.3
