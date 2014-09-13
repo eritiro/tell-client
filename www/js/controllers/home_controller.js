@@ -1,34 +1,25 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService, Auth) {
+  .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService, Auth, backButtonService) {
 
-    var scannear = function() {
-      // Hack horrible para que angular no se rompa con los plugins de cordova
-      var cordobaHack = function() {
+
+    $scope.scan = function() {
+
+      backButtonService.detach();
+      scanService.scan( function(scanResult){
+        Location.scan({ url: scanResult.text }, function(location){
+          backButtonService.attach();
+          $location.path("/locations/" + location.id);
+        }, function(error){
+          backButtonService.attach();
+          alert("El código QR escaneado no es un código válido. Contiene lo siguiente: " + scanResult.text)
+        });
         if (!$rootScope.$$phase) {
           $scope.$apply();
         }
-      }
-
-      var processScannedCode = function(scanResult) {
-        Location.scan({ url: scanResult.text }, function(location){
-          $location.path("/locations/" + location.id);
-        }, function(error){
-          alert("El código QR escaneado no es un código válido. Contiene lo siguiente: " + scanResult.text)
-        });
-        cordobaHack();
-      }
-
-      scanService.scan(function(scanResult){
-        processScannedCode(scanResult);
       }, function(error) {
-        alert(error);
       });
-    }
-
-    $scope.scan = function() {
-      scannear();
     }
 
     $scope.recents = function() {
