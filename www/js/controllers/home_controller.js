@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function($scope, $location, userSession, $rootScope, Location, scanService, Auth, backButtonService) {
+  .controller('HomeController', function($scope, $location, userSession, Location, scanService, Auth, backButtonService) {
 
 
     $scope.scan = function() {
@@ -15,9 +15,7 @@ angular.module('tell.controllers')
           backButtonService.attach();
           alert("El código QR escaneado no es un código válido. Contiene lo siguiente: " + scanResult.text)
         });
-        if (!$rootScope.$$phase) {
-          $scope.$apply();
-        }
+        $scope.$apply();
       }, function(error) {
       });
     }

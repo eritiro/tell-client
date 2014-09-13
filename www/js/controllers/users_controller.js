@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('UsersController', function(Auth, User, $scope, $location, userSession, formHelper, facebookService, $rootScope) {
+  .controller('UsersController', function(Auth, User, $scope, $location, userSession, formHelper, facebookService) {
 
     $scope.user = new formHelper.Model();
     $scope.user.username = $location.search()["guessed_username"]
@@ -40,15 +40,12 @@ angular.module('tell.controllers')
     $scope.fbLogin = function() {
       facebookService.login(
         function(fbUserData) { // FB login ok
-          User.facebook({token: fbUserData.accessToken}, function(user) {
-            userSession.storeUser(user);
-            nextStep(user);
+          $scope.$apply(function(){
+            User.facebook({token: fbUserData.accessToken}, function(user) {
+              userSession.storeUser(user);
+              nextStep(user);
+            });
           });
-
-          // Hack to make angular work with corodva barcode plugin
-          if (!$rootScope.$$phase) {
-            $scope.$apply();
-          }
         },
         function(errorData) { // FB login error
           document.querySelector("#debug").innerHTML = "Falló login FB " + JSON.stringify(errorData);

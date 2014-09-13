@@ -2,12 +2,16 @@ var cordova = cordova || {
 	plugins: {
 		barcodeScanner: {
 			scan: function (success, error) {
-				success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDY0MjU0MDUwMV1bdGlwb2RvbWljaWxpbz0xXVtzZWN1ZW5jaWE9MV19' });
+				setTimeout(function(){ 
+                    success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDY0MjU0MDUwMV1bdGlwb2RvbWljaWxpbz0xXVtzZWN1ZW5jaWE9MV19' });
+                },10);
 			}
 		},
 		facebookConnectPlugin: {
 		  login: function(permissions, success, error) {
+              setTimeout(function(){ 
 		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBADKcn55k4R5xqTnRUCJknJZCx7xmVvThFaZAHtLU6qeZBgdrlKi0SR2GHdU18qe4RRhwQijATPZBJ5T2RTTB6ZBZASMh7KD0SK6oQII7ZAC43gCF9E5JmZAr8sjton5to3TT4asZBi8we7mmn7ZAv5n6ILcGd2paZBlSohumNsiSZBTld62EWbrrBmvpsNzvjCU50WZBZAkGU0wszZC" } });
+              },10);
 		  }
 		}
 	}
