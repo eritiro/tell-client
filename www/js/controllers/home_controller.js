@@ -6,13 +6,14 @@ angular.module('tell.controllers')
 
     $scope.scan = function() {
 
-      backButtonService.detach();
       scanService.scan( function(scanResult){
+        if (scanResult.cancelled){
+          backButtonService.cancelled = true;
+          return;
+        }
         Location.scan({ url: scanResult.text }, function(location){
-          backButtonService.attach();
           $location.path("/locations/" + location.id);
         }, function(error){
-          backButtonService.attach();
           alert("El código QR escaneado no es un código válido. Contiene lo siguiente: " + scanResult.text)
         });
         $scope.$apply();
