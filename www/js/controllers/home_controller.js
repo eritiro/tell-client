@@ -8,7 +8,7 @@ angular.module('tell.controllers')
 
       scanService.scan( function(scanResult){
         if (scanResult.cancelled){
-          backButtonService.cancelled = true;
+          backButtonService.cancel();
           return;
         }
         Location.scan({ url: scanResult.text }, function(location){
