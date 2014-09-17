@@ -1,0 +1,46 @@
+<h1>Bienvenido</h1>
+<div class='tutorial-description' ng-if="step == 0" >
+  <p>
+    Tell te permite escanear los codigos que están en la puerta de todos los negocios de la Argentina (Codigos QR o Data Fiscal) para consultar opiniones y comentarios que otras personas hicieron sobre el local. Luego podes compartir tu propia experiencia calificando y escribiendo tu propio comentario.
+  </p>
+  <p>
+    Queremos hacer una comunidad de consumidores que se protejen entre si, ¿te sumas?
+  </p>
+  <p>
+    En este breve tutorial te vamos a explicar cómo hacerlo.
+  </p>
+
+<button ng-click="next()" class="btn btn-primary pull-right">Siguiente</button>
+
+</div>
+
+<div class='tutorial-description' ng-if="step == 1" >
+  <img src="../img/tutorial_1.jpg">
+  <p>
+Ves un local que te llama la atención. En nuestro caso "La Americana", porque nos gustan las empanadas.
+  </p>
+
+<button ng-click="next()" class="btn btn-primary pull-right">Siguiente</button>
+</div>
+
+<div class='tutorial-description' ng-if="step == 2" >
+  <img src="../img/tutorial_2.jpg">
+  <p>
+Te acercás y con Tell escaneas el código QR (ese cuadrado que dice "Data Fiscal" y que por ley está en todos los comercios)
+  </p>
+<button ng-click="next()" class="btn btn-primary pull-right">Siguiente</button>
+
+</div>
+
+<div class='tutorial-description' ng-if="step == 3" >
+  <p>
+¡Listo! Con eso podes leer los comentarios y compartir los tuyos.
+  </p>
+  <p>
+Si no queres comentar en el momento, no te preocupes, guardamos una lista de todos los lugares que ya visitaste.
+  </p>
+
+<a href="#/home" class="btn btn-success pull-right">¡Entendido!</a>
+</div>
+
+
