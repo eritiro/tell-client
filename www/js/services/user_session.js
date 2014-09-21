@@ -18,11 +18,14 @@ angular.module('tell.services')
       delete $http.defaults.headers.common['User-Id'];
       delete $http.defaults.headers.common['User-Token'];
     };
+
+    this.currentUser = function(){
+      return angular.fromJson(localStorage.getItem('tell.user.data'));
+    };
+
   })
-  .provider('currentUser', function(){
-    this.$get = function(){ return angular.fromJson(localStorage.getItem('tell.user.data')); };
-  })
-  .run(function(currentUser, $http){
+  .run(function(userSession, $http){
+    var currentUser = userSession.currentUser();
     if(currentUser){
       $http.defaults.headers.common['User-Id'] = currentUser.id;
       $http.defaults.headers.common['User-Token'] = currentUser.authentication_token;
