@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('tell.services').service('facebookService', function() {
 
   var permissions = ["public_profile", "email"];
@@ -14,5 +16,5 @@ angular.module('tell.services').service('facebookService', function() {
     } catch (e) {
       f(e);
     }
-  }
+  };
 });

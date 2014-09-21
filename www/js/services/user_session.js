@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('tell.services')
   .service('userSession', function($http){
     this.key = 'tell.user.data';
@@ -18,11 +20,11 @@ angular.module('tell.services')
     };
   })
   .provider('currentUser', function(){
-    this.$get = function(){ return angular.fromJson(localStorage.getItem('tell.user.data')); }
+    this.$get = function(){ return angular.fromJson(localStorage.getItem('tell.user.data')); };
   })
   .run(function(currentUser, $http){
     if(currentUser){
       $http.defaults.headers.common['User-Id'] = currentUser.id;
       $http.defaults.headers.common['User-Token'] = currentUser.authentication_token;
-    };
+    }
   });

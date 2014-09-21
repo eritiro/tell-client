@@ -4,11 +4,11 @@ angular.module('tell.controllers')
   .controller('UsersController', function(Auth, User, $scope, $location, userSession, formHelper, facebookService) {
 
     $scope.user = new formHelper.Model();
-    $scope.user.username = $location.search()["guessed_username"]
+    $scope.user.username = $location.search().guessed_username;
 
     function nextStep(user){
       if(!user.username){
-        $location.search("guessed_username", user.guessed_username)
+        $location.search("guessed_username", user.guessed_username);
         $location.path("/users/username");
       }
       else if (!user.completed_tutorial){

@@ -1,6 +1,8 @@
+'use strict';
+
 angular.module('tell.services').service('formHelper', function() {
   this.Model = function(){
-    that = this;
+    var that = this;
     this.showErrors = function(response){
       that.errors = [];
       var errors = response.data.errors;

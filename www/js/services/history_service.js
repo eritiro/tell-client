@@ -1,3 +1,5 @@
+'use strict';
+
 // Wrapper del plugin barcodescanner de cordova
 angular.module('tell.services').service('historyService', function() {
   var key = 'tell.history';
@@ -10,14 +12,14 @@ angular.module('tell.services').service('historyService', function() {
     var list = this.get();
     location.when = new Date();
     list = $.grep(list, function(loc){
-      return loc.id != location.id;
+      return loc.id !== location.id;
     });
     list.unshift(location);
     save(list);
-  }
+  };
 
   this.get = function(){
     return angular.fromJson(localStorage.getItem(key)) || [];
-  }
+  };
 });
 

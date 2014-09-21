@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('tell.services').factory('spinnerInterceptor', function ($q, $rootScope, $log) {
 
     var numLoadings = 0;
@@ -9,8 +11,7 @@ angular.module('tell.services').factory('spinnerInterceptor', function ($q, $roo
 
             // Show loader
             $rootScope.$broadcast("loader_show");
-            return config || $q.when(config)
-
+            return config || $q.when(config);
         },
         response: function (response) {
 

@@ -4,7 +4,7 @@
   angular.module('tell.controllers')
     .controller('CommentsController', function ($scope, $routeParams, Location, Comment, $window, $location, formHelper) {
 
-      var locationId = $routeParams.locationId
+      var locationId = $routeParams.locationId;
       $scope.comment = new Comment();
       $scope.comment.locationId = locationId;
       $scope.comment.score = $routeParams.score;
@@ -12,7 +12,7 @@
 
       $scope.setScore = function(index) {
         $scope.comment.score = index+1;
-      }
+      };
 
       $scope.send = function() {
         $scope.comment.$save(function (){
@@ -21,6 +21,6 @@
         }, function(){
           $scope.comment.errors = true;
         });
-      }
+      };
     });
 })();
