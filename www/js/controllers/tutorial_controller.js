@@ -3,7 +3,7 @@
 angular.module('tell.controllers').controller('TutorialController', function($scope, $location, $routeParams, User, currentUser, userSession) {
 
   $scope.next = function() {
-    $location.path("tutorial/" + (parseInt($routeParams.step)+ 1));
+    $location.path("tutorial/" + (parseInt($routeParams.step, 10)+ 1));
   };
 
   $scope.endTutorial = function(){
