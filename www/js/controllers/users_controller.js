@@ -7,11 +7,15 @@ angular.module('tell.controllers')
     $scope.user.username = $location.search()["guessed_username"]
 
     function nextStep(user){
-      if(user.username)
-        $location.path("/home");
-      else {
+      if(!user.username){
         $location.search("guessed_username", user.guessed_username)
         $location.path("/users/username");
+      }
+      else if (!user.completed_tutorial){
+       $location.path("/tutorial/1");
+      }
+      else{
+        $location.path("/home");
       }
     }
 
@@ -33,7 +37,7 @@ angular.module('tell.controllers')
 
     $scope.setUsername = function() {
       User.update({ user: $scope.user }, function() {
-        $location.url("/home");
+        $location.url("/tutorial/1");
       }, $scope.user.showErrors);
     };
 

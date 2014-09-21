@@ -5,7 +5,8 @@ angular.module('tell.services')
     this.storeUser = function(user) {
       localStorage.setItem(this.key, angular.toJson({
         id: user.id,
-        authentication_token: user.authentication_token}));
+        authentication_token: user.authentication_token,
+        completed_tutorial: user.completed_tutorial }));
       $http.defaults.headers.common['User-Id'] = user.id;
       $http.defaults.headers.common['User-Token'] = user.authentication_token;
     };
