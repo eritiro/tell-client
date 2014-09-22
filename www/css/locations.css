@@ -2,7 +2,6 @@
   position: fixed;
   z-index: -100;
   left: 0px;
-  top: 50px;
   margin: 0px;
   padding: 0px;
   height: 206px;
@@ -11,8 +10,7 @@
 }
 
 .location-body{
-  background-color: #108a93;
-  margin-top: 170px;
+  margin-top: 180px;
   margin-bottom: 45px;
 }
 
