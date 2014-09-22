@@ -9,7 +9,7 @@ html{
 body {
   font-size: 18px;
   background-image: url("../img/background.jpg");
-  background-position: center;
+  background-position: center top;
   background-size: Auto 640px;
   background-color: #a15429;
   height: 100%;
