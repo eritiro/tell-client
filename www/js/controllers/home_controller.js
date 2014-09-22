@@ -35,4 +35,8 @@ angular.module('tell.controllers')
     $scope.exit = function() {
       navigator.app.exitApp();
     };
+
+    $scope.tutorial = function() {
+      $location.path("/tutorial/1");
+    };
   });
