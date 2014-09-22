@@ -1,6 +1,22 @@
 /* general */
 
-body { font-size: 18px; }
+html{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 18px;
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-size: Auto 640px;
+  background-repeat: no-repeat;
+  background-color: #a15429;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 .btn { font-size: 24px; }
 
 .btn-secondary { background-color: #ca483b; color: white; }
@@ -30,15 +46,6 @@ h1 {
 }
 
 /* layout */
-.topbar {
-  background-color: white;
-  background-image: url('../img/logo-small.png');
-  background-repeat: no-repeat;
-  margin-bottom: 0px;
-  height: 50px;
-}
-.topbar h1 { color: black; margin: 4px; float: right; background-color: transparent; }
-body { padding-top: 60px; }
 
 .error {
   color: #660022;

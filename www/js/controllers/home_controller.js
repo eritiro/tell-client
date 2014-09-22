@@ -31,8 +31,4 @@ angular.module('tell.controllers')
         $location.path("/users/sign_up_selection");
       });
     };
-
-    $scope.exit = function() {
-      navigator.app.exitApp();
-    };
   });

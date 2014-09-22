@@ -1,5 +1,12 @@
 /* home */
 
+.logo{
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .home-row {
   margin-top: 20px;
   line-height: 120px;
@@ -11,4 +18,6 @@
   margin: 0 20px;
 }
 
-.home-exit { padding: 10px; width: auto; background-color: rgba(0, 0, 0, 0.2); }
+.home-background{
+  padding-top: 50px;
+}
