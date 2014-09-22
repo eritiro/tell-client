@@ -12,6 +12,12 @@
 .location-body{
   margin-top: 180px;
   margin-bottom: 45px;
+  background-color: #FFEEEE;
+  min-height: 500px;
+}
+
+.location-body div{
+  color:#555555;
 }
 
 .location-body hr { margin: 10px 0px; }
