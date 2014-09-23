@@ -18,6 +18,10 @@
   margin: 0 20px;
 }
 
+.home-row p {
+  line-height: 30px;
+}
+
 .home-background{
   padding-top: 50px;
 }
