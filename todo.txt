@@ -1,3 +1,13 @@
+- En el login usemos el botón típico de login con FB y pongámoslo arriba http://www.insidefacebook.com/wp-content/uploads/2013/10/FBloginbutton.png
+- Agregar texto descriptivo de la app en la home.
+- Sacar el botón salir
+- Cerrar sesión tiene que estar en un menú contextual tipo android
+- Modificar la pantalla de scan y texto, parece que es para códigos de barras
+- En pantalla recientes. Poner el cartel en rojo abajo para que sean 2 líneas. Que el tap en cualquier parte de la línea vaya al local.
+- Cambiar la home (ves psd)
+- No queda muy clara la separación entre información e input del usuario para comentar en la pantalla del local. Poner "1 de 5" en las estrellas. Una opción es que cuando tocás las estrellas para comentar se levante el comentario en lugar de ir a otra pantalla.
+- Pensar nombres alternativos.
+- Usar como logo una cosa sola. Está mejor el ícono de android.
 - fotos de los locales
 - subir imágenes desde el cel
 - geolocalización
