@@ -1,4 +1,5 @@
 www/bower_components
+signed
 
 # built application files
 *.apk
