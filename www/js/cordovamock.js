@@ -47,3 +47,12 @@ document.backbutton = function (){
   event.eventName = "backbutton";
   document.dispatchEvent(event);
 };
+
+
+document.menubutton = function (){
+  var event;
+  event = document.createEvent("HTMLEvents");
+  event.initEvent("menubutton", false, true);
+  event.eventName = "menubutton";
+  document.dispatchEvent(event);
+};

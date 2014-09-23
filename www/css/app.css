@@ -84,3 +84,15 @@ hr { border-color: #CCCCCC; }
   background-color: #ff4b00;
   border-color: #ff4b00;
 }
+
+#sidebar {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  height: 100%;
+  z-index: 10;
+  width: 30%;
+}
+
+#sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
+  background-color: black
+}

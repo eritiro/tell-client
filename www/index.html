@@ -15,21 +15,28 @@
 
     <body>
     	<div id="wrapper">
-        <div id="loaderDiv" loader>
-          <img src="img/loading.gif" class="ajax-loader"/>
+          <div id="loaderDiv" loader>
+            <img src="img/loading.gif" class="ajax-loader"/>
+          </div>
+        
+          <div id="sidebar" style="display:none">
+            <ul class="nav nav-sidebar">
+              <li><a href="/users/sign-out">Desconectar</a></li>
+              <li><a href="/exit">Salir</a></li>
+            </ul>
+          </div>
+          <div ng-view></div>
         </div>
-    		<div ng-view></div>
-		  </div>
 
-		  <div id="debug">
-		  </div>
+        <div id="debug">
+        </div>
 
     <script type="text/javascript" src="js/cordovamock.js"></script>
-	  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
   	<script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="bower_components/angular-devise/lib/devise-min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-devise/lib/devise-min.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/moment/locale/es.js"></script>
 
@@ -38,6 +45,7 @@
 
     <!-- services -->
     <script type="text/javascript" src="js/services/back_button_service.js"></script>
+    <script type="text/javascript" src="js/services/menu_button_service.js"></script>
     <script type="text/javascript" src="js/services/facebook_service.js"></script>
     <script type="text/javascript" src="js/services/form_helper.js"></script>
     <script type="text/javascript" src="js/services/history_service.js"></script>
