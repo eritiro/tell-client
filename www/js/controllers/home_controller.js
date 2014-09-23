@@ -31,4 +31,8 @@ angular.module('tell.controllers')
         $location.path("/users/sign_up_selection");
       });
     };
+
+    $scope.tutorial = function() {
+      $location.path("/tutorial/1");
+    };
   });

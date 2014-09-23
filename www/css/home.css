@@ -16,6 +16,7 @@
 .home-row button {
   min-width: 200px;
   margin: 0 20px;
+  text-align: left;
 }
 
 .home-row p {
