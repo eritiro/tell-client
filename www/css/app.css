@@ -74,3 +74,13 @@ hr { border-color: #CCCCCC; }
    display: block;
    height: 50px;
 }
+
+.btn-success {
+  background-color: #ff3b00;
+  border-color: #ff3b00;
+}
+
+.btn-success:hover {
+  background-color: #ff4b00;
+  border-color: #ff4b00;
+}
