@@ -1,40 +1,24 @@
-/* latin */
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/cabin.woff2') format('woff2'), url('../fonts/cabin.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-/* latin */
-@font-face {
-  font-family: 'Cabin';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/cabin-bold.woff2') format('woff2'), url('../fonts/cabin-bold.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+
 /* cyrillic */
 @font-face {
   font-family: 'Lobster';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/lobster.woff2') format('woff2'), url('../fonts/lobster.woff') format('woff'), url('../fonts/lobster.ttf') format('truetype');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url('../fonts/lobster.ttf') format('truetype');
 }
-/* latin-ext */
+
+/* roboto */
 @font-face {
-  font-family: 'Lobster';
+  font-family: 'Cabin';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/lobster-latin-ext.woff2') format('woff2'), url('../fonts/lobster-latin-ext.woff') format('woff'), url('../fonts/lobster-latin-ext.ttf') format('truetype');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
 }
-/* latin */
+
+/* roboto */
 @font-face {
-  font-family: 'Lobster';
+  font-family: 'Cabin';
   font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/lobster-latin.woff2') format('woff2'), url('../fonts/lobster-latin.woff') format('woff'), url('../fonts/lobster-latin.ttf') format('truetype');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  font-weight: 700;
+  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
 }
