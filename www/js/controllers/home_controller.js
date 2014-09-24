@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function($scope, $location, userSession, Location, scanService, backButtonService) {
+  .controller('HomeController', function($scope, $location, userSession, Location, scanService, backButtonService, menuOptionsService) {
+    
+    $scope.menuoptions = menuOptionsService.loggedMenuOptions();
 
     $scope.scan = function() {
       scanService.scan( function(scanResult){

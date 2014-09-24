@@ -14,59 +14,52 @@
     </head>
 
     <body>
-    	<div id="wrapper">
-          <div id="loaderDiv" loader>
-            <img src="img/loading.gif" class="ajax-loader"/>
-          </div>
-        
-          <div ng-controller="SidebarController" id="sidebar" style="display:none">
-            <ul class="nav nav-sidebar">
-              <li><a ng-click="logout()">Desconectar</a></li>
-              <li><a ng-click="exit()">Salir</a></li>
-            </ul>
-          </div>
-          <div ng-view></div>
+      <div id="wrapper">
+        <div id="loaderDiv" loader>
+          <img src="img/loading.gif" class="ajax-loader"/>
         </div>
 
-        <div id="debug">
-        </div>
+        <div ng-view></div>
+      </div>
 
-    <script type="text/javascript" src="js/cordovamock.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  	<script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-devise/lib/devise-min.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/moment/locale/es.js"></script>
+      <div id="debug">
+      </div>
 
-    <!-- app -->
-    <script type="text/javascript" src="js/app.js"></script>
+      <script type="text/javascript" src="js/cordovamock.js"></script>
+      <script src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-devise/lib/devise-min.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/moment/locale/es.js"></script>
 
-    <!-- services -->
-    <script type="text/javascript" src="js/services/back_button_service.js"></script>
-    <script type="text/javascript" src="js/services/menu_button_service.js"></script>
-    <script type="text/javascript" src="js/services/facebook_service.js"></script>
-    <script type="text/javascript" src="js/services/form_helper.js"></script>
-    <script type="text/javascript" src="js/services/history_service.js"></script>
-    <script type="text/javascript" src="js/services/scan_service.js"></script>
-    <script type="text/javascript" src="js/services/spinner_interceptor.js"></script>
-    <script type="text/javascript" src="js/services/user_session.js"></script>
+      <!-- app -->
+      <script type="text/javascript" src="js/app.js"></script>
 
-    <!-- resources -->
-    <script type="text/javascript" src="js/resources/comment.js"></script>
-    <script type="text/javascript" src="js/resources/location.js"></script>
-    <script type="text/javascript" src="js/resources/user.js"></script>
+      <!-- services -->
+      <script type="text/javascript" src="js/services/back_button_service.js"></script>
+      <script type="text/javascript" src="js/services/menu_options_service.js"></script>
+      <script type="text/javascript" src="js/services/facebook_service.js"></script>
+      <script type="text/javascript" src="js/services/form_helper.js"></script>
+      <script type="text/javascript" src="js/services/history_service.js"></script>
+      <script type="text/javascript" src="js/services/scan_service.js"></script>
+      <script type="text/javascript" src="js/services/spinner_interceptor.js"></script>
+      <script type="text/javascript" src="js/services/user_session.js"></script>
 
-    <!-- controllers -->
-    <script type="text/javascript" src="js/controllers/sidebar_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/locations/history_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/locations/show_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/comments_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/home_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/start_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/tutorial_controller.js"></script>
-    <script type="text/javascript" src="js/controllers/users_controller.js"></script>
+      <!-- resources -->
+      <script type="text/javascript" src="js/resources/comment.js"></script>
+      <script type="text/javascript" src="js/resources/location.js"></script>
+      <script type="text/javascript" src="js/resources/user.js"></script>
+
+      <!-- controllers -->
+      <script type="text/javascript" src="js/controllers/locations/history_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/locations/show_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/comments_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/home_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/start_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/tutorial_controller.js"></script>
+      <script type="text/javascript" src="js/controllers/users_controller.js"></script>
 
     </body>
 </html>

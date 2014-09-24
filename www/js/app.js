@@ -53,6 +53,28 @@ angular.module('tell', [
         });
     };
 })
+.directive("tellSidebar", function ($rootScope) {
+  return {
+    templateUrl: 'partials/sidebar.html',
+    link: function(scope, element, attrs) {
+      element.hide();
+      
+      var handleMenuButton = function() {
+        if (element.is(':hidden')) {
+          element.show();
+        } else {
+          element.hide();
+        }
+      };
+      
+      document.addEventListener("menubutton", handleMenuButton, false);
+      
+      element.on('$destroy', function() {
+        document.removeEventListener("menubutton", handleMenuButton, false);
+      });
+    }
+  };
+})
 .config(function($httpProvider){
   $httpProvider.defaults.headers.common['Accept'] = 'application/json';
 });
