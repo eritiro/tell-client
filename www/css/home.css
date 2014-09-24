@@ -1,17 +1,16 @@
 /* home */
 
-.home-logo{
+.home-logo {
   width: 180px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: 15px;
 }
 
-.home-welcome{
+.home-welcome {
   text-align: center;
   font-size: 33px;
-  margin-top: 42px;
+  margin-top: 19px;
 }
 
 .home-description {
@@ -22,14 +21,14 @@
 }
 
 .home-row {
-  margin-top: 38px;
-  line-height: 76px;
+  margin-top: 16px;
+  line-height: 74px;
   text-align: center;
 }
 
 .home-row .btn {
   width: 290px;
-  height: 53px;
+  height: 52px;
   padding: 0px 51px;
   text-align: left;
   background-color: #ff3b00;
@@ -47,5 +46,8 @@
 }
 
 .home-background{
-  padding-top: 42px;
+  position: absolute;
+  height: 490px;
+  top: 50%;
+  margin-top: -245px;
 }

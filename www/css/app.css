@@ -96,3 +96,7 @@ hr { border-color: #CCCCCC; }
 #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
   background-color: black
 }
+
+#wrapper {
+  height: 100%;
+}
