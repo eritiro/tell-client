@@ -6,18 +6,18 @@ angular.module('tell.services').service('menuButtonService', function($location,
   
   this.openMenu = function() {
     document.getElementById("sidebar").style.display = "";
+    menuOpen = true;
   };
   
   this.closeMenu = function() {
     document.getElementById("sidebar").style.display = "none";
+    menuOpen = false;
   };
 
   this.handleMenuButton = function() {
     if (!menuOpen) {
-      menuOpen = true;
       that.openMenu();
     } else {
-      menuOpen = false;
       that.closeMenu();
     }
   };
