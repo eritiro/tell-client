@@ -29,7 +29,7 @@
 .home-row .btn {
   width: 290px;
   height: 52px;
-  padding: 0px 51px;
+  padding: 0px 49px;
   text-align: left;
   background-color: #ff3b00;
   font-size: 26px;
@@ -43,6 +43,7 @@
 .home-clock{
   height: 34px;
   margin-right: 17px;
+  margin-left: 2px;
 }
 
 .home-background{
