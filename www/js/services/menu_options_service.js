@@ -14,10 +14,16 @@ angular.module('tell.services').service('menuOptionsService', function(Auth, use
     });
   };
   
-  this.loggedMenuOptions = function() {
-    return [
-      { name: "Desconectar", onclick: logout },
-      { name: "Salir", onclick: exit }
-    ];
+  var loggedMenuOptions = [
+    { name: "Desconectar", onclick: logout },
+    { name: "Salir", onclick: exit }
+  ];
+  
+  var notLoggedMenuOptions = [
+    { name: "Salir", onclick: exit }
+  ];
+  
+  this.getOptionsForPath = function(path) {
+    return path.indexOf('/users/') !== -1 ? notLoggedMenuOptions : loggedMenuOptions;
   };
 });

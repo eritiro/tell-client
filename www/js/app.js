@@ -53,7 +53,7 @@ angular.module('tell', [
         });
     };
 })
-.directive("tellSidebar", function ($rootScope) {
+.directive("tellSidebar", function ($rootScope, menuOptionsService, $location) {
   return {
     templateUrl: 'partials/sidebar.html',
     link: function(scope, element, attrs) {
@@ -66,6 +66,8 @@ angular.module('tell', [
           element.hide();
         }
       };
+      
+      scope.menuoptions = menuOptionsService.getOptionsForPath($location.path());
       
       document.addEventListener("menubutton", handleMenuButton, false);
       
