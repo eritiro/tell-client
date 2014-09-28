@@ -1,20 +1,20 @@
 <div tell-sidebar id="sidebar"></div>
 
 <h1>Bienvenido</h1>
-<div class="container-fluid">
+<div class="container-fluid signup-selection">
   <div class='login-options'>
-    <a ng-click="fbLogin()" class="btn btn-success btn-signup">
-      <img class="login-icon" src="img/face.png" />
-      Ingresá con Facebook
-    </a>
+    <img class="btn-signup" src="img/fb_login.png" ng-click="fbLogin()" />
     <a href="#/users/email_sign_up" class="btn btn-success btn-signup">
-      <img class="login-icon" src="img/email.png"  />
+      <i class="fa fa-envelope"></i>
       Registrate con email
     </a>
   </div>
   <hr class='login-hr' />
   <div class="login-options">
-    <a href="#/users/email_sign_in" class="btn btn-secondary btn-signin">¡Ya estoy registrado!</a>
+    <a href="#/users/email_sign_in" class="btn btn-secondary btn-signin">
+      <i class="fa fa-arrow-circle-right"></i>
+      ¡Ya estoy registrado!
+    </a>
   </div>
   <br/>
 </div>

@@ -1,29 +1,24 @@
-.login-icon{
-  width: 60px;
-  height: 60px;
-  margin-right: 6px;
-  display: inline-block;
-}
-
 .login-options{
   text-align: center;
-  line-height: 120px;
+  line-height: 5em;
   margin: 10px 0px 10px;
 }
 
 .btn-signup {
-  width: 300px;
-  margin: 0 15px;
+  width: 13em;
+  margin: auto;
   font-size: 1.2em;
-  text-align: left;
 }
 
 .btn-signin {
-  width: 300px;
-  margin: 0 15px;
+  width: 13em;
+  margin: auto;
   font-size: 1.2em;
 }
 
 .login-hr {
   margin: 30px 0px 10px;
+}
+
+.signup-selection {
 }
