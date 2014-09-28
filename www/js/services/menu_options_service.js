@@ -15,7 +15,7 @@ angular.module('tell.services').service('menuOptionsService', function(Auth, use
   };
   
   var loggedMenuOptions = [
-    { name: "Desconectar", onclick: logout },
+    { name: "Logout", onclick: logout },
     { name: "Salir", onclick: exit }
   ];
   
