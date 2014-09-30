@@ -22,7 +22,14 @@ angular.module('tell', [
   'tell.resources',
   'tell.directives'
 ])
-.config(function($routeProvider) {
+.config(function(AuthProvider, $httpProvider, $routeProvider){
+  AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
+  AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
+  AuthProvider.registerPath(config.serverUrl + '/users');
+  AuthProvider.ignoreAuth(true);
+  
+  $httpProvider.defaults.headers.common.Accept = 'application/json';
+  
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
 
   $routeProvider.when('/users/sign_up_selection', {templateUrl: 'partials/users/sign_up_selection.html', controller: 'UsersController'});
@@ -36,15 +43,6 @@ angular.module('tell', [
 
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
-})
-.config(function(AuthProvider){
-  AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
-  AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
-  AuthProvider.registerPath(config.serverUrl + '/users');
-  AuthProvider.ignoreAuth(true);
-})
-.config(function($httpProvider){
-  $httpProvider.defaults.headers.common.Accept = 'application/json';
 });
 
 // Angular bootstrap
