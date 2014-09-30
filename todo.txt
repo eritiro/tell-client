@@ -1,3 +1,12 @@
+EMI hacer andar google adwords
+EMI hacer una landing page con un contador
+DIE cambios en el video
+DIE revisar boton de facebook
+DIE revisar menu contextual
+EMI boton verde
+
+
+
 - Modificar la pantalla de scan y texto, parece que es para códigos de barras
 - No queda muy clara la separación entre información e input del usuario para comentar en la pantalla del local. Poner "1 de 5" en las estrellas. Una opción es que cuando tocás las estrellas para comentar se levante el comentario en lugar de ir a otra pantalla.
 - fotos de los locales
