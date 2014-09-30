@@ -3,10 +3,14 @@
 <h1>Bienvenido</h1>
 <div class="container-fluid signup-selection">
   <div class='login-options'>
-    <img class="btn-signup" src="img/fb_login.png" ng-click="fbLogin()" />
+    <a ng-click="fbLogin()" class="btn btn-success btn-signup fb-login">
+      <i class="fa fa-facebook-square"></i>
+      Ingresá con Facebook
+    </a>
+    
     <a href="#/users/email_sign_up" class="btn btn-success btn-signup">
       <i class="fa fa-envelope"></i>
-      Registrate con email
+      Registrate con tu email
     </a>
   </div>
   <hr class='login-hr' />

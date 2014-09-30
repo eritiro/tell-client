@@ -22,3 +22,12 @@
 
 .signup-selection {
 }
+
+.fb-login, .fb-login:hover {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+}
+
+.signup-selection a i {
+  padding-right: 2px;
+}
