@@ -10,6 +10,7 @@ var POMELO = {
 
 var config = POSTA;
 
+angular.module('tell.directives', []);
 angular.module('tell.services', []);
 angular.module('tell.resources', ['ngResource', 'tell.services']);
 angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']);
@@ -18,7 +19,8 @@ angular.module('tell', [
   'ngRoute',
   'tell.controllers',
   'tell.services',
-  'tell.resources'
+  'tell.resources',
+  'tell.directives'
 ])
 .config(function($routeProvider) {
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
@@ -53,32 +55,8 @@ angular.module('tell', [
         });
     };
 })
-.directive("tellSidebar", function ($rootScope, menuOptionsService, $location) {
-  return {
-    templateUrl: 'partials/sidebar.html',
-    link: function(scope, element, attrs) {
-      element.hide();
-      
-      var handleMenuButton = function() {
-        if (element.is(':hidden')) {
-          element.show();
-        } else {
-          element.hide();
-        }
-      };
-      
-      scope.menuoptions = menuOptionsService.getOptionsForPath($location.path());
-      
-      document.addEventListener("menubutton", handleMenuButton, false);
-      
-      element.on('$destroy', function() {
-        document.removeEventListener("menubutton", handleMenuButton, false);
-      });
-    }
-  };
-})
 .config(function($httpProvider){
-  $httpProvider.defaults.headers.common['Accept'] = 'application/json';
+  $httpProvider.defaults.headers.common.Accept = 'application/json';
 });
 
 // Angular bootstrap
