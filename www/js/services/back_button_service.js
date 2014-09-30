@@ -8,6 +8,11 @@ angular.module('tell.services').service('backButtonService', function($location,
   };
 
   this.onBack = function() {
+    if (!$('#sidebar').is(':hidden')) {
+      $('#sidebar').hide();
+      return;
+    }
+    
     var currentPath = $location.path();
     var noReturn = ['/', '/home', '/users/sign_up_selection', '/tutorial/1'];
     if (noReturn.indexOf(currentPath) !== -1) {
