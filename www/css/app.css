@@ -85,12 +85,11 @@ hr { border-color: #CCCCCC; }
   border-color: #ff4b00;
 }
 
-#sidebar {
-  position: fixed;
+#sidebar {}
+
+#sidebar .nav {
   background-color: rgba(0,0,0,0.8);
-  height: 100%;
-  z-index: 10;
-  width: auto;
+  z-index: 1040;
 }
 
 #sidebar .nav>li {
