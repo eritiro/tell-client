@@ -1,3 +1,4 @@
 Versión 0.0.3
 
 - Cambio del look and feel
+- Se agregó menú contextual
