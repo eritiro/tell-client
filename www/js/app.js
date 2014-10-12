@@ -5,7 +5,7 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://192.168.1.104:3000'
+  serverUrl: 'http://localhost:3000'
 };
 
 var config = POSTA;
@@ -27,9 +27,9 @@ angular.module('tell', [
   AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
   AuthProvider.registerPath(config.serverUrl + '/users');
   AuthProvider.ignoreAuth(true);
-  
+
   $httpProvider.defaults.headers.common.Accept = 'application/json';
-  
+
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
 
   $routeProvider.when('/users/sign_up_selection', {templateUrl: 'partials/users/sign_up_selection.html', controller: 'UsersController'});
