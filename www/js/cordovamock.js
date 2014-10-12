@@ -5,7 +5,7 @@ var cordova = cordova || {
 		barcodeScanner: {
 			scan: function (success, error) {
 				setTimeout(function(){
-                    success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDY0MjU0MDUwMV1bdGlwb2RvbWljaWxpbz0xXVtzZWN1ZW5jaWE9MV19' });
+                    success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDcxMDA0MDUyMF1bdGlwb2RvbWljaWxpbz0zXVtzZWN1ZW5jaWE9NDZdfQ==' });
                 },10);
 			}
 		},
