@@ -1,0 +1,14 @@
+<div tell-sidebar id="sidebar"></div>
+
+<h1>Boliches encontrados</h1>
+
+<ul class="list-group history">
+  <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
+    <img src="http://placehold.it/100x100" style="float:left;">
+    <div style="margin-left:7em;">
+      <p>{{ location.name }}</p>
+      <small>Hoy van {{ location.users }} amigos</small>
+    </div>
+    <div style="clear:both;"></div>
+  </li>
+</ul>
