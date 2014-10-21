@@ -113,6 +113,6 @@
   float:left;
 }
 
-.location-item-data {
+.locations-find .list-group-item .location-item-data {
   margin-left:7em;
 }
