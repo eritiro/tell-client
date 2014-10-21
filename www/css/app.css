@@ -103,3 +103,7 @@ hr { border-color: #CCCCCC; }
 #wrapper {
   height: 100%;
 }
+
+.clearfix {
+  clear: both;
+}

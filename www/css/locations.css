@@ -104,7 +104,15 @@
   text-decoration:none;
 }
 
-.history .list-group-item {
+.history .list-group-item, .locations-find .list-group-item {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid white;
+}
+
+.locations-find .list-group-item img {
+  float:left;
+}
+
+.location-item-data {
+  margin-left:7em;
 }
