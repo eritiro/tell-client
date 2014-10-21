@@ -1,23 +1,17 @@
-EMI hacer andar google adwords
-EMI hacer una landing page con un contador
-DIE cambios en el video
-DIE revisar boton de facebook
-DIE revisar menu contextual
-EMI boton verde
+Nadie la bajó => a la gente no le gusta la idea
+pivot bestia
+- mantenemos login, pero solo FB
+- elegir foto de perfil
+- por ahora mantenemos diseño
+- buscador de boliches por nombre
+- al elegir vas al chat grupal y dice "hoy van 23 tipos/as"
+- cuando no hay nadie se va a background con un cartelito
+- chat grupal bestia con subida de fotos
 
+El server
+/locations?name=ink
+[{ id:1, name: "ink cañitas" }]
 
-
-- Modificar la pantalla de scan y texto, parece que es para códigos de barras
-- No queda muy clara la separación entre información e input del usuario para comentar en la pantalla del local. Poner "1 de 5" en las estrellas. Una opción es que cuando tocás las estrellas para comentar se levante el comentario en lugar de ir a otra pantalla.
-- fotos de los locales
-- subir imágenes desde el cel
-- geolocalización
-- compartir comentario en facebook
-- no hay olvidé mi passwords
-- fue util este comentario?
-- ordenar comentarios por "utilidad"
-- invitar usuarios para puntos extra
-- que el server devuelva la url completa de las imágenes
-- deshardcodear config
-- hacer un modo sin conexión.
-- splashscreen
+Quizás
+- Podría haber un mapa
+- opción "no sé"
