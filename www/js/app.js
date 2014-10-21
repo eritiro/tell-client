@@ -37,9 +37,8 @@ angular.module('tell', [
   $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
   $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
 
-  $routeProvider.when('/locations/history', {templateUrl: 'partials/locations/history.html', controller: 'LocationsHistoryController'});
+  $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
-  $routeProvider.when('/locations/find/:name', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
   
   $routeProvider.when('/tutorial/:step', {templateUrl: function($routeParams){ return 'partials/tutorial/step_'+ $routeParams.step +'.html'; }, controller: 'TutorialController'});
 
