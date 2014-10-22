@@ -5,10 +5,10 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://localhost:3000'
+  serverUrl: 'http://192.168.1.103:3000'
 };
 
-var config = POSTA;
+var config = POMELO;
 
 angular.module('tell.directives', []);
 angular.module('tell.services', []);
@@ -40,7 +40,7 @@ angular.module('tell', [
   $routeProvider.when('/locations/history', {templateUrl: 'partials/locations/history.html', controller: 'LocationsHistoryController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
   $routeProvider.when('/locations/find/:name', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
-  
+
   $routeProvider.when('/tutorial/:step', {templateUrl: function($routeParams){ return 'partials/tutorial/step_'+ $routeParams.step +'.html'; }, controller: 'TutorialController'});
 
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
