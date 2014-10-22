@@ -6,8 +6,8 @@
   <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
     <img src="http://placehold.it/100x100">
     <div class="location-item-data">
-      <p>{{ location.name }}</p>
-      <small>Hoy van {{ location.users }} amigos</small>
+      <h2>{{ location.name }}</h2>
+      <small>{{ location.address }}</small>
     </div>
     <div class="clearfix"></div>
   </li>

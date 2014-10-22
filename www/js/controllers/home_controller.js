@@ -3,9 +3,9 @@
 angular.module('tell.controllers')
   .controller('HomeController', function($scope, $location) {
 
-    $scope.scan = function() {
+    $scope.find = function() {
       var name = $scope.name;
-      $location.path("/locations/find/" + name);
+      $location.path("/locations").search("name", name);
     };
     
   });
