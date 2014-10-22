@@ -7,6 +7,7 @@ pivot bestia
 - al elegir vas al chat grupal y dice "hoy van 23 tipos/as"
 - cuando no hay nadie se va a background con un cartelito
 - chat grupal bestia con subida de fotos
+- ver paginado
 
 El server
 /locations?name=ink

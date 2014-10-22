@@ -16,17 +16,19 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
         }
     });
     
-    // Wraps scan function to update the cache by id:
-    Location.scan = function(hash, result, error){
-      this.scanPrivate(hash, function(location){
-        $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id, location);
-        result(location);
-      }, error);
+    Location.find = function (data, success, error) {
+      Location.query(data, function(locations) {
+        success(locations);
+      });
     };
   
-    // TODO
-    Location.find = function(data, success, error) {
-      success([{ id: 1, name: "ink", users: 3 }, { id: 2, name: "The Mo", users: 40 }]);
+    var wrapped = Location.get;
+    Location.get = function(data, success, error) {
+      wrapped(data 
+        , function(location) {
+          $cacheFactory.get('$http').put(config.serverUrl + "/locations/" + location.id, location);
+          success(location);
+        }, error);
     };
     
     Location.stale = function(id){

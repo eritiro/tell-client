@@ -5,7 +5,7 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://localhost:3000'
+  serverUrl: 'http://192.168.1.103:3000'
 };
 
 var config = POSTA;
