@@ -10,10 +10,7 @@
 }
 
 .location-body{
-  margin-top: 180px;
-  margin-bottom: 45px;
   background-color: #FFEEEE;
-  min-height: 500px;
 }
 
 .location-body div{
@@ -63,25 +60,32 @@
   position: relative;
 }
 
-.total-rating {
-  background-image: url('../img/black-star.png');
-  background-size: 46px 40px;
-  height: 40px;
-  width: 230px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  margin-top: 5px;
+.location-attending {
+  height: 50%;
 }
 
-.total-rating .stars {
-  background-image: url('../img/white-star.png');
-  background-size: 46px 40px;
-  height: 40px;
+.location-attending-row {
+  margin-top: 0.5em;
+}
+
+.location-attending-item {
+  text-align: center;
+}
+
+.location-attending-arrow {
+  text-align: center;
+}
+
+.comments {
+  height: 150px;
 }
 
 .comment {
   margin: 0px 5px;
+}
+
+.new-comment button{
+  width: 100%;
 }
 
 .no-comments {

@@ -1,66 +1,45 @@
 <div tell-sidebar id="sidebar"></div>
-
-&nbsp;
-<img ng-if="ready" class="location-image" style='background-image: url("{{ location.photo_url }}")' />
 <div ng-if="ready" class="location-body">
   <h1>{{ location.name }}</h1>
-  <div class="total-rating" >
-    <div class='stars' style='width:{{ location.score * 46 }}px'></div>
-  </div>
-  <div class='location-section' ng-if="location.address" >
-    <img src='img/address.png' />
-    <div>
-      {{ location.address | lowercase }}
+
+  <div class="location-attending">
+    <div class="location-attending-show">
+      <div class="location-attending-row row">
+        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Pepe"></div>
+        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Juan"></div>
+        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Carlos"></div>
+      </div>
+      <div class="location-attending-row row">
+        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Emiliano"></div>
+        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Diego"></div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="location-attending-pages row">
+      <div class="location-attending-arrow col-xs-2"><i class="fa fa-arrow-circle-left"></i></div>
+      <div class="location-attending-arrow col-xs-8"></div>
+      <div class="location-attending-arrow col-xs-2"><i class="fa fa-arrow-circle-right"></i></div>
     </div>
   </div>
 
-  <div class='location-section' ng-if="location.phone" >
-    <img class='icon' src='img/phone.png' />
-    <div>
-      <a href="tel://{{ location.phone }}">
-        {{ location.phone }}
-      </a>
-    </div>
-  </div>
-  <hr></hr>
-  <a href="#/locations/{{location.id}}/comments/new" ng-if="!location.comments.length" class="no-comments-anchor">
-    <div class="no-comments">
-        Aún nadie ha escrito una crítica para este negocio.
-        <br/>
-        <em>¡Se el primero!</em>
-    </div>
-  </a>
-  <div ng-repeat="comment in location.comments">
+  <hr />
+
+  <div class="comments" ng-repeat="comment in location.comments">
     <div class="comment">
-      <div>
-        <span ng-repeat="i in [1,2,3,4,5]" >
-          <span ng-if="$index < comment.score">
-              &#x2605;
-          </span>
-          <span ng-if="$index >= comment.score">
-              &#x2606;
-          </span>
-        </span>
-      </div>
       <p>
+        <i>{{ comment.author.username }}</i>
+        :
         {{ comment.text }}
-        <br/>
-        <div style='text-align:right'>
-          <i>- {{ comment.author.username }}</i>
-        </div>
       </p>
     </div>
-    <hr></hr>
   </div>
-</div>
 
-<div class="navbar actionbar navbar-fixed-bottom">
-  <div class="rating" >
-    <span ng-repeat="i in [1,2,3,4,5]" >
-      <a href="#/locations/{{location.id}}/comments/new?score={{$index + 1}}" >
-        <img ng-if="$index < score" src="img/white-star-2.png" />
-        <img ng-if="$index >= score" src="img/black-star-2.png" />
-      </a>
-    </span>
+  <div class="new-comment">
+    <textarea class="form-control" rows="3" placeholder="¡Contá tu anécdota!"></textarea>
+    <button type="submit" class="btn btn-success btn-lg" ng-click="comment()">
+      <i class="fa fa-arrow-circle-right"></i>
+    </button>
   </div>
 </div>
