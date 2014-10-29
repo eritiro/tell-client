@@ -1,14 +1,11 @@
 var registrationId;
 
 function onNotification(e) {
-    $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
-
     switch( e.event )
     {
     case 'registered':
         if ( e.regid.length > 0 )
         {
-            $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
             console.log("regID = " + e.regid);
@@ -36,7 +33,14 @@ function onNotification(e) {
             }
             else
             {
-                $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+              window.plugin.notification.local.add({
+              id:         e.payload.id,  // A unique id of the notifiction
+              date:       e.payload.date,    // This expects a date object
+              message:    e.payload.message,  // The message that is displayed
+              title:      e.payload.title  // The title of the message
+
+              }, function(){}, "scope");
+
             }
         }
 
