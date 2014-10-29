@@ -5,6 +5,8 @@ angular.module('tell.controllers')
 
     $scope.user = new formHelper.Model();
     $scope.user.username = $location.search().guessed_username;
+    $scope.user.device_token = registrationId;
+    $scope.user.gender = 'male';
 
     function nextStep(user){
       if(!user.username){

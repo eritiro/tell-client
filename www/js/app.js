@@ -5,10 +5,10 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://192.168.1.103:3000'
+  serverUrl: 'http://192.168.0.6:3000'
 };
 
-var config = POSTA;
+var config = POMELO;
 
 angular.module('tell.directives', []);
 angular.module('tell.services', []);
@@ -39,7 +39,7 @@ angular.module('tell', [
 
   $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
-  
+
   $routeProvider.when('/tutorial/:step', {templateUrl: function($routeParams){ return 'partials/tutorial/step_'+ $routeParams.step +'.html'; }, controller: 'TutorialController'});
 
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
@@ -49,7 +49,18 @@ angular.module('tell', [
 // Angular bootstrap
 document.addEventListener("deviceready", function() {
  try {
-   angular.bootstrap(document, ['tell']);
+   window.plugins.pushNotification.register(
+    function(result){
+      console.log("pushNotification success. result = " + result);
+      angular.bootstrap(document, ['tell']);
+    },
+    function(error) {
+      console.log("pushNotification error. result = " + error);
+    },
+    {
+        "senderID":"528578293155",
+        "ecb":"onNotification"
+    });
  } catch (error) {
    console.log(error);
  }
