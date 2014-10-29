@@ -2,7 +2,7 @@
 
 angular.module('tell.services').service('facebookService', function() {
 
-  var permissions = ["public_profile", "email", "user_birthday"];
+  var permissions = ["public_profile", "email", "user_birthday", "user_photos"];
 
   this.login = function(s, f) {
     try {

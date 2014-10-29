@@ -31,3 +31,9 @@
 .signup-selection a i {
   padding-right: 2px;
 }
+
+.login-options p {
+  text-align: left;
+  line-height: 1.5em;
+  margin-top: 2em;
+}
