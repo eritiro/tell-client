@@ -6,7 +6,6 @@ angular.module('tell.controllers')
     $scope.user = new formHelper.Model();
     $scope.user.username = $location.search().guessed_username;
     $scope.user.device_token = registrationId;
-    $scope.user.gender = 'male';
 
     function nextStep(user){
       if(!user.username){
@@ -47,7 +46,7 @@ angular.module('tell.controllers')
       facebookService.login(
         function(fbUserData) { // FB login ok
           $scope.$apply(function(){
-            User.facebook({token: fbUserData.accessToken}, function(user) {
+            User.facebook({token: fbUserData.accessToken, device_token: registrationId }, function(user) {
               userSession.storeUser(user);
               nextStep(user);
             });
