@@ -9,15 +9,10 @@ angular.module('tell.controllers')
 
     function nextStep(user){
       if(!user.username){
-        $location.search("guessed_username", user.guessed_username);
-        $location.path("/users/username");
+        user.username = user.guessed_username
       }
-      else if (!user.completed_tutorial){
-       $location.path("/tutorial/1");
-      }
-      else{
-        $location.path("/home");
-      }
+
+      $location.path("/home");
     }
 
     $scope.signIn = function() {
@@ -58,4 +53,3 @@ angular.module('tell.controllers')
       );
     };
   });
-
