@@ -11,6 +11,8 @@
 
 .location-body{
   background-color: #FFEEEE;
+  position: absolute;
+  height: 100%;
 }
 
 .location-body div{

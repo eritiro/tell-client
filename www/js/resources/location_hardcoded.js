@@ -205,7 +205,8 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
             { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c8.0.50.50/p50x50/10635967_10203955260615764_1188128965634461297_n.jpg?oh=cb3339f55b67ee9f96bbe7717ccd9686&oe=54EC1923&__gda__=1425090863_8c39a13ba7b6aebe55998316d736d572" },
             { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c0.5.50.50/p50x50/427689_3198533559439_300299200_n.jpg?oh=14b56f594214ff84a889b264cdf7c544&oe=54DD2937&__gda__=1423709587_46949950a9dee1b4c9811a5c4d7627a2" },
             { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/c0.8.50.50/p50x50/1234903_10201719162719041_1298139233_n.jpg?oh=533cab020ee75d2fd3d6fcb0f4ebf28c&oe=54D7363E&__gda__=1423995364_841c6655880ea687b91af54d028da074" },
-            { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c12.0.50.50/p50x50/994929_10201857064295527_177603821_n.jpg?oh=450851d77835a491bf11b359a548fc74&oe=54ED2A21&__gda__=1423514055_702893edfcdecebbcfaf5bdab781c7a1" }
+            { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c12.0.50.50/p50x50/994929_10201857064295527_177603821_n.jpg?oh=450851d77835a491bf11b359a548fc74&oe=54ED2A21&__gda__=1423514055_702893edfcdecebbcfaf5bdab781c7a1" },
+            { name: "", url: "http://i.imgur.com/NWVNQoO.jpg" }
           ]
       });
     };
