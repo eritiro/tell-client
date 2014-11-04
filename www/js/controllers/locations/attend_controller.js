@@ -7,6 +7,10 @@ angular.module('tell.controllers').controller('LocationsAttendController', funct
     });
 
     $scope.attending = function() {
-      $location.path("/locations/" + $routeParams.id + "/show");
+      Location.attend(function(){
+        $location.path("/locations/" + $routeParams.id + "/show");
+      }, function() {
+        alert("Ha ocurrido un error, intenta luego por favor");
+      });
     };
 });
