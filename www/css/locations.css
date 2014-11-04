@@ -62,14 +62,16 @@
 
 .location-attending {
   height: 50%;
+  min-height: 250px;
 }
 
-.location-attending-row {
-  margin-top: 0.5em;
+.location-attending img{
+  width: 80%;
 }
 
-.location-attending-item {
+.location-attending .location-attending-item {
   text-align: center;
+  margin-top: 0.5em;
 }
 
 .location-attending-arrow {

@@ -3,25 +3,13 @@
   <h1>{{ location.name }}</h1>
 
   <div class="location-attending">
-    <div class="location-attending-show">
-      <div class="location-attending-row row">
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Pepe"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Juan"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Carlos"></div>
-      </div>
-      <div class="location-attending-row row">
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Emiliano"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Diego"></div>
-      </div>
-    </div>
-
-    <hr />
-
-    <div class="location-attending-pages row">
-      <div class="location-attending-arrow col-xs-2"><i class="fa fa-arrow-circle-left"></i></div>
-      <div class="location-attending-arrow col-xs-8"></div>
-      <div class="location-attending-arrow col-xs-2"><i class="fa fa-arrow-circle-right"></i></div>
-    </div>
+    <carousel class="location-attending-show">
+      <slide ng-repeat="page in pages" active="page.active">
+        <div ng-repeat="attending in page.items" class="location-attending-item col-xs-4">
+          <img ng-src="{{attending.url}}" />
+        </div>
+      </slide>
+    </carousel>
   </div>
 
   <hr />

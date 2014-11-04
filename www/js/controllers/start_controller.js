@@ -8,9 +8,5 @@ angular.module('tell.controllers').controller('StartController', function(userSe
     return;
   }
 
-  if(currentUser.completed_tutorial) {
-    $location.path("/home");
-  } else {
-    $location.path("/tutorial/1");
-  }
+  $location.path("/home");
 });
