@@ -2,13 +2,26 @@
 
 angular.module('tell.controllers')
   .controller('LocationsShowController', function($scope, $routeParams, Location, historyService) {
+
+    var pagesConfig = { perPage: 6, maxPages: 10 };
+
+    var paginate = function(items, pagesConfig) {
+      var pages = Math.min(Math.ceil(items.length / pagesConfig.perPage), pagesConfig.maxPages);
+      var result = [];
+
+      for (var i = 0; i < pages; i++) {
+        var start = i * pagesConfig.perPage;
+        var page = { active:false, items: items.slice(start, start + pagesConfig.perPage) };
+        result.push(page);
+      }
+
+      return result;
+    }
+
     Location.get({ id: $routeParams.id }, function(location) {
       $scope.location = location;
-      $scope.pages = [
-        { attending: location.attending, active: true },
-        { attending: location.attending, active: false },
-        { attending: location.attending, active: false }
-      ]
+      var items = location.attending;
+      $scope.pages = paginate(items, pagesConfig);
       historyService.log(location);
     });
 

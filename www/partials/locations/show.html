@@ -5,7 +5,7 @@
   <div class="location-attending">
     <carousel class="location-attending-show">
       <slide ng-repeat="page in pages" active="page.active">
-        <div ng-repeat="attending in page.attending" class="location-attending-item col-xs-4">
+        <div ng-repeat="attending in page.items" class="location-attending-item col-xs-4">
           <img ng-src="{{attending.url}}" />
         </div>
       </slide>

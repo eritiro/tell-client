@@ -62,6 +62,7 @@
 
 .location-attending {
   height: 50%;
+  min-height: 250px;
 }
 
 .location-attending img{
