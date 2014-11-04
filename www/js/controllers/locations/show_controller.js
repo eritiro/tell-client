@@ -3,7 +3,7 @@
 angular.module('tell.controllers')
   .controller('LocationsShowController', function($scope, $routeParams, Location, historyService) {
 
-    var pagesConfig = { perPage: 6, maxPages: 10 };
+    var pagesConfig = { perPage: 9, maxPages: 10 };
 
     var paginate = function(items, pagesConfig) {
       var pages = Math.min(Math.ceil(items.length / pagesConfig.perPage), pagesConfig.maxPages);

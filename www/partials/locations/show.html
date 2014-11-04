@@ -11,23 +11,4 @@
       </slide>
     </carousel>
   </div>
-
-  <hr />
-
-  <div class="comments" ng-repeat="comment in location.comments">
-    <div class="comment">
-      <p>
-        <i>{{ comment.author.username }}</i>
-        :
-        {{ comment.text }}
-      </p>
-    </div>
-  </div>
-
-  <div class="new-comment">
-    <textarea class="form-control" rows="3" placeholder="¡Contá tu anécdota!"></textarea>
-    <button type="submit" class="btn btn-success btn-lg" ng-click="comment()">
-      <i class="fa fa-arrow-circle-right"></i>
-    </button>
-  </div>
 </div>
