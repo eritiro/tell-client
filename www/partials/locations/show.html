@@ -4,14 +4,8 @@
 
   <div class="location-attending">
     <div class="location-attending-show">
-      <div class="location-attending-row row">
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Pepe"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Juan"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Carlos"></div>
-      </div>
-      <div class="location-attending-row row">
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Emiliano"></div>
-        <div class="location-attending-item col-xs-4"><img src="http://placehold.it/100x100" title="Diego"></div>
+      <div ng-repeat="attending in location.attending" class="location-attending-item col-xs-4">
+        <img ng-src="{{attending.url}}" />
       </div>
     </div>
 
