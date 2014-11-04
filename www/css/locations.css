@@ -122,3 +122,18 @@
 .locations-find .list-group-item .location-item-data {
   margin-left:7em;
 }
+
+.location-form {
+  width: 80%;
+  margin: auto;
+}
+
+.location-form p {
+  margin-top: 2em;
+  font-size: 18pt;
+}
+
+.location-form .btn-lg {
+  margin-top: 2em;
+  width: 100%;
+}
