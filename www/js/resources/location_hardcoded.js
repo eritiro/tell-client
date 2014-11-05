@@ -207,12 +207,11 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
             { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/c0.8.50.50/p50x50/1234903_10201719162719041_1298139233_n.jpg?oh=533cab020ee75d2fd3d6fcb0f4ebf28c&oe=54D7363E&__gda__=1423995364_841c6655880ea687b91af54d028da074" },
             { name: "", url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c12.0.50.50/p50x50/994929_10201857064295527_177603821_n.jpg?oh=450851d77835a491bf11b359a548fc74&oe=54ED2A21&__gda__=1423514055_702893edfcdecebbcfaf5bdab781c7a1" },
             { name: "", url: "http://i.imgur.com/NWVNQoO.jpg" }
-          ]
+          ],
+          "$attend": function(datal, success, error) {
+            success();
+          }
       });
-    };
-
-    Location.attend = function(success, error) {
-      success();
     };
 
     return Location;
