@@ -6,6 +6,8 @@ angular.module('tell.controllers')
     var pagesConfig = { perPage: 9, maxPages: 10 };
 
     var paginate = function(items, pagesConfig) {
+      if (!items) return [];
+      
       var pages = Math.min(Math.ceil(items.length / pagesConfig.perPage), pagesConfig.maxPages);
       var result = [];
 
