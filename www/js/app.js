@@ -5,7 +5,7 @@ var POSTA = {
 };
 
 var POMELO = {
-  serverUrl: 'http://10.80.98.52:3000'
+  serverUrl: 'http://127.0.0.1:3000'
 };
 
 var config = POMELO;
@@ -36,6 +36,8 @@ angular.module('tell', [
   $routeProvider.when('/users/email_sign_in', {templateUrl: 'partials/users/email_sign_in.html', controller: 'UsersController'});
   $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
   $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
+
+  $routeProvider.when('/users/:id', {templateUrl: 'partials/users/user.html', controller: 'SocialController'});
 
   $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
   $routeProvider.when('/locations/:id/attend', {templateUrl: 'partials/locations/attend.html', controller: 'LocationsAttendController'});

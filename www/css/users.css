@@ -43,3 +43,15 @@ p.login-message {
   color: black;
   text-align: center;
 }
+
+.user .user_photo img {
+  max-height: 20em;
+  max-width: 20em;
+  margin: auto;
+  display: block;
+}
+
+.user button {
+  width: 44%;
+  margin: 0.5em;
+}
