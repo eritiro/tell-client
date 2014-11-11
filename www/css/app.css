@@ -17,6 +17,10 @@ body {
   padding: 0px;
 }
 
+#app {
+  height: 100%;
+}
+
 .btn { font-size: 24px; }
 
 .btn-secondary { background-color: #ca483b; color: white; }
