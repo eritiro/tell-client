@@ -1,0 +1,12 @@
+<h1>Chat con {{user.name}}</h1>
+
+<div class="chat_box">
+  <div class="comment" ng-repeat="comment in comments" ng-class="{ own_comment: comment.userid === me.id }">
+    {{comment.text}}
+  </div>
+</div>
+
+<div class="chat_new">
+  <input type="text" class="form-control" ng-model="comment" style="width: 85%;display: inline-block;"/>
+  <button type="submit" class="btn btn-success">></button>
+</div>

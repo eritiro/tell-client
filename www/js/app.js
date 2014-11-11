@@ -39,11 +39,11 @@ angular.module('tell', [
 
   $routeProvider.when('/users/:id', {templateUrl: 'partials/users/user.html', controller: 'SocialController'});
 
+  $routeProvider.when('/users/:id/chat', {templateUrl: 'partials/users/chat.html', controller: 'ChatController'});
+
   $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
   $routeProvider.when('/locations/:id/attend', {templateUrl: 'partials/locations/attend.html', controller: 'LocationsAttendController'});
   $routeProvider.when('/locations/:id/show', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
-
-  $routeProvider.when('/tutorial/:step', {templateUrl: function($routeParams){ return 'partials/tutorial/step_'+ $routeParams.step +'.html'; }, controller: 'TutorialController'});
 
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });

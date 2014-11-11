@@ -1,0 +1,14 @@
+.comment {
+  margin-top: 0.25em;
+  padding: 0.25em;
+  background-color: rgba(1, 1, 1, 0.3);
+}
+
+.comment.own_comment {
+  text-align: right;
+  background-color: rgba(1, 1, 1, 0.1);
+}
+
+.chat_box {
+  height: 80%;
+}
