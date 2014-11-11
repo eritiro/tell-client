@@ -10,5 +10,7 @@
 }
 
 .chat_box {
-  height: 80%;
+  height: 78%;
+  margin-bottom: 2%;
+  overflow: auto;
 }
