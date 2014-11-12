@@ -7,5 +7,10 @@ angular.module('tell.controllers')
       var name = $scope.name;
       $location.path("/locations").search("name", name);
     };
-    
+
+    $scope.notifications = function() {
+      var name = $scope.name;
+      $location.path("/notifications");
+    };
+
   });

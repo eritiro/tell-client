@@ -1,0 +1,14 @@
+<div tell-sidebar id="sidebar"></div>
+
+<h1>Notificationes</h1>
+
+<ul class="list-group notifications">
+  <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification.user.id)">
+    <img src="{{notification.user.photo}}" />
+    <div class="location-item-data">
+      <h2>{{ notification.user.name }}</h2>
+      <small>{{ notification.text }}</small>
+    </div>
+    <div class="clearfix"></div>
+  </li>
+</ul>

@@ -45,8 +45,11 @@ angular.module('tell', [
   $routeProvider.when('/locations/:id/attend', {templateUrl: 'partials/locations/attend.html', controller: 'LocationsAttendController'});
   $routeProvider.when('/locations/:id/show', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
 
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
+
+  $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
+
+  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
 });
 
 // Angular bootstrap
