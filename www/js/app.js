@@ -1,11 +1,13 @@
 'use strict';
 
 var POSTA = {
-  serverUrl: 'http://tell.startmeapps.com'
+  serverUrl: 'http://tell.startmeapps.com',
+  support: 'info@startmeapps.com'
 };
 
 var POMELO = {
-  serverUrl: 'http://192.168.1.102:3000'
+  serverUrl: 'http://192.168.1.102:3000',
+  support: 'info@startmeapps.com'
 };
 
 var config = POMELO;
