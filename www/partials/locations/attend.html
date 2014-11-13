@@ -1,9 +1,17 @@
 <h1>{{location.name}}</h1>
 
 <form role="form" class="location-form ng-pristine ng-valid">
-  <p ng-if="location.attending.length > 1">¿Vas esta noche? {{ location.attending.length }} chicos y chicas van.</p>
-  <p ng-if="location.attending.length <= 1">¿Vas esta noche?</p>
-  <p>Vení y conocé quién va.</p>
+  <p>
+    <i class="fa fa-location-arrow"></i>
+    {{ location.address }}
+  </p>
+  <p ng-if="location.phone" >
+    <i class="fa fa-phone"></i>
+    {{ location.phone }}
+  </p>
+  <p>
+    Vení y conocé quienes van!
+  </p>
 
   <button type="submit" class="btn btn-success btn-lg" ng-click="attending()">
     <i class="icon-thumbs-up"></i>¡Voy!

@@ -139,3 +139,8 @@
   margin-top: 2em;
   width: 100%;
 }
+
+.location-form .fa {
+  min-width:20px;
+  text-align: center;
+}
