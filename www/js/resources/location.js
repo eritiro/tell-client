@@ -12,7 +12,12 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
         },
         attend: {
           method: 'PUT',
-          params: { action: 'attend' }
+          params: { action: 'attendees' }
+        },
+        attendees: {
+          method: 'GET',
+          isArray: true,
+          params: { action: 'attendees' }
         }
     });
 

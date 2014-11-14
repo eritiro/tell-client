@@ -20,10 +20,9 @@ angular.module('tell.controllers')
       return result;
     }
 
-    Location.get({ id: $routeParams.id }, function(location) {
-      $scope.location = location;
-      var items = location.attending;
-      $scope.pages = paginate(items, pagesConfig);
+    Location.attendees({ id: $routeParams.id }, function(attendees) {
+      //$scope.location = location;
+      $scope.pages = paginate(attendees, pagesConfig);
       historyService.log(location);
     });
 
