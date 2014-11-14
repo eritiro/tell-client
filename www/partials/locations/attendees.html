@@ -1,0 +1,14 @@
+<div tell-sidebar id="sidebar"></div>
+<div ng-if="ready" class="location-body">
+  <h1>{{ location.name }}</h1>
+
+  <div class="location-attending">
+    <carousel class="location-attending-show">
+      <slide ng-repeat="page in pages" active="page.active">
+        <div ng-repeat="attending in page.items" class="location-attending-item col-xs-4">
+          <a href="#/users/{{attending.id}}"><img ng-src="{{attending.url}}" /></a>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>

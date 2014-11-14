@@ -1,31 +1,19 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, historyService) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location) {
 
-    var pagesConfig = { perPage: 9, maxPages: 10 };
-
-    var paginate = function(items, pagesConfig) {
-      if (!items) return [];
-      
-      var pages = Math.min(Math.ceil(items.length / pagesConfig.perPage), pagesConfig.maxPages);
-      var result = [];
-
-      for (var i = 0; i < pages; i++) {
-        var start = i * pagesConfig.perPage;
-        var page = { active:false, items: items.slice(start, start + pagesConfig.perPage) };
-        result.push(page);
-      }
-
-      return result;
-    }
-
-    Location.get({ id: $routeParams.id }, function(location) {
+    var location = null;
+    Location.get({ id: $routeParams.id }, function(loc) {
+      location = loc;
       $scope.location = location;
-      var items = location.attending;
-      $scope.pages = paginate(items, pagesConfig);
-      historyService.log(location);
     });
 
-    $scope.score = 0;
-  });
+    $scope.attending = function() {
+      location.$attend({ id: $routeParams.id }, function(){
+        $location.path("/locations/" + $routeParams.id + "/attendees");
+      }, function() {
+        alert("Ha ocurrido un error, intenta luego por favor");
+      });
+    };
+});

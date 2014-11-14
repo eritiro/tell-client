@@ -1,10 +1,11 @@
 <div tell-sidebar id="sidebar"></div>
 
-<h1>Boliches encontrados</h1>
+<h1 ng-if="locations.length != 0">Boliches encontrados</h1>
+<h1 ng-if="locations.length == 0">Ups</h1>
 
 <ul class="list-group locations-find">
   <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
-    <img src="http://placehold.it/100x100" />
+    <img ng-src="{{ location.photo }}" />
     <div class="location-item-data">
       <h2>{{ location.name }}</h2>
       <small>{{ location.address }}</small>
@@ -12,3 +13,8 @@
     <div class="clearfix"></div>
   </li>
 </ul>
+<p ng-if="locations.length == 0">
+  Lo siento, pero no encontramos ningun lugar con el nombre <em>{{searchName}}</em>.
+  Si te parece que debería estar, <a href="mailto:{{support}}?subject=Agregar Local&body=Hola,
+ quisiera que agreguen '{{searchName}}' a la lista de locales.">hacé click acá</a> y con gusto lo agregamos!
+</p>

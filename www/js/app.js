@@ -1,11 +1,13 @@
 'use strict';
 
 var POSTA = {
-  serverUrl: 'http://tell.startmeapps.com'
+  serverUrl: 'http://tell.startmeapps.com',
+  support: 'info@startmeapps.com'
 };
 
 var POMELO = {
-  serverUrl: 'http://127.0.0.1:3000'
+  serverUrl: 'http://127.0.0.1:3000',
+  support: 'info@startmeapps.com'
 };
 
 var config = POMELO;
@@ -21,12 +23,7 @@ angular.module('tell', [
   'tell.services',
   'tell.resources',
   'tell.directives'
-])
-.config(function(AuthProvider, $httpProvider, $routeProvider){
-  AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
-  AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
-  AuthProvider.registerPath(config.serverUrl + '/users');
-  AuthProvider.ignoreAuth(true);
+]);
 
   $httpProvider.defaults.headers.common.Accept = 'application/json';
 

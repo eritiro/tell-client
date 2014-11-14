@@ -7,10 +7,6 @@ angular.module('tell.controllers')
     $scope.user.device_token = registrationId;
 
     function nextStep(user){
-      if(!user.username){
-        user.username = user.guessed_username;
-      }
-
       $location.path("/home");
     }
 

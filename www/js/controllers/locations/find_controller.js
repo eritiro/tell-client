@@ -4,10 +4,12 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
 
   Location.find({ name: $routeParams.name }, function(locations) {
     $scope.locations = locations;
+    $scope.searchName = $routeParams.name;
+    $scope.support = config.support;
   });
 
   $scope.go = function(id) {
-    $location.path("/locations/" + id + "/attend");
+    $location.path("/locations/" + id);
   };
 
 });
