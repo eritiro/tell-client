@@ -14,3 +14,7 @@
   margin-bottom: 2%;
   overflow: auto;
 }
+
+.chat_new.error  input {
+	border: 3px solid red;
+}
