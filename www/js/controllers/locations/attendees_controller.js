@@ -19,6 +19,10 @@ angular.module('tell.controllers')
 
       return result;
     }
+	
+	Location.get({ id: $routeParams.id }, function(location) {
+		$scope.location = location;
+	});
 
     Location.attendees({ id: $routeParams.id }, function(attendees) {
       $scope.pages = paginate(attendees, pagesConfig);
