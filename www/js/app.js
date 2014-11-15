@@ -27,19 +27,19 @@ angular.module('tell', [
 
 // Angular bootstrap
 document.addEventListener("deviceready", function() {
- try {
-   window.plugins.pushNotification.register(
-    function(result){
-      console.log("pushNotification success. result = " + result);
-      angular.bootstrap(document, ['tell']);
-    },
-    function(error) {
-      console.log("pushNotification error. result = " + error);
-    },
-    {
-        "senderID":"528578293155",
-        "ecb":"onNotification"
-    });
+  try {
+    window.plugins.pushNotification.register(
+      function(result){
+        console.log("pushNotification success. result = " + result);
+        angular.bootstrap(document, ['tell']);
+      },
+      function(error) {
+        console.log("pushNotification error. result = " + error);
+      },
+      {
+          "senderID":"528578293155",
+          "ecb":"onNotification"
+      });
  } catch (error) {
    console.log(error);
  }
