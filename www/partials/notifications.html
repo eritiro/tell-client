@@ -3,10 +3,11 @@
 <h1>Notificationes</h1>
 
 <ul class="list-group notifications">
-  <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification.user.id)">
-    <img src="{{notification.user.photo}}" />
+  <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification)">
+    <img ng-src="{{notification.user.photo}}" />
     <div class="location-item-data">
-      <h2>{{ notification.user.name }}</h2>
+      <h2 ng-if="notification.type==='invite'"><i class="fa fa-glass"></i></h2>
+			<h2 ng-if="notification.type==='message'"><i class="fa fa-weixin"></i></h2>
       <small>{{ notification.text }}</small>
     </div>
     <div class="clearfix"></div>

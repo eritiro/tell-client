@@ -13,8 +13,8 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
 	var Message = $resource(
 		config.serverUrl + '/users/:userId/messages/:messageId',
 		{ userId: $routeParams.id, messageId:'@id' }, 
-		{ charge: { method:'POST', params: { charge:true } }
-	 });
+		{ }
+	 );
 	$scope.comments = Message.query();
 	
   $scope.chat = function() {
