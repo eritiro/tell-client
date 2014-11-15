@@ -25,30 +25,6 @@ angular.module('tell', [
   'tell.directives'
 ]);
 
-  $httpProvider.defaults.headers.common.Accept = 'application/json';
-
-  $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
-
-  $routeProvider.when('/users/sign_up_selection', {templateUrl: 'partials/users/sign_up_selection.html', controller: 'UsersController'});
-  $routeProvider.when('/users/email_sign_in', {templateUrl: 'partials/users/email_sign_in.html', controller: 'UsersController'});
-  $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
-  $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
-
-  $routeProvider.when('/users/:id', {templateUrl: 'partials/users/user.html', controller: 'SocialController'});
-
-  $routeProvider.when('/users/:id/chat', {templateUrl: 'partials/users/chat.html', controller: 'ChatController'});
-
-  $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
-  $routeProvider.when('/locations/:id/attend', {templateUrl: 'partials/locations/attend.html', controller: 'LocationsAttendController'});
-  $routeProvider.when('/locations/:id/show', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
-
-  $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
-
-  $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
-
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
-});
-
 // Angular bootstrap
 document.addEventListener("deviceready", function() {
  try {

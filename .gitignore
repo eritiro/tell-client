@@ -28,3 +28,6 @@ ant-build/
 ant-gen/
 platforms/android/assets
 platforms/android/project.properties
+/node_modules/connect/.npmignore
+/node_modules/connect
+/node_modules/serve-static

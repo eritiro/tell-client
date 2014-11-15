@@ -21,6 +21,8 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
   $routeProvider.when('/locations/:id/attendees', {templateUrl: 'partials/locations/attendees.html', controller: 'LocationsAttendeesController'});
 
+  $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
+  
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 });

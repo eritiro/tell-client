@@ -21,7 +21,6 @@ angular.module('tell.controllers')
     }
 
     Location.attendees({ id: $routeParams.id }, function(attendees) {
-      //$scope.location = location;
       $scope.pages = paginate(attendees, pagesConfig);
       historyService.log(location);
     });
