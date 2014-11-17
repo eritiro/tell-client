@@ -15,7 +15,7 @@ function onNotification(e) {
 
   case 'message':
 
-      console.log("push_handler - foreground: " +  e.foreground + ". payload: " + JSON.stringify(e.payload));
+      console.log("push_handler - received message - foreground: " +  e.foreground + ". coldstart: " + e.coldstart + ". payload: " + JSON.stringify(e.payload));
 
       // if this flag is set, this notification happened while we were in the foreground.
       // you might want to play a sound to get the user's attention, throw up a dialog, etc.
@@ -29,6 +29,14 @@ function onNotification(e) {
           json:       JSON.stringify({ from_id: e.payload.from_id, type: e.payload.type })
         }, function(){}, "scope");
 
+        var injector = angular.element(document.body).injector();
+        injector.invoke(function($rootScope, userSession) {
+          $rootScope.$apply(function(){
+            userSession.setUnreadNotifications(e.payload.unread);
+            $rootScope.notificationsCount = e.payload.unread;
+          });
+        });
+
         window.plugin.notification.local.onclick = function (id, state, json) {
           console.log("push_handler - local notification onclick");
           var data = JSON.parse(json);
@@ -41,7 +49,6 @@ function onNotification(e) {
       }
       else
       {  // otherwise we were launched because the user touched a notification in the notification tray.
-          console.log("push_handler - coldstart: " +  e.coldstart);
 
           if ( e.coldstart )
           {

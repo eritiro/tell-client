@@ -1,6 +1,11 @@
 <div tell-sidebar id="sidebar"></div>
 
 <div class="home-background" style="width: 100%">
+  <div class="notification-icon" ng-click="notifications()">
+    <img src="img/notification.png"></img>
+    <p ng-if="notificationsCount > 0">{{notificationsCount}}</p>
+  </div>
+
   <img class="home-logo" src="img/logo.png" ></img>
 
   <div class="home-welcome">
@@ -14,10 +19,6 @@
 
     <button type="submit" class="btn btn-success btn-lg" ng-click="find()">
       <i class="fa fa-search"></i>Buscar
-    </button>
-
-    <button type="submit" class="btn btn-success btn-lg" ng-click="notifications()">
-      <i class="fa fa-weixin"></i>Notificaciones
     </button>
   </form>
 </div>
