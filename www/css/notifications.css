@@ -14,3 +14,7 @@
   float: left;
   margin-right: 1em;
 }
+
+.notifications .list-group-item[read=true] {
+  color: gray;
+}

@@ -15,7 +15,7 @@ function onNotification(e) {
 
   case 'message':
 
-      console.log("push_handler - foreground: " +  e.foreground);
+      console.log("push_handler - foreground: " +  e.foreground + ". payload: " + JSON.stringify(e.payload));
 
       // if this flag is set, this notification happened while we were in the foreground.
       // you might want to play a sound to get the user's attention, throw up a dialog, etc.
