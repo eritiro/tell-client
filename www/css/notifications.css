@@ -18,3 +18,26 @@
 .notifications .list-group-item[read=true] {
   color: gray;
 }
+
+.notification-icon{
+  position: fixed;
+  right: 3px;
+  top: 2px;
+  background: rgba(255,255,255,0.6);
+  border: solid gray 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.notification-icon img{
+  width: 60px;
+}
+
+.notification-icon p{
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  width: 20px;
+  border-radius: 10px;
+  text-align: center;
+}

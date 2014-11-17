@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('HomeController', function($scope, $location) {
+  .controller('HomeController', function($scope, $rootScope, $location, userSession) {
+    $rootScope.notificationsCount = userSession.getUnreadNotifications();
 
     $scope.find = function() {
       var name = $scope.name;
