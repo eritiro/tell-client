@@ -8,11 +8,11 @@
   </div>
 
   <div class="user_accions">
-    <button type="button" ng-if="!user.invited" ng-click="invite()" class="btn btn-success">
+    <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
       <i class="fa fa-glass"></i>
       Invitar trago
     </button>
-    <button type="button" ng-if="user.invited" class="btn btn-warning active">
+    <button type="button" ng-if="user.was_invited" class="btn btn-warning active">
       <i class="fa fa-check"></i>
       ¡Enviado!
     </button>

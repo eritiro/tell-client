@@ -9,8 +9,8 @@ angular.module('tell.controllers').controller('SocialController', function($scop
 	});
 	
   $scope.invite = function() {
-		user.$invite({ id: $scope.user.id });
-    $scope.user.invited = true;
+	user.$invite({ id: $scope.user.id });
+    $scope.user.was_invited = true;
   };
 
   $scope.chat = function() {
