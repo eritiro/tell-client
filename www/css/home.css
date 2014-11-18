@@ -17,6 +17,11 @@
   margin:auto;
 }
 
+.home-form input[type=text]{
+  height: 50px;
+  font-size: 22px;
+}
+
 .home-background .btn {
   width: 100%;
   text-align: middle;
