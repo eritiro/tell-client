@@ -8,6 +8,12 @@
     <img ng-src="{{user.picture}}" />
   </div>
 
+  <div class="user_info">
+    <p ng-if="user.location">
+      Esta noche va a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
+    </p>
+  </div>
+
   <div class="user_accions">
     <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
       <i class="fa fa-glass"></i>

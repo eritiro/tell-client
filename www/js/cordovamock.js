@@ -12,7 +12,7 @@ var cordova = cordova || {
 		facebookConnectPlugin: {
 		  login: function(permissions, success, error) {
               setTimeout(function(){
-		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBADynYMqxwFSzZB13fFU38SSZBgtqkMwI1FZC1sBHSc0X7TMsBopdmSDerLEyCxzp73AAh4ZAZAglXfmaRmdmtmLro6RAnOZAhoGznJZCRZAgVjvss11UiJXvGTpLwXSWoRX9ZCP1UYWqhARrtJtZBJo1GlPXmct63C0aHKI4ExkStArFVXB8WKGFyOMCMSe3WCpluP6ZAwsc99F26NF7QKNZA8IZD" } });
+		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBAMKZBNtHLa96GayIZCCIfkWgkqaZCZA5scQgFqrAU4D5CTjYKkXm85hOrLbUPLWlmiLZCZCShwo66U4AqRNmU2QxemZCamReOhZADF0hZBgMw4ybpv5MOiL63Py98TT8S7haEkiDzozPyl2Yzqsf4MDIynKlEWxt3SCahlOVk6frwQLp9kbVSQSGZAnzwZAdx7lFi3PrvyoE01mth0oFHw3hf8ZD" } });
               },10);
 		  }
 		},

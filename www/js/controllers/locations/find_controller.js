@@ -9,7 +9,7 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
   });
 
   $scope.go = function(id) {
-    $location.path("/locations/" + id);
+    $location.url("/locations/" + id);
   };
 
 });

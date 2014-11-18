@@ -55,3 +55,14 @@ p.login-message {
   width: 42%;
   margin: 0.5em;
 }
+
+.user_info {
+  font-size: 1.4em;
+  color: black;
+  margin: 4px;
+  text-align: center;
+}
+.user_info a {
+  display: block;
+  color: white;
+}
