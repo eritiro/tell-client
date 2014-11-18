@@ -1,5 +1,6 @@
 .message {
-  margin-top: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0.25em;
   padding: 4px 10px;
   clear: both;
   min-width: 30%;

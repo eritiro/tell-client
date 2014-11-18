@@ -5,7 +5,7 @@ angular.module('tell.controllers')
 
     $scope.find = function() {
       if($scope.name === undefined || $scope.name.length < 2)
-        alert("Escribí el nombre del boliche!");
+        navigator.notification.alert("Tenés que escribir el nombre del boliche", function(){}, "Hey!");
       else
         $location.path("/locations").search("name", $scope.name);
     };
