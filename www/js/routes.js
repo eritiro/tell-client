@@ -13,7 +13,7 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
   $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
 
-  $routeProvider.when('/users/:id', {templateUrl: 'partials/users/user.html', controller: 'SocialController'});
+  $routeProvider.when('/users/:id', {templateUrl: 'partials/users/show.html', controller: 'UsersShowController'});
 
   $routeProvider.when('/users/:id/chat', {templateUrl: 'partials/users/chat.html', controller: 'ChatController'});
 
@@ -22,7 +22,7 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/locations/:id/attendees', {templateUrl: 'partials/locations/attendees.html', controller: 'LocationsAttendeesController'});
 
   $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
-  
+
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 });
