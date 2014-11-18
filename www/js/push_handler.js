@@ -12,6 +12,13 @@ function onPushMessageReceived(e){
     injector.invoke(function($rootScope) {
       $rootScope.$apply(function(){
         $rootScope.notificationsCount = e.payload.msgcnt;
+
+        var notification = e.payload;
+        notification.text = e.payload.message;
+        notification.read = false;
+        notification.from_id = parseInt(e.payload.from_id);
+        console.log("push_handler - broadcasting: " + JSON.stringify(notification));
+        $rootScope.$broadcast('notification', notification);
         var sound = new Media("/android_asset/www/sounds/notify.mp3");
         sound.play();
         navigator.vibrate(500);
