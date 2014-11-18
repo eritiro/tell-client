@@ -1,4 +1,27 @@
+'use strict';
+
 var registrationId;
+
+function onPushMessageReceived(e){
+  console.log("push_handler - received message: " + JSON.stringify(e));
+
+  window.localStorage.setItem('unreadNotifications', e.payload.msgcnt);
+
+  if (e.foreground) {
+    var injector = angular.element(document.body).injector();
+    injector.invoke(function($rootScope) {
+      $rootScope.$apply(function(){
+        $rootScope.notificationsCount = e.payload.msgcnt;
+      });
+    });
+  } else {
+    if(e.payload.type === "invite"){
+      window.location = "#/users/" + e.payload.from_id;
+    } else {
+      window.location = "#/users/" + e.payload.from_id + "/chat";
+    }
+  }
+}
 
 function onNotification(e) {
   switch( e.event )
@@ -14,58 +37,7 @@ function onNotification(e) {
   break;
 
   case 'message':
-
-      console.log("push_handler - received message - foreground: " +  e.foreground + ". coldstart: " + e.coldstart + ". payload: " + JSON.stringify(e.payload));
-
-      // if this flag is set, this notification happened while we were in the foreground.
-      // you might want to play a sound to get the user's attention, throw up a dialog, etc.
-      if ( e.foreground )
-      {
-        // todo
-        window.plugin.notification.local.add({
-          id:         e.payload.id,  // A unique id of the notifiction
-          message:    e.payload.message,  // The message that is displayed
-          title:      e.payload.title,  // The title of the message
-          json:       JSON.stringify({ from_id: e.payload.from_id, type: e.payload.type })
-        }, function(){}, "scope");
-
-        var injector = angular.element(document.body).injector();
-        injector.invoke(function($rootScope, userSession) {
-          $rootScope.$apply(function(){
-            userSession.setUnreadNotifications(e.payload.unread);
-            $rootScope.notificationsCount = e.payload.unread;
-          });
-        });
-
-        window.plugin.notification.local.onclick = function (id, state, json) {
-          console.log("push_handler - local notification onclick");
-          var data = JSON.parse(json);
-          if(data.type === "invite"){
-            window.location = "#/users/" + data.from_id;
-          } else {
-            window.location = "#/users/" + data.from_id + "/chat";
-          }
-        };
-      }
-      else
-      {  // otherwise we were launched because the user touched a notification in the notification tray.
-
-          if ( e.coldstart )
-          {
-             window.plugin.notification.local.add({
-              id:         e.payload.id,  // A unique id of the notifiction
-              message:    e.payload.message,  // The message that is displayed
-              title:      e.payload.title  // The title of the message
-            }, function(){}, "scope");
-          }
-          else {
-            if(e.payload.type === "invite"){
-              window.location = "#/users/" + e.payload.from_id;
-            } else {
-              window.location = "#/users/" + e.payload.from_id + "/chat";
-            }
-          }
-      }
+      onPushMessageReceived(e);
       break;
 
     case 'error':
@@ -75,5 +47,5 @@ function onNotification(e) {
     default:
       console.log("push_handler - UNKNOWN: " +  e.event);
     break;
-}
+  }
 }

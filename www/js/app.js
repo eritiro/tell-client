@@ -30,11 +30,12 @@ document.addEventListener("deviceready", function() {
   try {
     window.plugins.pushNotification.register(
       function(result){
-        console.log("pushNotification success. result = " + result);
+        console.log("pushNotification register success. result = " + result);
+        console.log("==== bootstraping angular ====");
         angular.bootstrap(document, ['tell']);
       },
       function(error) {
-        console.log("pushNotification error. result = " + error);
+        console.log("pushNotification register error. result = " + error);
       },
       {
           "senderID":"528578293155",
