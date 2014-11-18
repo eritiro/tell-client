@@ -1,130 +1,20 @@
-.location-image {
-  position: fixed;
-  z-index: -100;
-  left: 0px;
-  margin: 0px;
-  padding: 0px;
-  height: 206px;
-  width: 100%;
-  border: none;
-}
-
-.location-body{
-  background-color: #FFEEEE;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.location-body div{
-  color:#555555;
-}
-
-.location-body hr { margin: 10px 0px; }
-.location-body h1{
-  font-family: "Cabin",Arial,sans-serif;
-  font-size: 30px;
-  margin-bottom: 3px;
-  margin-top: 0px;
-}
-.location-section{
-  min-height: 37px;
-  position: relative;
-}
-
-.location-section a{
-  color: white;
-}
-
-.location-section div{
-  display: block;
-  margin-left: 29px;
-  height: 100%;
-  vertical-align: middle;
-  min-height: 37px;
-}
-
-.location-section img {
-  position: absolute;
-  top: 3px;
-}
-
-.actionbar{
-  background-color: white;
-  text-align: center;
-}
-
-.rating {
-  display: inline-block;
-  text-align: center;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-}
-
-.location-attending {
-  height: 50%;
-  min-height: 250px;
-}
-
-.location-attending img{
-  width: 80%;
-}
-
-.location-attending .location-attending-item {
-  text-align: center;
-  margin-top: 0.5em;
-}
-
-.location-attending-arrow {
-  text-align: center;
-}
-
-.comments {
-  height: 150px;
-}
-
-.comment {
-  margin: 0px 5px;
-}
-
-.new-comment button{
-  width: 100%;
-}
-
-.no-comments {
-  border-style: dotted;
-  border-width: 5px;
-  padding: 10px 15px;
-  border-color: #AAAAAA;
-  margin: 0px 30px 60px;
-  font-size: 18px;
-  line-height: 24px;
-  color: white;
-}
-
-.no-comments em{
-  color: #400000;
-  font-size: 23px;
-}
-
-.no-comments-anchor:hover{
-  text-decoration:none;
-}
-
-.history .list-group-item, .locations-find .list-group-item {
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-}
-
 .locations-find .list-group-item img {
   float:left;
+}
+
+.locations-find{
+  margin: 10px;
 }
 
 .locations-find .list-group-item .location-item-data {
   margin-left:7em;
 }
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+}
+
 
 .location-form {
   width: 80%;
@@ -144,4 +34,29 @@
 .location-form .fa {
   min-width:20px;
   text-align: center;
+}
+
+.location-body h2{
+  text-align: center;
+}
+.location-scroll{
+  position: fixed;
+  top: 140px;
+  bottom: 0px;
+  overflow: auto;
+  width: 100%;
+}
+
+.attendees-container{
+  background-color: black;
+  text-align: center;
+}
+
+.attendees-container a{
+  display: inline-block;
+  width: 50%;
+}
+
+.attendees-container img{
+  width: 100%;
 }
