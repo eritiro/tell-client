@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsAttendeesController', function($scope, $routeParams, Location, historyService) {
+  .controller('LocationsAttendeesController', function($scope, $routeParams, Location) {
 
     var pagesConfig = { perPage: 9, maxPages: 10 };
 
@@ -19,14 +19,13 @@ angular.module('tell.controllers')
 
       return result;
     }
-	
+
 	Location.get({ id: $routeParams.id }, function(location) {
 		$scope.location = location;
 	});
 
     Location.attendees({ id: $routeParams.id }, function(attendees) {
       $scope.pages = paginate(attendees, pagesConfig);
-      historyService.log(location);
     });
 
     $scope.score = 0;
