@@ -1,13 +1,16 @@
-.locations-find .list-group-item img {
-  float:left;
-}
 
 .locations-find{
   position: fixed;
   top: 70px;
-  bottom: 0;
-  overflow: scroll;
+  bottom: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 100%;
+  padding: 0px 5px;
+}
+
+.locations-find .list-group-item img {
+  float:left;
 }
 
 .locations-find .list-group-item .location-item-data {
