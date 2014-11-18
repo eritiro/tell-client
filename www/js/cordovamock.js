@@ -27,6 +27,12 @@ var cordova = cordova || {
 	}
 };
 
+navigator.notification = {
+    alert: function(message, callback, title, button){
+      alert(message);
+    }
+  };
+
 window.plugins = cordova.plugins;
 var facebookConnectPlugin = cordova.plugins.facebookConnectPlugin;
 
