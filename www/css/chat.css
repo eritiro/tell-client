@@ -1,9 +1,9 @@
 .message {
   margin-top: 0.25em;
-  padding: 5px;
+  padding: 4px 10px;
   clear: both;
   min-width: 30%;
-  max-width: 60%;
+  max-width: 90%;
   background-color: rgba(1, 1, 1, 0.3);
 }
 
