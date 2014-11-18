@@ -3,15 +3,15 @@
 
 <h1>Chat con {{user.username}}</h1>
 
-<div class="chat_box" scroll-glue>
-  <div class="comment" ng-repeat="comment in comments" ng-class="{ own_comment: comment.mine }">
+<div class="chat-box" scroll-glue>
+  <div class="message" ng-repeat="comment in comments" ng-class="{ mine: comment.mine }">
     {{ comment.text }}
   </div>
 </div>
 
-<form class="chat_new" ng-class="{ 'error': error }" >
-  <input type="text" class="form-control"ng-model="comment" style="width: 85%; display: inline-block;" />
-  <button type="submit" ng-click="chat()" class="btn btn-success" style="width: 13%; display: inline-block;">
+<form class="chat-write" >
+  <input type="text" class="form-control"ng-model="comment" />
+  <button type="submit" ng-click="chat()" class="btn btn-success">
     <i class="fa fa-caret-right"></i>
   </button>
 </form>
