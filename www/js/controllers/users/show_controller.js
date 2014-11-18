@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams) {
+angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession) {
 
+    $scope.currentUser = userSession.currentUser();
 	var user;
 	User.get({ id: $routeParams.id }, function(u){
 		user = u;
