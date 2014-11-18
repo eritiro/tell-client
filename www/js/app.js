@@ -19,6 +19,7 @@ angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']
 
 angular.module('tell', [
   'ngRoute',
+  'luegg.directives',
   'tell.controllers',
   'tell.services',
   'tell.resources',
