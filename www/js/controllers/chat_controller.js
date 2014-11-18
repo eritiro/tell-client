@@ -31,10 +31,13 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
     $scope.comment = "";
   };
 
+  $scope.showUser = function(){
+    $location.path("/users/" + $routeParams.id);
+  };
+
   $scope.$on('notification',function(event, notification){
     if($routeParams.id === notification.from_id.toString() && notification.type === "message") {
       $scope.comments.push({ text: notification.text, mine: false});
     }
   });
-
 });
