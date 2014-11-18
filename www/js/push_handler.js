@@ -12,6 +12,9 @@ function onPushMessageReceived(e){
     injector.invoke(function($rootScope) {
       $rootScope.$apply(function(){
         $rootScope.notificationsCount = e.payload.msgcnt;
+        var sound = new Media("/android_asset/www/sounds/notify.mp3");
+        sound.play();
+        navigator.vibrate(500);
       });
     });
   } else {
