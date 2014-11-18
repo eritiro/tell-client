@@ -20,25 +20,39 @@
 }
 
 
-.location-form {
+.location-show {
   width: 80%;
   margin: auto;
 }
 
-.location-form p {
-  margin-top: 2em;
+.location-show p {
+  margin-top: 1em;
   font-size: 18pt;
+  text-align: center;
 }
 
-.location-form .btn-lg {
+.location-show .location-photo-container{
+  height: 200px;
+  vertical-align: middle;
+}
+
+.location-show img{
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.location-show .btn-lg {
   margin-top: 2em;
   width: 100%;
 }
 
-.location-form .fa {
+.location-show .fa {
   min-width:20px;
   text-align: center;
 }
+
 
 .location-body h2{
   text-align: center;
