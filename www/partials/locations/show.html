@@ -3,7 +3,7 @@
 
 <h1>{{location.name}}</h1>
 
-<form role="form" class="location-form ng-pristine ng-valid">
+<form role="form" class="location-form ng-pristine ng-valid" ng-if="ready">
   <p>
     <i class="fa fa-location-arrow"></i>
     {{ location.address }}

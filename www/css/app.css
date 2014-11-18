@@ -35,6 +35,7 @@ h1 {
   padding-right: 80px;
   line-height: 50px;
   font-size: 30px;
+  min-height: 65px;
 }
 
 hr { border-color: #CCCCCC; }

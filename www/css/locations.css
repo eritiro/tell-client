@@ -3,7 +3,11 @@
 }
 
 .locations-find{
-  margin: 10px;
+  position: fixed;
+  top: 70px;
+  bottom: 0;
+  overflow: scroll;
+  width: 100%;
 }
 
 .locations-find .list-group-item .location-item-data {
