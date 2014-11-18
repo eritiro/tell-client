@@ -7,9 +7,10 @@
 
 .home-welcome {
   text-align: center;
-  font-size: 33px;
-  margin-top: 2em;
+  font-size: 27px;
+  margin-top: 0.2em;
   margin-bottom: 16px;
+  margin-bottom: 2.5em;
 }
 
 .home-form {
@@ -38,5 +39,5 @@
   position: absolute;
   height: 490px;
   top: 50%;
-  margin-top: -245px;
+  margin-top: -215px;
 }
