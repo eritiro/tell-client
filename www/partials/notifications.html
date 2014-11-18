@@ -3,7 +3,7 @@
 <h1>Notificationes</h1>
 
 <ul class="list-group notifications">
-  <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification)" read="{{notification.read}}">
+  <li class="list-group-item" ng-repeat="notification in notifications" ng-click="showNotifications" read="{{notification.read}}">
     <img ng-src="{{notification.user.photo}}" />
     <div class="location-item-data">
       <h2 ng-if="notification.type==='invite'"><i class="fa fa-glass"></i></h2>

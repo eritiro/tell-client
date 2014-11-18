@@ -12,7 +12,12 @@ angular.module('tell.resources').factory('User', function($resource){
 				method: 'PUT',
 				url: config.serverUrl +'/users/facebook'
 			},
-			get: { // TODO hace cache de angular
+          	profile: {
+				method: 'GET',
+                cache: true,
+				url: config.serverUrl +'/users/profile'
+			},
+          	get: { // TODO hace cache de angular
 				cache: true,
 				method: 'GET'
 			},

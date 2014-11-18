@@ -3,22 +3,12 @@
 angular.module('tell.services')
   .service('userSession', function($http){
     this.key = 'tell.user.data';
-
-    this.setUnreadNotifications = function(number){
-      localStorage.setItem('unreadNotifications', number);
-    }
-
-    this.getUnreadNotifications = function(){
-      return parseInt(localStorage.getItem('unreadNotifications'));
-    }
-
     this.storeUser = function(user) {
       localStorage.setItem(this.key, angular.toJson({
         id: user.id,
         authentication_token: user.authentication_token,
         completed_tutorial: user.completed_tutorial}));
 
-      this.setUnreadNotifications(user.unread_notifications);
       $http.defaults.headers.common['User-Id'] = user.id;
       $http.defaults.headers.common['User-Token'] = user.authentication_token;
     };
