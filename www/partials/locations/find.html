@@ -4,7 +4,7 @@
 <h1 ng-if="locations.length != 0">Boliches</h1>
 <h1 ng-if="locations.length == 0">Ups</h1>
 
-<ul class="list-group locations-find">
+<ul class="list-group locations-find" ng-if="locations.length !== 0" >
   <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
     <img ng-src="{{ location.photo }}" />
     <div class="location-item-data">
@@ -14,7 +14,7 @@
     <div class="clearfix"></div>
   </li>
 </ul>
-<p ng-if="locations.length == 0">
+<p ng-if="locations.length === 0">
   Lo siento, pero no encontramos ningun lugar con el nombre <em>{{searchName}}</em>.
   Si te parece que debería estar, <a href="mailto:{{support}}?subject=Agregar Local&body=Hola,
  quisiera que agreguen '{{searchName}}' a la lista de locales.">hacé click acá</a> y con gusto lo agregamos!
