@@ -52,8 +52,9 @@ p.login-message {
 }
 
 .user button {
-  width: 42%;
-  margin: 0.5em;
+  margin: 2px;
+  font-size: 22px;
+  width: 48%;
 }
 
 .user_info {
@@ -65,4 +66,8 @@ p.login-message {
 .user_info a {
   display: block;
   color: white;
+}
+
+.user_accions{
+  text-align: center;
 }
