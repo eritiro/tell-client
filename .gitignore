@@ -2,6 +2,7 @@ www/bower_components
 signed
 
 # built application files
+platforms/android/out/
 *.apk
 *.ap_
 
