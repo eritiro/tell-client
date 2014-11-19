@@ -17,7 +17,7 @@
     </p>
   </div>
 
-  <div class="user_accions" ng-if="user.id !== currentUser.id">
+  <div class="user_accions" ng-if="ready && user.id !== currentUser.id">
     <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
       <i class="fa fa-glass"></i>
       Invitar trago

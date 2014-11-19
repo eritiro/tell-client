@@ -17,11 +17,7 @@ angular.module('tell.resources').factory('User', function($resource){
                 cache: true,
 				url: config.serverUrl +'/users/profile'
 			},
-          	get: { // TODO hace cache de angular
-				cache: true,
-				method: 'GET'
-			},
-			invite: {
+          	invite: {
 				method: 'POST',
 				params: { action: 'invite' }
 			},
