@@ -2,29 +2,36 @@
 
 var registrationId;
 
+function broadcastNotification(e){
+  var injector = angular.element(document.body).injector();
+  injector.invoke(function($rootScope) {
+    $rootScope.$apply(function(){
+      $rootScope.notificationsCount = e.payload.msgcnt;
+
+      var notification = e.payload;
+      notification.text = e.payload.message;
+      notification.read = false;
+      notification.from_id = parseInt(e.payload.from_id, 10);
+      console.log("push_handler - broadcasting: " + JSON.stringify(notification));
+      $rootScope.$broadcast('notification', notification);
+    });
+  });
+}
+
 function onPushMessageReceived(e){
   console.log("push_handler - received message: " + JSON.stringify(e));
 
   window.localStorage.setItem('unreadNotifications', e.payload.msgcnt);
 
   if (e.foreground) {
-    var injector = angular.element(document.body).injector();
-    injector.invoke(function($rootScope) {
-      $rootScope.$apply(function(){
-        $rootScope.notificationsCount = e.payload.msgcnt;
-
-        var notification = e.payload;
-        notification.text = e.payload.message;
-        notification.read = false;
-        notification.from_id = parseInt(e.payload.from_id);
-        console.log("push_handler - broadcasting: " + JSON.stringify(notification));
-        $rootScope.$broadcast('notification', notification);
-        var sound = new Media("/android_asset/www/sounds/notify.mp3");
-        sound.play();
-        navigator.vibrate(500);
-      });
-    });
+    broadcastNotification(e);
+    var sound = new Media("/android_asset/www/sounds/notify.mp3");
+    sound.play();
+    navigator.vibrate(500);
   } else {
+    if(!e.coldstart){
+      broadcastNotification(e);
+    }
     if(e.payload.type === "invite"){
       window.location = "#/users/" + e.payload.from_id;
     } else {
