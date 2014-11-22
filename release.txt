@@ -3,3 +3,4 @@ Mejorada la usabilidad del chat.
 Corregida la actualización del chat.
 Corrección de textos.
 Cambios estéticos
+Fix "agregar boliche"

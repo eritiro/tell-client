@@ -87,3 +87,10 @@
 .attendees-container img{
   width: 100%;
 }
+
+.location-not-found{
+  color:black;
+}
+.location-not-found a{
+  color:blue;
+}
