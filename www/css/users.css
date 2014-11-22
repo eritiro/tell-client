@@ -59,7 +59,6 @@ p.login-message {
 
 .user_info {
   font-size: 1.4em;
-  color: black;
   margin: 4px;
   text-align: center;
 }
@@ -70,4 +69,10 @@ p.login-message {
 
 .user_accions{
   text-align: center;
+}
+
+.user{
+  background-color: rgba(0,0,0,0.6);
+  margin-top: -15px;
+  padding-top: 15px;
 }

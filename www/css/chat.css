@@ -5,12 +5,15 @@
   clear: both;
   min-width: 30%;
   max-width: 90%;
-  background-color: rgba(1, 1, 1, 0.3);
+  color: black;
+  background-color: rgba(255, 225, 175, 0.9);
+  border-radius: 5px 5px 5px 0px;
 }
 
 .message.mine {
   float: right;
-  background-color: rgba(1, 1, 1, 0.1);
+  background-color: rgba(255, 255, 200, 0.9);
+  border-radius: 5px 5px 0px 5px;
 }
 
 .chat-box {

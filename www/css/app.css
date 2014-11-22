@@ -10,7 +10,7 @@ body {
   font-size: 16px;
   background-image: url("../img/background.jpg");
   background-position: center top;
-  background-size: Auto 640px;
+  background-size: Auto 100%;
   background-color: #a15429;
   height: 100%;
   margin: 0px;
@@ -21,10 +21,23 @@ body {
   height: 100%;
 }
 
-.btn { font-size: 24px; }
+.btn {
+  font-size: 24px;
+  border-radius: 10px;
+  border-width: 2px;
+  background-color: #0A0909 !important;
+}
 
-.btn-secondary { background-color: #ca483b; color: white; }
-.btn-secondary:hover { color: white; background-color: #a5382d; }
+.btn-secondary { color: white; }
+.btn-secondary:hover { color: white; }
+
+.btn-success {
+  border-color: #ff3b00;
+}
+
+.btn-success:hover {
+  border-color: #ff4b00;
+}
 
 h1 {
   background-color: rgba(0, 0, 0, 0.2);
@@ -82,16 +95,6 @@ hr { border-color: #CCCCCC; }
    margin-top: -25px;
    display: block;
    height: 50px;
-}
-
-.btn-success {
-  background-color: #ff3b00;
-  border-color: #ff3b00;
-}
-
-.btn-success:hover {
-  background-color: #ff4b00;
-  border-color: #ff4b00;
 }
 
 #sidebar {}
