@@ -2,3 +2,4 @@ Version 0.1.1:
 Mejorada la usabilidad del chat.
 Corregida la actualización del chat.
 Corrección de textos.
+Cambios estéticos
