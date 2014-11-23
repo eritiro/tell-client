@@ -5,6 +5,10 @@ angular.module('tell.controllers')
 
     $scope.user = new formHelper.Model();
     $scope.user.device_token = registrationId;
+		
+	Auth.logout().then(function() {
+      userSession.logout();
+    });
 
     function nextStep(user){
       $location.path("/home");

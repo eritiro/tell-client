@@ -1,5 +1,4 @@
-
-.locations-find{
+.locations-find {
   position: fixed;
   top: 70px;
   bottom: 0px;
@@ -9,19 +8,34 @@
   padding: 0px 5px;
 }
 
-.locations-find .list-group-item img {
-  float:left;
-}
-
 .locations-find .list-group-item .location-item-data {
   margin-left:7em;
+}
+
+.locations-find .list-group-item .location-item-data  h2{
+  margin-top: 0;
 }
 
 .list-group-item {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid white;
+	
 }
 
+.locations-find .list-group-item {
+	min-height: 120px;
+}
+
+.locations-find .list-group-item  .location-item-img {
+	height:100px;
+	float:left;
+}
+
+.locations-find .list-group-item  .location-item-img  .helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
 
 .location-show {
 

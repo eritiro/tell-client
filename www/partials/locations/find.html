@@ -6,12 +6,14 @@
 
 <ul class="list-group locations-find" ng-if="locations.length !== 0" >
   <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
-    <img ng-src="{{ location.photo }}" />
-    <div class="location-item-data">
+    <div class="location-item-img">
+			<span class="helper"></span>
+			<img ng-src="{{ location.photo }}" />
+		</div>
+		<div class="location-item-data">
       <h2>{{ location.name }}</h2>
       <small>{{ location.address }}</small>
     </div>
-    <div class="clearfix"></div>
   </li>
 </ul>
 <p ng-if="locations.length === 0" class="location-not-found">
