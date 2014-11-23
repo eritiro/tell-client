@@ -1,6 +1,7 @@
 .notifications {
   width: 95%;
   margin:auto;
+  font-size: 18px;
 }
 
 .notifications .list-group-item {
