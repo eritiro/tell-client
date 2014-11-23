@@ -51,30 +51,7 @@ h1 {
   min-height: 65px;
 }
 
-hr { border-color: #CCCCCC; }
-
-/* error */
-
-.form-errors{
-  background-color: rgba(0, 0, 0, 0.2);
-  margin-bottom: 5px;
-}
-
-.form-errors h3{
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 3px;
-}
-
-.form-errors li{
-  list-style-type: none;
-  color: white;
-}
-
-/* layout */
-
-.error {
-  color: #660022;
-}
+/* spinner */
 
 #loaderDiv {
    position: fixed;
@@ -97,7 +74,7 @@ hr { border-color: #CCCCCC; }
    height: 50px;
 }
 
-#sidebar {}
+/* sidebar */
 
 #sidebar .nav {
   background-color: rgba(0,0,0,0.8);
@@ -110,10 +87,6 @@ hr { border-color: #CCCCCC; }
 
 #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
   background-color: black
-}
-
-#wrapper {
-  height: 100%;
 }
 
 .clearfix {

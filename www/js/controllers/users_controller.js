@@ -5,7 +5,7 @@ angular.module('tell.controllers')
 
     $scope.user = new formHelper.Model();
     $scope.user.device_token = registrationId;
-		
+
 	Auth.logout().then(function() {
       userSession.logout();
     });
@@ -25,7 +25,7 @@ angular.module('tell.controllers')
           });
         },
         function(errorData) { // FB login error
-          document.querySelector("#debug").innerHTML = "Falló login FB " + JSON.stringify(errorData);
+          console.log("Falló login FB " + JSON.stringify(errorData));
         }
       );
     };
