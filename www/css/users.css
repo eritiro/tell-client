@@ -24,7 +24,7 @@
 }
 
 .fb-login, .fb-login:hover {
-  background-color: #3b5998;
+  background-color: #3b5998 !important;
   border: 1px solid #3b5998;
 }
 

@@ -10,7 +10,7 @@ var POMELO = {
   support: 'info@startmeapps.com'
 };
 
-var config = POMELO;
+var config = POSTA;
 
 angular.module('tell.directives', ['ui.bootstrap']);
 angular.module('tell.services', []);
