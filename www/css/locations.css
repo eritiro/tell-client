@@ -19,7 +19,7 @@
 .list-group-item {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid white;
-	
+
 }
 
 .locations-find .list-group-item {
@@ -38,12 +38,12 @@
 }
 
 .location-show {
-
+  font-size: 17pt;
 }
 
+.location-show span { margin: 5px 10px; }
 .location-show p {
   margin-top: 1em;
-  font-size: 17pt;
   text-align: center;
 }
 
