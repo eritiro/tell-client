@@ -1,6 +1,10 @@
 Version 0.1.1:
-Mejorada la usabilidad del chat.
-Corregida la actualización del chat.
+El teclado del chat ya no se oculta luego de enviar un mensaje.
+El chat ahora permite escribir en multiples líneas.
+Corregida actualización automatica del chat al presionar sobre una notificación.
 Corrección de textos.
-Cambios estéticos
-Fix "agregar boliche"
+Cambios estéticos.
+Arreglo de e-mail para cargar locales.
+Agregada una descripción sobre los locales.
+
+
