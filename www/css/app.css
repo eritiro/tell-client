@@ -96,16 +96,27 @@ h2 {
 /* sidebar */
 
 #sidebar .nav {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #E0E0E0;
   z-index: 1040;
+  left: 6px;
+  right: auto;
+  width: 55%;
+}
+
+#sidebar a{
+  color: black;
+}
+
+#sidebar li{
+  border-bottom: #B0B0B0 solid 1px;
 }
 
 #sidebar .nav>li {
-  padding: 0.5em 0;
+  padding: 5px 0;
 }
 
 #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
-  background-color: black
+  background-color: white;
 }
 
 .clearfix {
