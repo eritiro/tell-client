@@ -8,6 +8,7 @@
   color: black;
   background-color: rgba(255, 225, 175, 0.9);
   border-radius: 5px 5px 5px 0px;
+  font-size: 18px;
 }
 
 .message.mine {
@@ -34,12 +35,13 @@
 .chat-write input[type=text]{
   width: 85%;
   display: inline-block;
+  font-size: 18px;
 }
 
 .chat-write button{
   width: 13%;
   display: inline-block;
   height: 40px;
-  margin-top: -2px;
-  padding: inherit;
+  margin-top: -3px;
+  padding: 0px;
 }
