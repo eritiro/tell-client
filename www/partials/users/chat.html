@@ -4,7 +4,7 @@
 <h1 ng-click="showUser()">{{user.username}}</h1>
 
 <div class="chat-box" scroll-glue>
-  <div class="message" style="white-space: pre;" ng-repeat="message in messages" ng-class="{ mine: message.mine }">{{ message.text }}</div>
+  <div class="message" ng-repeat="message in messages" ng-class="{ mine: message.mine }">{{ message.text }}</div>
 </div>
 
 <form class="chat-write" >

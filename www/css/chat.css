@@ -9,7 +9,9 @@
   background-color: rgba(255, 225, 175, 0.9);
   border-radius: 5px 5px 5px 0px;
   font-size: 18px;
+  word-wrap: normal;
   word-break: break-word;
+  white-space: pre-line;
 }
 
 .message.mine {
