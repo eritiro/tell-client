@@ -4,13 +4,11 @@
 <h1 ng-click="showUser()">{{user.username}}</h1>
 
 <div class="chat-box" scroll-glue>
-  <div class="message" ng-repeat="comment in comments" ng-class="{ mine: comment.mine }">
-    {{ comment.text }}
-  </div>
+  <div class="message" style="white-space: pre;" ng-repeat="message in messages" ng-class="{ mine: message.mine }">{{ message.text }}</div>
 </div>
 
 <form class="chat-write" >
-  <input type="text" class="form-control"ng-model="comment" is-focused="true" />
+  <textarea ng-model="message" rows="1" is-focused="true" />
   <button type="submit" ng-click="chat()" class="btn btn-success">
     <i class="fa fa-caret-right"></i>
   </button>

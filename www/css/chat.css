@@ -9,6 +9,7 @@
   background-color: rgba(255, 225, 175, 0.9);
   border-radius: 5px 5px 5px 0px;
   font-size: 18px;
+  word-break: break-word;
 }
 
 .message.mine {
@@ -32,16 +33,19 @@
   width: 100%;
 }
 
-.chat-write input[type=text]{
+.chat-write textarea{
   width: 85%;
   display: inline-block;
   font-size: 18px;
+  color: #444444;
+  padding: 6px;
+  height: 40px;
 }
 
 .chat-write button{
   width: 13%;
   display: inline-block;
   height: 40px;
-  margin-top: -3px;
+  margin-top: -30px;
   padding: 0px;
 }

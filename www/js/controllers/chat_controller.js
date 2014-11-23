@@ -15,20 +15,20 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
     { }
   );
 
-  $scope.comments = Message.query();
+  $scope.messages = Message.query();
 
   $scope.chat = function() {
-    if (!$scope.comment) {
+    if (!$scope.message) {
       return;
     }
 
     $scope.error = false; // TODO error handling
-    var message = new Message({ text: $scope.comment });
+    var message = new Message({ text: $scope.message });
     message.$save();
 
     message.mine = true;
-    $scope.comments.push(message);
-    $scope.comment = "";
+    $scope.messages.push(message);
+    $scope.message = "";
   };
 
   $scope.showUser = function(){
@@ -37,7 +37,7 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
 
   $scope.$on('notification',function(event, notification){
     if($routeParams.id === notification.from_id.toString() && notification.type === "message") {
-      $scope.comments.push({ text: notification.text, mine: false});
+      $scope.messages.push({ text: notification.text, mine: false});
     }
   });
 });
