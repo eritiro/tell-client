@@ -43,7 +43,7 @@
 
 .location-show span { margin: 5px 10px; }
 .location-show p {
-  margin-top: 1em;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .location-show .description{
-  height: 150px;
+  height: 160px;
   overflow: auto;
 }
 

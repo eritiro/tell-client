@@ -1,10 +1,18 @@
 Version 0.1.1:
+
+Boliches
+--------
+Se agregó una descripción sobre los locales.
+Se agregó la cantidad de personas que van a ir al local.
+
+Chat
+--------
 El teclado del chat ya no se oculta luego de enviar un mensaje.
 El chat ahora permite escribir en multiples líneas.
 Corregida actualización automatica del chat al presionar sobre una notificación.
+
+Otros
+-----
 Corrección de textos.
 Cambios estéticos.
 Arreglo de e-mail para cargar locales.
-Agregada una descripción sobre los locales.
-
-
