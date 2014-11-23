@@ -24,6 +24,6 @@ angular.module('tell.services').service('menuOptionsService', function(Auth, use
   ];
 
   this.getOptionsForPath = function(path) {
-    return path.indexOf('/users/') !== -1 ? notLoggedMenuOptions : loggedMenuOptions;
+    return userSession.currentUser() ? loggedMenuOptions : notLoggedMenuOptions;
   };
 });

@@ -17,3 +17,4 @@ Otros
 Corrección de textos.
 Cambios estéticos.
 Arreglo de e-mail para cargar locales.
+Corrección del menu contextual para cerrar sesión en cualquier parte de la app. 
