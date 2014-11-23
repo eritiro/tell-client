@@ -1,0 +1,96 @@
+/* spinner */
+
+#loaderDiv {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1100;
+   background-color: rgba(22,22,22,0.3);
+   display: none;
+}
+
+.ajax-loader {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -25px;
+   margin-top: -25px;
+   display: block;
+   height: 50px;
+}
+
+/* sidebar */
+
+#sidebar .nav {
+  background-color: #E0E0E0;
+  z-index: 1040;
+  left: 6px;
+  right: auto;
+  width: 55%;
+}
+
+#sidebar a{
+  color: black;
+}
+
+#sidebar li{
+  border-bottom: #B0B0B0 solid 1px;
+}
+
+#sidebar .nav>li {
+  padding: 5px 0;
+}
+
+#sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
+  background-color: white;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.centered-image-container{
+  height: 200px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.centered-image-container img{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0px;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* icons */
+
+.notification-icon{
+  position: fixed;
+  right: 3px;
+  top: 2px;
+  background: rgba(255,255,255,0.6);
+  border: solid gray 1px;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 11;
+}
+.notification-icon img{
+  width: 60px;
+}
+
+.notification-icon p{
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  width: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
