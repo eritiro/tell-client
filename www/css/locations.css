@@ -1,11 +1,6 @@
 .locations-find {
-  position: fixed;
-  top: 70px;
-  bottom: 0px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
   padding: 0px 5px;
+  margin-top: 5px;
 }
 
 .locations-find .list-group-item .location-item-data {
@@ -47,28 +42,9 @@
   text-align: center;
 }
 
-.location-photo-container{
-  height: 200px;
-  width: 100%;
-  position:relative;
-  text-align: center;
-}
-
-.location-photo-container img{
-  position:absolute;
-  top:0;
-  bottom:0;
-  right: 0;
-  left: 0px;
-  margin:auto;
-  max-width: 100%;
-  max-height: 100%;
-}
-
 .location-show {
   background-color: rgba(0,0,0,0.6);
-  margin-top: -15px;
-  padding-top: 15px;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -84,17 +60,6 @@
 .location-show .description{
   height: 160px;
   overflow: auto;
-}
-
-.location-body h2{
-  text-align: center;
-}
-.location-scroll{
-  position: fixed;
-  top: 140px;
-  bottom: 0px;
-  overflow: auto;
-  width: 100%;
 }
 
 .attendees-container{

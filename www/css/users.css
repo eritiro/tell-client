@@ -44,9 +44,19 @@ p.login-message {
   text-align: center;
 }
 
+
+.user {
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 5px;
+}
+
+.user .user_photo {
+  height: 200px;
+}
+
 .user .user_photo img {
-  max-height: 20em;
-  max-width: 20em;
+  max-height: 200px;
+  max-width: 200px;
   margin: auto;
   display: block;
 }
@@ -69,10 +79,4 @@ p.login-message {
 
 .user_accions{
   text-align: center;
-}
-
-.user{
-  background-color: rgba(0,0,0,0.6);
-  margin-top: -15px;
-  padding-top: 15px;
 }

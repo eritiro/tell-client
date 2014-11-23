@@ -1,15 +1,13 @@
+<h1>{{ location.name }}</h1>
 <div tell-sidebar id="sidebar"></div>
+<div notification-icon></div>
 
-<div ng-if="ready" class="location-body">
-  <h1>{{ location.name }}</h1>
-  <div notification-icon></div>
+<div ng-if="ready" class="content">
   <h2>Invitados</h2>
 
-  <div class="location-scroll">
-    <div class="attendees-container">
-      <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
-        <img ng-src="{{attendee.picture}}" />
-      </a>
-    </div>
+  <div class="attendees-container">
+    <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
+      <img ng-src="{{attendee.picture}}" />
+    </a>
   </div>
 </div>

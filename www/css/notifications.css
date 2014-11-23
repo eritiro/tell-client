@@ -1,6 +1,5 @@
 .notifications {
-  width: 95%;
-  margin:auto;
+  margin: 5px;
   font-size: 18px;
 }
 
@@ -21,8 +20,8 @@
 }
 
 .notifications .list-group-item h2 {
-	float: left;
-	margin-right: 1em;
+  float: left;
+  margin-right: 1em;
 }
 
 .notification-icon{
@@ -33,6 +32,7 @@
   border: solid gray 1px;
   border-radius: 5px;
   padding: 5px;
+  z-index: 11;
 }
 .notification-icon img{
   width: 60px;

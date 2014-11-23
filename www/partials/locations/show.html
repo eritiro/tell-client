@@ -2,28 +2,29 @@
 <div notification-icon></div>
 
 <h1>{{location.name}}</h1>
+<div class="content">
+  <div class="location-show" ng-if="ready">
+    <div class="centered-image-container">
+      <img ng-src="{{ location.photo }}" />
+    </div>
+    <span>
+      <i class="fa fa-location-arrow"></i>
+      {{ location.address }}
+    </span>
+    <span>
+      <i class="fa fa-users"></i>
+      {{ location.attendees }}
+    </span>
 
-<div class="location-show" ng-if="ready">
-  <div class="location-photo-container">
-    <img ng-src="{{ location.photo }}" />
+    <p class="description" ng-if="!location.description">
+      Vení y conocé quienes van!
+    </p>
+    <p class="description" ng-if="location.description">
+      {{location.description}}
+    </p>
+
+    <button type="submit" class="btn btn-success btn-lg" ng-click="attending()">
+      <i class="icon-thumbs-up"></i>¡Voy!
+    </button>
   </div>
-  <span>
-    <i class="fa fa-location-arrow"></i>
-    {{ location.address }}
-  </span>
-  <span>
-    <i class="fa fa-users"></i>
-    {{ location.attendees }}
-  </span>
-
-  <p class="description" ng-if="!location.description">
-    Vení y conocé quienes van!
-  </p>
-  <p class="description" ng-if="location.description">
-    {{location.description}}
-  </p>
-
-  <button type="submit" class="btn btn-success btn-lg" ng-click="attending()">
-    <i class="icon-thumbs-up"></i>¡Voy!
-  </button>
 </div>

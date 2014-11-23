@@ -1,12 +1,3 @@
-
-/* cyrillic */
-@font-face {
-  font-family: 'Lobster';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/lobster.ttf') format('truetype');
-}
-
 /* roboto */
 @font-face {
   font-family: 'Cabin';

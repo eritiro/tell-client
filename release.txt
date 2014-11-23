@@ -4,6 +4,7 @@ Boliches
 --------
 Se agregó una descripción sobre los locales.
 Se agregó la cantidad de personas que van a ir al local.
+Se corrigió el scroll en la busqueda de locales y en el listado de invitados para android 2.x
 
 Chat
 --------

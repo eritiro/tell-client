@@ -21,18 +21,17 @@
 }
 
 .chat-box {
-  position: fixed;
-  top: 70px;
-  bottom: 60px;
+  padding-top: 70px;
+  padding-bottom: 50px;
   overflow: auto;
-  width: 100%;
 }
 
 .chat-write{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 3px;
   width: 100%;
+  background-color: black;
 }
 
 .chat-write textarea{

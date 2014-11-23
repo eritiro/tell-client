@@ -1,35 +1,35 @@
 <div tell-sidebar id="sidebar"></div>
-<div notification-icon></div>
-
 <h1>{{user.username}}</h1>
+<div notification-icon></div>
+<div class="content">
+  <div class="user" ng-if="ready">
 
-<div class="user">
+    <div class="centered-image-container">
+      <img ng-src="{{user.picture}}" />
+    </div>
 
-  <div class="user_photo">
-    <img ng-src="{{user.picture}}" />
-  </div>
+    <div class="user_info">
+      <p ng-if="user.location && user.id !== currentUser.id">
+        Esta noche va a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
+      </p>
+      <p ng-if="user.location && user.id === currentUser.id">
+        Esta noche vas a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
+      </p>
+    </div>
 
-  <div class="user_info">
-    <p ng-if="user.location && user.id !== currentUser.id">
-      Esta noche va a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
-    </p>
-    <p ng-if="user.location && user.id === currentUser.id">
-      Esta noche vas a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
-    </p>
-  </div>
-
-  <div class="user_accions" ng-if="ready && user.id !== currentUser.id">
-    <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
-      <i class="fa fa-glass"></i>
-      Invitar trago
-    </button>
-    <button type="button" ng-if="user.was_invited" class="btn btn-warning active">
-      <i class="fa fa-check"></i>
-      ¡Enviado!
-    </button>
-    <button type="button" ng-click="chat()" class="btn btn-success">
-      <i class="fa fa-weixin"></i>
-      Escribir
-    </button>
+    <div class="user_accions" ng-if="ready && user.id !== currentUser.id">
+      <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
+        <i class="fa fa-glass"></i>
+        Invitar trago
+      </button>
+      <button type="button" ng-if="user.was_invited" class="btn btn-warning active">
+        <i class="fa fa-check"></i>
+        ¡Enviado!
+      </button>
+      <button type="button" ng-click="chat()" class="btn btn-success">
+        <i class="fa fa-weixin"></i>
+        Escribir
+      </button>
+    </div>
   </div>
 </div>
