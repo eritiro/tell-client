@@ -24,13 +24,12 @@
 
 
 .location-show {
-  width: 80%;
-  margin: auto;
+
 }
 
 .location-show p {
   margin-top: 1em;
-  font-size: 18pt;
+  font-size: 17pt;
   text-align: center;
 }
 
@@ -52,9 +51,15 @@
   max-height: 100%;
 }
 
+.location-show {
+  background-color: rgba(0,0,0,0.6);
+  margin-top: -15px;
+  padding-top: 15px;
+  text-align: center;
+}
+
 .location-show .btn-lg {
-  margin-top: 2em;
-  width: 100%;
+  width: 80%;
 }
 
 .location-show .fa {
@@ -62,6 +67,10 @@
   text-align: center;
 }
 
+.location-show .description{
+  height: 150px;
+  overflow: auto;
+}
 
 .location-body h2{
   text-align: center;
