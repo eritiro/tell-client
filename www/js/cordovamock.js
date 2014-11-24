@@ -30,6 +30,10 @@ var cordova = cordova || {
 navigator.notification = {
     alert: function(message, callback, title, button){
       alert(message);
+    },
+    confirm: function(message, callback, title, button){
+      var result = window.confirm(message);
+      callback(result ? 1 : 0);
     }
   };
 

@@ -3,11 +3,21 @@
 <div notification-icon></div>
 
 <div ng-if="ready" class="content">
-  <h2>Invitados</h2>
 
   <div class="attendees-container">
+    <div class="topbar">
+      <h2>Invitados</h2>
+    </div>
     <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
       <img ng-src="{{attendee.picture}}" />
     </a>
   </div>
+</div>
+<div class="attendees-actions">
+  <button type="submit" class="btn btn-success" ng-click="showInfo()">
+    <i class="fa fa-info-circle"></i>
+  </button>
+  <button type="submit" class="btn btn-success" ng-click="leave()">
+    <i class="fa fa-sign-out"></i>
+  </button>
 </div>

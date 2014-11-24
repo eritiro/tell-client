@@ -14,6 +14,10 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
           method: 'PUT',
           params: { action: 'attendees' }
         },
+        leave: {
+          method: 'DELETE',
+          params: { action: 'attendees' }
+        },
         attendees: {
           method: 'GET',
           isArray: true,

@@ -82,3 +82,24 @@
 .location-not-found a{
   color:blue;
 }
+
+.attendees-actions {
+  position: fixed;
+  top: 65px;
+  padding: 3px;
+  right: 0;
+}
+
+.attendees-container .topbar{
+  height: 60px;
+  background-color: rgba(255,64,0,0.5);
+  padding-top: 20px;
+  padding-left: 8px;
+}
+.attendees-container h2{
+  margin: 0px;
+}
+
+.attendees-actions .btn{
+  width: 54px;
+}
