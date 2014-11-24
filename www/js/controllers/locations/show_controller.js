@@ -9,7 +9,7 @@ angular.module('tell.controllers')
       $scope.location = location;
     });
 
-    $scope.attending = function() {
+    $scope.attend = function() {
       location.$attend({ id: $routeParams.id }, function(){
         $location.path("/locations/" + $routeParams.id + "/attendees");
       }, function() {
