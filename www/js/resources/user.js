@@ -14,8 +14,7 @@ angular.module('tell.resources').factory('User', function($resource){
 			},
           	profile: {
 				method: 'GET',
-                cache: true,
-				url: config.serverUrl +'/users/profile'
+            	url: config.serverUrl +'/users/profile'
 			},
           	invite: {
 				method: 'POST',

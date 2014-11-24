@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsAttendeesController', function($scope, $routeParams, Location, $location) {
+  .controller('LocationsAttendeesController', function($scope, $routeParams, Location, $location, $rootScope) {
 
 	Location.get({ id: $routeParams.id }, function(location) {
 		$scope.location = location;
@@ -13,12 +13,13 @@ angular.module('tell.controllers')
 
     $scope.leave = function(){
       navigator.notification.confirm("Ya no vas a ir a " + $scope.location.name, function(result){
-        if(result == 1){
+        if(result === 1){
           $scope.location.$leave({ id: $routeParams.id }, function(){
+            $rootScope.attendingLocationId = null;
             $location.path("/home");
-          })
+          });
         }
-      });
+      }, "¿Estás seguro?");
     };
 
     $scope.showInfo = function(){

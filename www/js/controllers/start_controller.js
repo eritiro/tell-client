@@ -8,9 +8,7 @@ angular.module('tell.controllers').controller('StartController', function(userSe
     return;
   }
   User.profile({}, function(user) {
-    $rootScope.notificationsCount = user.unread_notifications;
     if(user.attending_location_id) {
-      $rootScope.attendingLocationId = user.attending_location_id;
       $location.path("/locations/" + user.attending_location_id + "/attendees");
     } else {
       $location.path("/home");
