@@ -6,6 +6,11 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
       config.serverUrl +'/locations/:id/:action',
       { },
       {
+        query: {
+          cache: true,
+          method: 'GET',
+          isArray: true
+        },
         get: {
           cache: true,
           method: 'GET'
