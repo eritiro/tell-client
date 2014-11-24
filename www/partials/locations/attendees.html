@@ -2,12 +2,11 @@
 <div tell-sidebar id="sidebar"></div>
 <div notification-icon></div>
 
-<div ng-if="ready" class="content">
-
-  <div class="attendees-container">
-    <div class="topbar">
-      <h2>Invitados</h2>
-    </div>
+<div class="content">
+  <div class="location-topbar">
+    <h2>Invitados</h2>
+  </div>
+  <div ng-if="ready" class="attendees-container">
     <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
       <img ng-src="{{attendee.picture}}" />
     </a>

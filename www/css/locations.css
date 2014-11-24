@@ -90,13 +90,14 @@
   right: 0;
 }
 
-.attendees-container .topbar{
+.location-topbar{
   height: 60px;
-  background-color: rgba(255,64,0,0.5);
+  background-color: rgba(0,0,0,0.5);
   padding-top: 20px;
   padding-left: 8px;
 }
-.attendees-container h2{
+
+.location-topbar h2{
   margin: 0px;
 }
 
