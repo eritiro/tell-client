@@ -31,7 +31,7 @@
     </button>
   </div>
 </div>
-<div class="attendees-actions" ng-if="location.id == attendingLocationId">
+<div class="attendees-actions" ng-if="ready && location.id == attendingLocationId">
   <button type="submit" class="btn btn-success" ng-click="showAttendees()">
     <i class="fa fa-users"></i>
   </button>
