@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.services')
-  .service('userSession', function($http){
+  .service('userSession', function($http, $cacheFactory){
     this.key = 'tell.user.data';
     this.storeUser = function(user) {
       localStorage.setItem(this.key, angular.toJson({
@@ -17,6 +17,7 @@ angular.module('tell.services')
       localStorage.removeItem(this.key);
       delete $http.defaults.headers.common['User-Id'];
       delete $http.defaults.headers.common['User-Token'];
+      $cacheFactory.get('$http').removeAll();
     };
 
     this.currentUser = function(){
