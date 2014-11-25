@@ -18,6 +18,16 @@ function broadcastNotification(e){
   });
 }
 
+function broadcastDontRedirect(){
+  var injector = angular.element(document.body).injector();
+  injector.invoke(function($rootScope) {
+    $rootScope.$apply(function(){
+      $rootScope.$broadcast('dontRedirect');
+    });
+  });
+}
+
+
 function onPushMessageReceived(e){
   console.log("push_handler - received message: " + JSON.stringify(e));
 
@@ -32,6 +42,7 @@ function onPushMessageReceived(e){
     if(!e.coldstart){
       broadcastNotification(e);
     }
+    broadcastDontRedirect();
     if(e.payload.type === "invite"){
       window.location = "#/users/" + e.payload.from_id;
     } else {
