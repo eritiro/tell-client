@@ -25,6 +25,7 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
         },
         attendees: {
           method: 'GET',
+          cache: true,
           isArray: true,
           params: { action: 'attendees' }
         }
@@ -47,6 +48,10 @@ angular.module('tell.resources').factory('Location', function($resource, $cacheF
 
     Location.stale = function(id){
       $cacheFactory.get('$http').remove(config.serverUrl + "/locations/" + id);
+    };
+
+    Location.staleAttending = function(id){
+      $cacheFactory.get('$http').remove(config.serverUrl + "/locations/" + id + '/attendees');
     };
 
     return Location;

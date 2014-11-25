@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsAttendeesController', function($scope, $routeParams, Location, $location, $rootScope) {
+  .controller('LocationsAttendeesController', function($scope, $routeParams, Location, $location, $rootScope, $route) {
 
 	Location.get({ id: $routeParams.id }, function(location) {
 		$scope.location = location;
@@ -25,4 +25,9 @@ angular.module('tell.controllers')
     $scope.showInfo = function(){
       $location.path("/locations/" + $routeParams.id);
     };
+		
+		$scope.refresh = function() {
+			Location.staleAttending($routeParams.id);
+			$route.reload();
+		};
   });
