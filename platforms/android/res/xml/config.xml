@@ -34,7 +34,7 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
-    <name>Tell</name>
+    <name>Warmapp</name>
     <description>
         Aplicación para opinar sobre locales
     </description>
