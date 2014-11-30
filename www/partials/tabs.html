@@ -1,17 +1,17 @@
 <img src="img/logo.png" class="logo" />
 
-<div class="option">
+<div class="option" ng-class="{active: active('find')}" ng-click="go('find')">
 	<i class="fa fa-search"></i>
 </div>
 
-<div class="option">
+<div class="option" ng-class="{active: active('notifications')}" ng-click="go('notifications')">
 	<i class="fa fa-comments-o"></i>
 </div>
 
-<div class="option">
+<div class="option" ng-class="{active: active('location')}" ng-click="go('location')">
 	<i class="fa fa-beer"></i>
 </div>
 
-<div class="option active">
+<div class="option" ng-class="{active: active('feeds')}" ng-click="go('feeds')">
 	<i class="fa fa-newspaper-o"></i>
 </div>
