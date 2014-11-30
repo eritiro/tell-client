@@ -1,0 +1,37 @@
+#tabs {
+	background: black;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	padding-top: 5px;
+	border-bottom: 2px solid white;
+}
+
+#tabs + * {
+	width: 100%;
+	position: relative;
+	top: 57px;
+}
+
+#tabs img.logo {
+	width: auto;
+	height: 50px;
+	border-radius: 10px;
+	background: white;
+	float: left;
+}
+
+#tabs .option {
+	width: 20%;
+	height: 50px;	
+	float: right;
+	text-align: center;
+	font-size: 22pt;
+	line-height: 50px;
+}
+
+#tabs .option.active {
+	background: white;
+	color: black;
+}
