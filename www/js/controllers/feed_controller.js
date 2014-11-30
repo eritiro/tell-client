@@ -9,7 +9,7 @@ angular.module('tell.controllers').controller('FeedController', function($scope,
 	
 	$scope.resolve = function(feed) {
 		if (feed.link) {
-			$location.path('#' + feed.link);
+			$location.path(feed.link);
 		}
 	}
 
