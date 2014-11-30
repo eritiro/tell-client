@@ -25,11 +25,7 @@ angular.module('tell.controllers').controller('StartController', function(userSe
     $rootScope.notificationsCount = user.unread_notifications;
     $rootScope.attendingLocationId = user.attending_location_id;
     if(redirect) {
-      if(user.attending_location_id) {
-        $location.path("/locations/" + user.attending_location_id + "/attendees");
-      } else {
-        $location.path("/home");
-      }
+      $location.path("/feeds");
     }
   });
 
