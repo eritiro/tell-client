@@ -1,7 +1,6 @@
-<h1 ng-if="locations.length != 0">Búsqueda de lugares</h1>
-<h1 ng-if="locations.length == 0">Ups</h1>
 <div tell-sidebar id="sidebar"></div>
-<div notification-icon></div>
+<div tell-tabs id="tabs"></div>
+
 <div class="content">
   <ul class="list-group locations-find" ng-if="locations.length !== 0" >
     <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
