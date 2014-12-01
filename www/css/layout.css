@@ -90,6 +90,7 @@
   width: 60px;
   display: inline-block;
   text-align: center;
+  background-color: #FF8000;
 }
 
 .action.search, .action.back{

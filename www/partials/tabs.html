@@ -2,20 +2,20 @@
   <img src="img/logo.png" class="logo-icon"  ng-if="!searching" />
 
   <div class="tabs" ng-if="!searching">
-    <a class="action" href="#/feeds">
+    <a class="action" href="#/feeds" tabindex="-1">
       <i class="fa fa-newspaper-o"></i>
     </a>
-    <a class="action" href="#/locations/attendees">
+    <a class="action" href="#/locations/attendees" tabindex="-1">
       <i class="fa fa-beer"></i>
     </a>
-    <a class="action" href="#/notifications">
+    <a class="action" href="#/notifications" tabindex="-1">
       <i class="fa fa-comments-o"></i>
     </a>
 
     <div class="current-tab {{active}}" ></div>
   </div>
 
-  <a class="action search" href="#/locations">
+  <a class="action search" href="#/locations" tabindex="-1">
     <i class="fa fa-search"></i>
   </a>
 
