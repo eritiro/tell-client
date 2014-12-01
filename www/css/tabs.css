@@ -1,63 +1,28 @@
-#tabs {
-	background: black;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 10;
-	padding-top: 5px;
-	border-bottom: 2px solid white;
-}
-
-#tabs + * {
-	width: 100%;
-	position: relative;
-	top: 57px;
-}
-
-#tabs img.logo {
+img.logo-icon {
 	width: auto;
 	height: 50px;
-	border-radius: 10px;
-	background: white;
 	float: left;
 }
 
-#tabs .option {
-	width: 20%;
-	height: 50px;	
-	float: right;
-	text-align: center;
-	font-size: 22pt;
-	line-height: 50px;
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: width .5s;
+.tabs {
+  margin-left: 32px;
+  display: inline-block;
+  position: relative;
+  margin-top: 5px;
 }
 
-#tabs .option.active {
-	background: white;
-	color: black;
+.current-tab{
+  background-color: white;
+  height: 5px;
+  width: 60px;
+  position: absolute;
+  top: 50px;
 }
 
-#tabs .option  input{
-	display: none;
+[current=notifications] .current-tab{
+  left: 130px;
 }
-#tabs .option.search {
-	width: 80%;
-}
-#tabs .option.search  input{
-	display: inline;
-	width: 80%;
-	height: 80%;
-	background-color: black;
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-bottom: 2px solid white;
-}
-#tabs .option.search  input:focus{
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-bottom: 2px solid white;
+
+[current=location] .current-tab{
+  left: 65px;
 }

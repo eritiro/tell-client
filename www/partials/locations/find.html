@@ -1,5 +1,16 @@
 <div tell-sidebar id="sidebar"></div>
-<div tell-tabs id="tabs"></div>
+<div class="top-bar">
+  <div class="action back" ng-click="back()">
+    <i class="fa fa-angle-left"></i>
+  </div>
+
+  <form ng-submit="search()">
+    <input ng-model="searchName" type="search" ng-enter="search()" />
+    <div class="action search" ng-click="search()">
+      <i class="fa fa-search"></i>
+    </div>
+  </form>
+</div>
 
 <div class="content">
   <ul class="list-group locations-find" ng-if="locations.length !== 0" >

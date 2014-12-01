@@ -1,18 +1,22 @@
-<img src="img/logo.png" class="logo" />
+<div class="top-bar">
+  <img src="img/logo.png" class="logo-icon"  ng-if="!searching" />
 
-<div class="option" ng-class="{ search: status === 'search' }">
-	<input type="search" placeholder="Boliche" ng-model="query" />
-	<i class="fa fa-search" ng-click="go('find')"></i>
-</div>
+  <div class="tabs" ng-if="!searching">
+    <a class="action" href="#/feeds">
+      <i class="fa fa-newspaper-o"></i>
+    </a>
+    <a class="action" href="#/locations/1">
+      <i class="fa fa-beer"></i>
+    </a>
+    <a class="action" href="#/notifications">
+      <i class="fa fa-comments-o"></i>
+    </a>
 
-<div class="option" ng-class="{active: active('notifications')}" ng-click="go('notifications')" ng-show="status === 'iddle'">
-	<i class="fa fa-comments-o"></i>
-</div>
+    <div class="current-tab {{active}}" ></div>
+  </div>
 
-<div class="option" ng-class="{active: active('location')}" ng-click="go('location')" ng-show="status === 'iddle'">
-	<i class="fa fa-beer"></i>
-</div>
+  <a class="action search" href="#/locations">
+    <i class="fa fa-search"></i>
+  </a>
 
-<div class="option" ng-class="{active: active('feeds')}" ng-click="go('feeds')" ng-show="status === 'iddle'">
-	<i class="fa fa-newspaper-o"></i>
 </div>
