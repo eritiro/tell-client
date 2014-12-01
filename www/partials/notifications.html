@@ -1,7 +1,7 @@
 <div tell-sidebar id="sidebar"></div>
 <div tell-tabs current="notifications"></div>
 
-<div class="content">
+<div class="content" ng-swipe-right="swipeRight()">
   <ul class="list-group notifications">
     <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification)" read="{{notification.read}}">
       <img ng-src="{{notification.user.photo}}" />

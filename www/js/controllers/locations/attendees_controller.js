@@ -26,8 +26,16 @@ angular.module('tell.controllers')
       $location.path("/locations/" + $scope.attendingLocationId);
     };
 
-		$scope.refresh = function() {
-			Location.staleAttending($scope.attendingLocationId);
-			$route.reload();
-		};
+    $scope.refresh = function() {
+      Location.staleAttending($scope.attendingLocationId);
+      $route.reload();
+    };
+
+    $scope.swipeRight = function(){
+      $location.path("/feeds");
+    };
+
+    $scope.swipeLeft = function(){
+      $location.path("/notifications");
+    };
   });

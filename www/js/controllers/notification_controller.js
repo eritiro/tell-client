@@ -19,4 +19,7 @@ angular.module('tell.controllers').controller('NotificationController', function
     }
   };
 
+  $scope.swipeRight = function(){
+    $location.path("/locations/attendees");
+  };
 });

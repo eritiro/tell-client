@@ -1,7 +1,7 @@
 <div tell-sidebar id="sidebar"></div>
 <div tell-tabs current="location"></div>
 
-<div class="content">
+<div class="content" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
   <div ng-if="ready" class="attendees-container">
     <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
       <img ng-src="{{attendee.picture}}" />

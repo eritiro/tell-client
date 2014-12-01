@@ -19,6 +19,7 @@ angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']
 
 angular.module('tell', [
   'ngRoute',
+  'ngTouch',
   'luegg.directives',
   'tell.controllers',
   'tell.services',
@@ -46,3 +47,6 @@ document.addEventListener("deviceready", function() {
    console.log(error);
  }
 }, false);
+
+// swipe behavior:
+MIN_HORIZONTAL_DISTANCE = 20;

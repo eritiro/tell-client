@@ -1,6 +1,6 @@
 <div tell-sidebar id="sidebar"></div>
 <div tell-tabs current="feeds"></div>
-<div class="content">
+<div class="content" ng-swipe-left="swipeLeft()">
   <ul class="list-group feeds">
       <li class="list-group-item" ng-repeat="feed in feeds" ng-click="resolve(feed)">
           {{ feed.content }}
