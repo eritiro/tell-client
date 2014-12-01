@@ -1,8 +1,9 @@
 <div tell-sidebar id="sidebar"></div>
 <div tell-tabs current="feeds"></div>
-
-<ul class="list-group feeds">
-	<li class="list-group-item" ng-repeat="feed in feeds" ng-click="resolve(feed)">
-		{{ feed.content }}
-	</li>
-</ul>
+<div class="content">
+  <ul class="list-group feeds">
+      <li class="list-group-item" ng-repeat="feed in feeds" ng-click="resolve(feed)">
+          {{ feed.content }}
+      </li>
+  </ul>
+</div>
