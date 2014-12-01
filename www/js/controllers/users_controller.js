@@ -11,7 +11,7 @@ angular.module('tell.controllers')
     });
 
     function nextStep(user){
-      $location.path("/home");
+      $location.path("/feeds");
     }
 
     $scope.fbLogin = function() {

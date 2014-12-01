@@ -27,7 +27,7 @@ angular.module('tell.controllers')
         if(result === 1){
           $scope.location.$leave({ id: $routeParams.id }, function(){
             $rootScope.attendingLocationId = null;
-            $location.path("/home");
+            $location.path("/feeds");
           });
         }
       }, "¿Estás seguro?");

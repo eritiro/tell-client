@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvider){
   AuthProvider.loginPath(config.serverUrl + '/users/sign_in');
   AuthProvider.logoutPath(config.serverUrl + '/users/sign_out');
@@ -22,9 +24,8 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/locations/:id/attendees', {templateUrl: 'partials/locations/attendees.html', controller: 'LocationsAttendeesController'});
 
   $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
-	
+
 	$routeProvider.when('/feeds', {templateUrl: 'partials/feeds.html', controller: 'FeedController'});
 
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeController'});
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
 });

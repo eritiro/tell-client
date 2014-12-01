@@ -69,39 +69,3 @@
   max-height: 100%;
 }
 
-/* icons */
-
-.icon{
-  position: fixed;
-  background: rgba(255,255,255,0.6);
-  border: solid gray 1px;
-  border-radius: 5px;
-  padding: 5px;
-  z-index: 11;
-  width: 72px;
-  text-align: center;
-  top: 2px;
-}
-
-.icon img{
-  height: 47px;
-}
-
-.notification-icon{
-  right: 3px;
-}
-
-.home-icon{
-  right: 78px;
-}
-
-
-.notification-icon p{
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  background-color: red;
-  width: 20px;
-  border-radius: 10px;
-  text-align: center;
-}

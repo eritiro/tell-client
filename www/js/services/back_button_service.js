@@ -14,7 +14,7 @@ angular.module('tell.services').service('backButtonService', function($location,
     }
 
     var currentPath = $location.path();
-    var noReturn = ['/', '/home', '/users/sign_up_selection'];
+    var noReturn = ['/', '/users/sign_up_selection'];
     if (noReturn.indexOf(currentPath) !== -1) {
       navigator.app.exitApp();
     } else {
