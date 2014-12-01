@@ -12,14 +12,14 @@ angular.module('tell.controllers')
     function doAttend(){
       location.$attend({ id: $routeParams.id }, function(){
         $rootScope.attendingLocationId = parseInt($scope.location.id, 10);
-        $location.path("/locations/" + $routeParams.id + "/attendees");
+        $location.path("/locations/attendees");
       }, function() {
         alert("Ha ocurrido un error, intenta luego por favor");
       });
     }
 
     $scope.showAttendees = function(){
-      $location.path("/locations/" + $routeParams.id + "/attendees");
+      $location.path("/locations/attendees");
     };
 
     $scope.leave = function(){
