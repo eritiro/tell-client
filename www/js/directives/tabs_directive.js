@@ -38,7 +38,7 @@ angular.module('tell.directives')
 					}
 					
 					if (scope.query) {
-						$location.path("/locations").search("name", $scope.query);
+						$location.path("/locations").search("name", scope.query);
 					} else {
 						scope.status = 'iddle';
 					}
