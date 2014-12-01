@@ -20,8 +20,8 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/users/:id/chat', {templateUrl: 'partials/users/chat.html', controller: 'ChatController'});
 
   $routeProvider.when('/locations', {templateUrl: 'partials/locations/find.html', controller: 'LocationsFindController'});
+  $routeProvider.when('/locations/attendees', {templateUrl: 'partials/locations/attendees.html', controller: 'LocationsAttendeesController'});
   $routeProvider.when('/locations/:id', {templateUrl: 'partials/locations/show.html', controller: 'LocationsShowController'});
-  $routeProvider.when('/locations/:id/attendees', {templateUrl: 'partials/locations/attendees.html', controller: 'LocationsAttendeesController'});
 
   $routeProvider.when('/notifications', {templateUrl: 'partials/notifications.html', controller: 'NotificationController'});
 

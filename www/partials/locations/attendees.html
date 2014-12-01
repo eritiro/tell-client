@@ -1,10 +1,7 @@
-<h1>{{ location.name }}</h1>
 <div tell-sidebar id="sidebar"></div>
+<div tell-tabs current="location"></div>
 
 <div class="content">
-  <div class="location-topbar">
-    <h2>Invitados</h2>
-  </div>
   <div ng-if="ready" class="attendees-container">
     <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
       <img ng-src="{{attendee.picture}}" />
