@@ -29,9 +29,35 @@
 	text-align: center;
 	font-size: 22pt;
 	line-height: 50px;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: width .5s;
 }
 
 #tabs .option.active {
 	background: white;
 	color: black;
+}
+
+#tabs .option  input{
+	display: none;
+}
+#tabs .option.search {
+	width: 80%;
+}
+#tabs .option.search  input{
+	display: inline;
+	width: 80%;
+	height: 80%;
+	background-color: black;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 2px solid white;
+}
+#tabs .option.search  input:focus{
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 2px solid white;
 }

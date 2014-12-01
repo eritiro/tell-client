@@ -16,6 +16,8 @@ angular.module('tell.directives')
 			var isSelected = function(action) {
 				return $location.path().indexOf(action) >= 0;
 			};
+	
+			scope.status = 'iddle';
 			
       scope.active = isSelected;
 			scope.go = function(action) {
@@ -30,7 +32,17 @@ angular.module('tell.directives')
 				}
 				
 				if (action === 'find') {
-					// TODO desplegar un input medio loco
+					if (scope.status === 'iddle') {
+						scope.status = 'search';
+						return;
+					}
+					
+					if (scope.query) {
+						$location.path("/locations").search("name", $scope.query);
+					} else {
+						scope.status = 'iddle';
+					}
+					
 					return;
 				}
 				
