@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window) {
 
     var location = null;
     Location.get({ id: $routeParams.id }, function(loc) {
@@ -45,5 +45,9 @@ angular.module('tell.controllers')
       } else {
         doAttend();
       }
+    };
+
+    $scope.back = function(){
+      $window.history.back();
     };
 });

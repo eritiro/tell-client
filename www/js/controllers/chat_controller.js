@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource) {
+angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window) {
   $scope.me = userSession.currentUser();
 
   var user;
@@ -40,4 +40,8 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
       $scope.messages.push({ text: notification.text, mine: false});
     }
   });
+
+  $scope.back = function(){
+    $window.history.back();
+  };
 });

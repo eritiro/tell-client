@@ -1,5 +1,10 @@
 <div tell-sidebar id="sidebar"></div>
-
+<div class="top-bar">
+  <div class="action back" ng-click="back()">
+    <i class="fa fa-angle-left"></i>
+  </div>
+  <h1>{{location.name}}</h1>
+</div>
 <div class="location-show" ng-if="ready">
 	<div class="centered-image-container">
 		<img ng-src="{{ location.photo }}" />

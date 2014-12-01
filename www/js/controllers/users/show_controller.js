@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession) {
+angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession, $window) {
 
     $scope.currentUser = userSession.currentUser();
 	var user;
@@ -16,5 +16,10 @@ angular.module('tell.controllers').controller('UsersShowController', function($s
 
   $scope.chat = function() {
     $location.path('/users/' + $scope.user.id + '/chat');
+  };
+
+
+  $scope.back = function(){
+    $window.history.back();
   };
 });

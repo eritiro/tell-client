@@ -1,6 +1,10 @@
 <div tell-sidebar id="sidebar"></div>
-
-<h1 ng-click="showUser()">{{user.username}}</h1>
+<div class="top-bar">
+  <div class="action back" ng-click="back()">
+    <i class="fa fa-angle-left"></i>
+  </div>
+  <h1 ng-click="showUser()">{{user.username}}</h1>
+</div>
 <div class="content chat-box" scroll-glue>
   <div class="message" ng-repeat="message in messages" ng-class="{ mine: message.mine }">{{ message.text }}</div>
 </div>

@@ -101,3 +101,9 @@
   right: 10px;
   top: 5px;
 }
+
+.top-bar h1{
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 26px;
+}
