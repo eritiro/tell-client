@@ -24,3 +24,9 @@ body {
   margin-bottom: -65px;
   margin-top: 65px;
 }
+
+a:hover, a:visited, a:active, a:link{
+  text-decoration:none;
+  border:0;
+  outline:none;
+}
