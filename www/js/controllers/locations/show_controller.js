@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService) {
 
     var location = null;
     Location.get({ id: $routeParams.id }, function(loc) {
       location = loc;
       $scope.location = location;
+      historyService.log(location);
     });
 
     function doAttend(){

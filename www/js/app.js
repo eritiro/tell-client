@@ -1,7 +1,7 @@
 'use strict';
 
 var POSTA = {
-  serverUrl: 'http://tell.startmeapps.com',
+  serverUrl: 'http://warmapp.startmeapps.com',
   support: 'info@startmeapps.com'
 };
 
@@ -47,6 +47,3 @@ document.addEventListener("deviceready", function() {
    console.log(error);
  }
 }, false);
-
-// swipe behavior:
-MIN_HORIZONTAL_DISTANCE = 20;
