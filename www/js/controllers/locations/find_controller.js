@@ -16,18 +16,21 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
   };
 
   $scope.search = function(){
-    Location.find({ name: $scope.nameToSearch }, function(locations) {
-      $scope.locations = locations;
-      $scope.searchName = $scope.nameToSearch;
-    });
+    var currentSearch = $scope.nameToSearch;
+    if(!currentSearch) {
+      $scope.locations = historyService.get();
+    } else {
+      Location.find({ name: currentSearch }, function(locations) {
+        if(currentSearch === $scope.nameToSearch){
+          $scope.locations = locations;
+          $scope.searchName = currentSearch;
+        }
+      });
+    }
   };
 
   $scope.searchName = $routeParams.name;
   $scope.nameToSearch = $scope.searchName; // they are the same at the begining and when you press search.
   $scope.support = config.support;
-  if($scope.searchName) {
-    $scope.search();
-  } else {
-    $scope.locations = historyService.get();
-  }
+  $scope.search();
 });
