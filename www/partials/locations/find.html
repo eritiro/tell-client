@@ -26,12 +26,12 @@
       </div>
     </li>
   </ul>
-  <p ng-if="locations.length === 0 && searchName" class="location-not-found">
+  <p ng-if="type === 'search' && locations.length === 0" class="location-not-found">
     Lo siento, pero no encontramos ningun lugar con el nombre <em>{{searchName}}</em>.
     Si te parece que debería estar, <a href="mailto:{{support}}?subject=Agregar Local&body=Hola,
    quisiera que agreguen '{{searchName}}' a la lista de locales.">hacé click acá</a> y con gusto lo agregamos!
   </p>
-  <p ng-if="locations.length === 0 && !searchName" class="location-not-found">
-    Escribí el nombre del lugar
+  <p ng-if="type === 'history' && locations.length === 0" class="location-not-found">
+    Escribí el nombre del lugar al que quieras ir. También podés buscar por barrio, dirección o tipo de música.
   </p>
 </div>

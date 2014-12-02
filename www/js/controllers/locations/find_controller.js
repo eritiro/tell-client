@@ -19,11 +19,13 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
     var currentSearch = $scope.nameToSearch;
     if(!currentSearch) {
       $scope.locations = historyService.get();
+      $scope.type = 'history';
     } else {
       Location.find({ name: currentSearch }, function(locations) {
         if(currentSearch === $scope.nameToSearch){
           $scope.locations = locations;
           $scope.searchName = currentSearch;
+          $scope.type = 'search';
         }
       });
     }
