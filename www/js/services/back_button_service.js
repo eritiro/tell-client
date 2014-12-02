@@ -1,10 +1,21 @@
 'use strict';
 
-angular.module('tell.services').service('backButtonService', function($location, $window, $rootScope) {
+angular.module('tell.services').service('backButtonService', function($location, $window, $rootScope, $routeParams) {
   var that = this;
 
-  this.cancel = function() {
-    alert('Lectura cancelada');
+  this.back = function(){
+    var currentPath = $location.path();
+    var noReturn = ['/', '/users/sign_up_selection', '/feeds'];
+    var gotoHome = ['/locations/attendees', '/notifications'];
+    if (noReturn.indexOf(currentPath) !== -1) {
+      navigator.app.exitApp();
+    } else if(gotoHome.indexOf(currentPath) !== -1){
+      $location.path('/feeds');
+    } else if($routeParams.backto){
+      $location.url($routeParams.backto);
+    } else {
+      $window.history.back();
+    }
   };
 
   this.onBack = function() {
@@ -13,17 +24,8 @@ angular.module('tell.services').service('backButtonService', function($location,
       return;
     }
 
-    var currentPath = $location.path();
-    var noReturn = ['/', '/users/sign_up_selection', '/feeds'];
-    var gotoHome = ['/locations/attendees', '/notifications'];
     $rootScope.$apply(function(){
-      if (noReturn.indexOf(currentPath) !== -1) {
-        navigator.app.exitApp();
-      } else if(gotoHome.indexOf(currentPath) !== -1){
-        $location.path('/feeds');
-      } else {
-        $window.history.back();
-      }
+      that.back();
     });
   };
 

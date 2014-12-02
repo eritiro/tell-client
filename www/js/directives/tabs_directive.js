@@ -13,12 +13,7 @@ angular.module('tell.directives')
     return {
       templateUrl: 'partials/tabs.html',
       link: function(scope, element, attrs) {
-
-        scope.searching = false;
-
-        scope.search = function(){
-          scope.searching = true;
-        }
+        scope.currentUrl = $location.url();
       }
     };
   });

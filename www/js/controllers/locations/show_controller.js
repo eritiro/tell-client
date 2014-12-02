@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService, backButtonService) {
 
     var location = null;
     Location.get({ id: $routeParams.id }, function(loc) {
@@ -13,7 +13,7 @@ angular.module('tell.controllers')
     function doAttend(){
       location.$attend({ id: $routeParams.id }, function(){
         $rootScope.attendingLocationId = parseInt($scope.location.id, 10);
-        $location.path("/locations/attendees");
+        $location.url("/locations/attendees");
       }, function() {
         alert("Ha ocurrido un error, intenta luego por favor");
       });
@@ -49,6 +49,6 @@ angular.module('tell.controllers')
     };
 
     $scope.back = function(){
-      $window.history.back();
+      backButtonService.back();
     };
 });

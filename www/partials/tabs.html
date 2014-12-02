@@ -1,7 +1,7 @@
 <div class="top-bar">
-  <img src="img/logo.png" class="logo-icon"  ng-if="!searching" />
+  <img src="img/logo.png" class="logo-icon" />
 
-  <div class="tabs" ng-if="!searching">
+  <div class="tabs">
     <a class="action" href="#/feeds" tabindex="-1">
       <i class="fa fa-newspaper-o"></i>
     </a>
@@ -15,7 +15,7 @@
     <div class="current-tab {{active}}" ></div>
   </div>
 
-  <a class="action search" href="#/locations" tabindex="-1">
+  <a class="action search" href="#/locations?backto={{currentUrl}}" tabindex="-1">
     <i class="fa fa-search"></i>
   </a>
 
