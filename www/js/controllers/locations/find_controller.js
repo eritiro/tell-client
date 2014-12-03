@@ -31,6 +31,17 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
     }
   };
 
+  // Performs search and closes the keyboard
+  $scope.forceSearch = function(){
+    var searchInput = $("input[type=search");
+    searchInput.attr('readonly', 'readonly');
+    setTimeout(function() {
+      searchInput.blur();
+      searchInput.removeAttr('readonly');
+      $scope.search();
+    }, 100);
+  };
+
   $scope.searchName = $routeParams.name;
   $scope.nameToSearch = $scope.searchName; // they are the same at the begining and when you press search.
   $scope.support = config.support;

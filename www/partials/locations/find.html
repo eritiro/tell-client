@@ -5,9 +5,9 @@
     <i class="fa fa-angle-left"></i>
   </div>
 
-  <form ng-submit="search()">
-    <input ng-model="nameToSearch" type="search" ng-enter="search()" ng-change="search()" />
-    <div class="action search" ng-click="search()">
+  <form ng-submit="forceSearch()">
+    <input ng-model="nameToSearch" type="search" ng-change="search()" />
+    <div class="action search" ng-click="forceSearch()">
       <i class="fa fa-search"></i>
     </div>
   </form>
