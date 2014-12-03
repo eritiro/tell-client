@@ -22,4 +22,5 @@
 .notifications .list-group-item h2 {
   float: left;
   margin-right: 1em;
+  margin-top: 10px;
 }
