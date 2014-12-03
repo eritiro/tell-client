@@ -100,7 +100,7 @@ input[type=search]::-webkit-search-cancel-button{
 .location .info{
   width: 70%;
   display: inline-block;
-  color: #D0D0D0;
+  color: #F5F5F5;
 }
 
 .location .section {
