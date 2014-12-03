@@ -61,33 +61,51 @@ input[type=search]::-webkit-search-cancel-button{
   vertical-align: middle;
 }
 
-.location-show {
+.location {
   background-color: rgba(0,0,0,0.6);
   font-size: 17pt;
   text-align: center;
 }
 
-.location-show span { margin: 5px 10px; }
+.fixed-ratio-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  background: black;
+}
+.fixed-ratio-container {
+  padding-top: 50%; /* 2:1 aspect ratio */
+}
+.fixed-ratio-container img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.location-show p {
+.location span { margin: 5px 10px; }
+
+.location p {
   margin-top: 10px;
   text-align: center;
 }
 
 
-.location-show .btn-lg {
+.location .btn-lg {
   width: 80%;
 }
 
-.location-show .fa {
+.location .fa {
   min-width:20px;
   text-align: center;
 }
 
-.location-show .description{
+.location .description{
   height: 160px;
   overflow: auto;
 }
+
 
 .attendees-container{
   background-color: black;

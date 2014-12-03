@@ -5,10 +5,12 @@
   </div>
   <h1>{{location.name}}</h1>
 </div>
-<div class="location-show content" ng-if="ready">
-	<div class="centered-image-container">
-		<img ng-src="{{ location.photo_medium }}" />
-	</div>
+<div class="location content" ng-if="ready">
+  <div class="fixed-ratio-container">
+    <div class="dummy"></div>
+    <img ng-src="{{ location.banner }}" />
+  </div>
+
 	<span>
 		<i class="fa fa-location-arrow"></i>
 		{{ location.address }}

@@ -1,6 +1,12 @@
 'use strict';
 
-angular.module('tell.controllers').controller('LocationsFindController', function($scope, $routeParams, Location, $location, $window, historyService, backButtonService) {
+angular.module('tell.controllers').controller('LocationsFindController', function($scope, $routeParams, Location, $location, $window, historyService, backButtonService, imageLoader) {
+
+  function loadImages(locations){
+    angular.forEach(locations, function(location, key) {
+      imageLoader.preload(location, "thumb", "img/thumb-default.jpg");
+    });
+  }
 
   $scope.go = function(id) {
     if($scope.searchName) {
@@ -22,11 +28,13 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
     if(!currentSearch) {
       $scope.searchName = currentSearch;
       $scope.locations = historyService.get();
+      loadImages($scope.locations);
       $scope.type = 'history';
     } else {
       Location.find({ name: currentSearch }, function(locations) {
         if(currentSearch === $scope.nameToSearch){
           $scope.locations = locations;
+          loadImages($scope.locations);
           $scope.searchName = currentSearch;
           $scope.type = 'search';
         }
