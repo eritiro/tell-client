@@ -4,7 +4,7 @@
 }
 
 .notifications .list-group-item {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid white;
 }
 
@@ -22,4 +22,5 @@
 .notifications .list-group-item h2 {
   float: left;
   margin-right: 1em;
+  margin-top: 10px;
 }

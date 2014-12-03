@@ -3,6 +3,11 @@
 angular.module('tell.controllers')
   .controller('LocationsAttendeesController', function($scope, Location, $location, $rootScope, $route) {
 
+    if (!$scope.attendingLocationId) {
+      $location.path("/locations").search("backto", "/feeds");
+      return;
+    }
+  
 	Location.get({ id: $scope.attendingLocationId }, function(location) {
 		$scope.location = location;
 	});
