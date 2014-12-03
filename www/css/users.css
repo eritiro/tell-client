@@ -84,6 +84,7 @@ p.login-message {
 .full_app {
   background-color: orange;
   margin-top: 0;
+  height: 100%;
 }
 .full_app h1{
   text-align: center;
