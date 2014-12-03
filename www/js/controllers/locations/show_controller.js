@@ -7,7 +7,7 @@ angular.module('tell.controllers')
     Location.get({ id: $routeParams.id }, function(loc) {
       location = loc;
       $scope.location = location;
-      imageLoader.preload($scope.location, "photo_medium", "img/banner-default.jpg");
+      imageLoader.preload($scope.location, "banner", "img/banner-default.jpg");
       historyService.log(location);
     });
 
