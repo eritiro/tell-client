@@ -105,7 +105,8 @@
 }
 
 .top-bar h1{
-  display: inline-block;
-  margin-top: 5px;
+  display: block;
+  margin-top: 12px;
   font-size: 26px;
+  padding-left: 45px;
 }

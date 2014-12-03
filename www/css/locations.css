@@ -47,35 +47,33 @@ input[type=search]::-webkit-search-cancel-button{
 }
 
 .locations-find .list-group-item {
-	min-height: 120px;
+  min-height: 120px;
 }
 
 .locations-find .list-group-item  .location-item-img {
-	height:100px;
-	float:left;
+  height:100px;
+  float:left;
 }
 
 .locations-find .list-group-item  .location-item-img  .helper {
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .location-show {
+  background-color: rgba(0,0,0,0.6);
   font-size: 17pt;
+  text-align: center;
 }
 
 .location-show span { margin: 5px 10px; }
+
 .location-show p {
   margin-top: 10px;
   text-align: center;
 }
 
-.location-show {
-  background-color: rgba(0,0,0,0.6);
-  padding-top: 5px;
-  text-align: center;
-}
 
 .location-show .btn-lg {
   width: 80%;
