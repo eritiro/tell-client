@@ -128,6 +128,8 @@ div[tell-tabs] {
 .bottom-bar{
   position: fixed;
   bottom: 0px;
+  left: 0px;
+  right: 0px;
   width: 100%;
   height: 55px;
   z-index: 10;
