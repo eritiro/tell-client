@@ -5,6 +5,8 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
   $scope.go = function(id) {
     if($scope.searchName) {
       $location.search("name", $scope.searchName);
+    } else {
+      $location.search("name", null);
     }
     $location.search("backto", $location.url());
 
@@ -18,6 +20,7 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
   $scope.search = function(){
     var currentSearch = $scope.nameToSearch;
     if(!currentSearch) {
+      $scope.searchName = currentSearch;
       $scope.locations = historyService.get();
       $scope.type = 'history';
     } else {
