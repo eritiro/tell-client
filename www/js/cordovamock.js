@@ -2,17 +2,10 @@
 
 var cordova = cordova || {
 	plugins: {
-		barcodeScanner: {
-			scan: function (success, error) {
-				setTimeout(function(){
-                    success({ text: 'https://servicios1.afip.gov.ar/clavefiscal/qr/mobilePublicInfo.aspx?req=e1ttZXRob2Q9Z2V0UHVibGljSW5mb11bcGVyc29uYT0zMDcxMDA0MDUyMF1bdGlwb2RvbWljaWxpbz0zXVtzZWN1ZW5jaWE9NDZdfQ==' });
-                },10);
-			}
-		},
 		facebookConnectPlugin: {
 		  login: function(permissions, success, error) {
               setTimeout(function(){
-		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBAPZBtw1dsR7fGcbGjPMi9iH1sPOOqLJza3pEDKsvm6vtfFsEKFudOyWJ4pSGo5j9wvzC3qBbJDTW6ZBCmB03NaUqirOdS6oUeaIrEdbNXhS9pdlCEKUZBkWLeP4DjuNFJZCeIQ1t2Ryaql3NZBQDZAYXkAAp6K3gUHTBAXvIKZAqa9qrxGD1ukKnAwxZAOaChPhnl5I2jTcX" } });
+		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBAHv3ZArlP8LV9qL5oGeljfMljPTZCk8x4ZB2BzXYEW443sj967o4k9Q0M0ClWMzZBL7tXQVq0xDBSLxNrICP31Q5mrfov99zZAbyIa7a9FLAj2SZBmmJr9jSJZAvn7a7qpXj9KstGQLWbErDsn2kQNv1d8Vna1q0ZCYgSgFbrhP8IxZCyj1RRhlCr3VW0upHxvxrUj0jTNXXZB" } });
               },10);
 		  }
 		},

@@ -36,7 +36,9 @@
 }
 
 #sidebar li{
-  border-bottom: #B0B0B0 solid 1px;
+  border-top: #B0B0B0 solid 1px;
+  border-left: #B0B0B0 solid 1px;
+  border-right: #B0B0B0 solid 1px;
 }
 
 #sidebar .nav>li {
