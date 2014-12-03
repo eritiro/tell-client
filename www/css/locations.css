@@ -1,11 +1,13 @@
-.top-bar form{
-  display: inline-block;
-}
-.top-bar input[type=search]{
-  top: 12px;
+.top-bar form {
   position: absolute;
-  width: 200px;
-  display: inline-block;
+  top: 12px;
+  width: 100%;
+  padding-left: 45px;
+  padding-right: 65px;
+}
+.top-bar input[type=search] {
+  top: 12px;
+  width: 100%;
   height: 40px;
   padding: 6px 12px;
   font-size: 20px;

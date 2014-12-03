@@ -6,11 +6,11 @@
   </div>
 
   <form ng-submit="forceSearch()">
-    <input ng-model="nameToSearch" type="search" ng-change="search()" />
-    <div class="action search" ng-click="forceSearch()">
-      <i class="fa fa-search"></i>
-    </div>
+    <input ng-model="nameToSearch" type="search" ng-change="search()" placeholder="Buscar" />
   </form>
+  <div class="action search" ng-click="forceSearch()">
+    <i class="fa fa-search"></i>
+  </div>
 </div>
 
 <div class="content">

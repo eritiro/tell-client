@@ -95,10 +95,11 @@
 
 .action.search, .action.back{
   width: 40px;
+  z-index: 20;
+  position: absolute;
 }
 
 .action.search {
-  position: absolute;
   right: 10px;
   top: 5px;
 }
