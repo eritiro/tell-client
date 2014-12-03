@@ -4,7 +4,9 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
 
   function loadImages(locations){
     angular.forEach(locations, function(location, key) {
-      imageLoader.preload(location, "thumb", "img/thumb-default.jpg");
+      if(!location.thumb){
+        location.thumb = "img/thumb-default.jpg";
+      }
     });
   }
 

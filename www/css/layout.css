@@ -110,3 +110,18 @@
   font-size: 26px;
   padding-left: 45px;
 }
+
+.bottom-bar{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 55px;
+  z-index: 10;
+  background: black;
+  padding: 5px;
+}
+
+.bottom-bar-adjustment{
+  display: block;
+  height: 55px;
+}

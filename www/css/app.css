@@ -20,7 +20,7 @@ body {
 }
 
 .content {
-  max-height: 100%;
+  min-height: 100%;
   padding-top: 65px;
 }
 
@@ -32,4 +32,8 @@ a:hover, a:visited, a:active, a:link{
 
 h2, .h2 {
   font-size: 25px;
+}
+
+.btn, .btn:hover{
+  background-color: black;
 }

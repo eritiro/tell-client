@@ -11,25 +11,29 @@
     <img ng-src="{{ location.banner }}" />
   </div>
 
-	<span>
-		<i class="fa fa-location-arrow"></i>
-		{{ location.address }}
-	</span>
-	<span>
-		<i class="fa fa-users"></i>
-		{{ location.attendees }}
-	</span>
+  <div class="section">
+    <i class="fa fa-location-arrow icon"></i>
+    <div class="info">{{ location.address }}</div>
+  </div>
 
-	<p class="description" ng-if="!location.description">
-		Vení y conocé quienes van!
-	</p>
-	<p class="description" ng-if="location.description">
-		{{location.description}}
-	</p>
+  <div class="section">
+    <i class="fa fa-users icon"></i>
+    <div class="info">
+      Capacidad: {{ location.capacity }} <br/>
+      Invitados: {{ location.attendees }}
+	</div>
+  </div>
 
-	<button type="submit" class="btn btn-success btn-lg" ng-click="attend()" ng-if="location.id != attendingLocationId">
-		¡Voy!
-	</button>
+  <p class="description" ng-if="location.description">
+      {{location.description}}
+  </p>
+  <div class="bottom-bar-adjustment"></div>
+</div>
+
+<div class="bottom-bar attend-bar" >
+  <button type="submit" class="btn btn-success btn-lg" ng-click="attend()" ng-if="location.id != attendingLocationId">
+    ¡Voy!
+  </button>
 </div>
 
 <div class="attendees-actions" ng-if="ready && location.id == attendingLocationId">

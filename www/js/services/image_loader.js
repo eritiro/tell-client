@@ -3,7 +3,7 @@
 angular.module('tell.services').service('imageLoader', function($timeout, $rootScope) {
   this.preload = function(element, imageToLoad, temporaryImage){
     var url = element[imageToLoad];
-    element[imageToLoad] = temporaryImage;
+    element[imageToLoad] = null;
     if(url){
       $timeout(function(){
         $("<img />").attr('src', url).load(function(){
@@ -12,6 +12,8 @@ angular.module('tell.services').service('imageLoader', function($timeout, $rootS
           });
         });
       });
+    } else {
+      element[imageToLoad] = temporaryImage;
     }
   };
 });
