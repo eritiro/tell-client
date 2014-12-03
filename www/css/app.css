@@ -15,14 +15,13 @@ body {
 
 #app {
   height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .content {
   max-height: 100%;
-  padding-bottom: 70px;
-  height: 100%;
-  margin-bottom: -65px;
-  margin-top: 65px;
+  padding-top: 65px;
 }
 
 a:hover, a:visited, a:active, a:link{
