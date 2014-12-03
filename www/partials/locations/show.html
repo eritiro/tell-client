@@ -24,23 +24,18 @@
 	</div>
   </div>
 
+  <hr/>
   <p class="description" ng-if="location.description">
       {{location.description}}
   </p>
   <div class="bottom-bar-adjustment"></div>
 </div>
 
-<div class="bottom-bar attend-bar" >
-  <button type="submit" class="btn btn-success btn-lg" ng-click="attend()" ng-if="location.id != attendingLocationId">
+<div class="bottom-bar attend-bar" ng-if="ready" >
+  <button class="btn btn-success btn-lg" ng-click="attend()" ng-if="location.id != attendingLocationId">
     ¡Voy!
   </button>
-</div>
-
-<div class="attendees-actions" ng-if="ready && location.id == attendingLocationId">
-  <button type="submit" class="btn btn-success" ng-click="showAttendees()">
-    <i class="fa fa-users"></i>
-  </button>
-  <button type="submit" class="btn btn-success" ng-click="leave()">
-    <i class="fa fa-sign-out"></i>
+  <button class="btn btn-success btn-lg" ng-click="leave()" ng-if="location.id == attendingLocationId">
+    No voy a ir
   </button>
 </div>
