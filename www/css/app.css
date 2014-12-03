@@ -29,3 +29,7 @@ a:hover, a:visited, a:active, a:link{
   border:0;
   outline:none;
 }
+
+h2, .h2 {
+  font-size: 25px;
+}
