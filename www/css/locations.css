@@ -99,9 +99,13 @@
   width: 100%;
 }
 
-.location-not-found{
-  color:black;
+.location-not-found {
+  color: black;
+  padding: 30px;
+  background-color: #A0A0A0;
+  height: 100%;
 }
+
 .location-not-found a{
   color:blue;
 }
