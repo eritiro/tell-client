@@ -20,6 +20,10 @@
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+input[type=search]::-webkit-search-cancel-button{
+  -webkit-appearance:searchfield-cancel-button !important;
+  color: black;
+}
 
 .locations-find {
   padding: 0px 5px;
