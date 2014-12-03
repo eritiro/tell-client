@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService, backButtonService) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService, backButtonService, imageLoader) {
 
     var location = null;
     Location.get({ id: $routeParams.id }, function(loc) {
       location = loc;
       $scope.location = location;
+      imageLoader.preload($scope.location, "photo_medium", "img/banner-default.jpg");
       historyService.log(location);
     });
 
