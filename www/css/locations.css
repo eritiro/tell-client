@@ -67,12 +67,12 @@ input[type=search]::-webkit-search-cancel-button{
 }
 
 .fixed-ratio-container {
-  display: inline-block;
+  /* display: inline-block; */
   position: relative;
   width: 100%;
   background: #202020;
 }
-.fixed-ratio-container {
+.fixed-ratio-container .dummy{
   padding-top: 50%; /* 2:1 aspect ratio */
 }
 .fixed-ratio-container img{
@@ -128,7 +128,6 @@ input[type=search]::-webkit-search-cancel-button{
 
 .attendees-container{
   background-color: black;
-  text-align: center;
 }
 
 .attendees-container a{
