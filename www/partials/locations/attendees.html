@@ -4,22 +4,11 @@
 <div class="content" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">
   <div class="fixed-ratio-container">
     <div class="dummy"></div>
-    <img ng-src="{{ location.banner }}" />
+    <img ng-src="{{ location.banner }}" ng-click="showInfo()" />
   </div>
   <div ng-if="ready" class="attendees-container">
     <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
       <img ng-src="{{attendee.picture}}" />
     </a>
   </div>
-</div>
-<div class="attendees-actions" ng-if="ready">
-  <button type="submit" class="btn btn-success" ng-click="refresh()">
-    <i class="fa fa-refresh"></i>
-  </button>
-  <button type="submit" class="btn btn-success" ng-click="showInfo()">
-    <i class="fa fa-info-circle"></i>
-  </button>
-  <button type="submit" class="btn btn-success" ng-click="leave()">
-    <i class="fa fa-sign-out"></i>
-  </button>
 </div>

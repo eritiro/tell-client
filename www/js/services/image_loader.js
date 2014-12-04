@@ -5,11 +5,9 @@ angular.module('tell.services').service('imageLoader', function($timeout, $rootS
     var url = element[imageToLoad];
     element[imageToLoad] = null;
     if(url){
-      $timeout(function(){
-        $("<img />").attr('src', url).load(function(){
-          $rootScope.$apply(function(){
-            element[imageToLoad] = url;
-          });
+      $("<img />").attr('src', url).load(function(){
+        $rootScope.$apply(function(){
+          element[imageToLoad] = url;
         });
       });
     } else {
