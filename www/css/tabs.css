@@ -19,10 +19,21 @@ img.logo-icon {
   top: 50px;
 }
 
+.top-bar .action img{
+  vertical-align: middle;
+  height: 37px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.notifications-icon{
+  font-size: 1.1em;
+}
+
 [current=notifications] .current-tab{
-  left: 130px;
+  left: 126px;
 }
 
 [current=location] .current-tab{
-  left: 65px;
+  left: 63px;
 }
