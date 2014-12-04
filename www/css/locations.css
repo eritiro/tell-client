@@ -67,7 +67,6 @@ input[type=search]::-webkit-search-cancel-button{
 }
 
 .fixed-ratio-container {
-  /* display: inline-block; */
   position: relative;
   width: 100%;
   background: #202020;
@@ -82,6 +81,7 @@ input[type=search]::-webkit-search-cancel-button{
   width: 100%;
   height: 100%;
   display: none;
+  z-index: 0;
 }
 
 .fixed-ratio-container img[src] {
