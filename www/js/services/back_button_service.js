@@ -19,6 +19,11 @@ angular.module('tell.services').service('backButtonService', function($location,
   };
 
   this.onBack = function() {
+    if (!$('#dialog').is(':hidden')) {
+      $('#dialog').parent().hide();
+      return;
+    }
+
     if (!$('#sidebar').is(':hidden')) {
       $('#sidebar').hide();
       return;

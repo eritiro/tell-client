@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService, backButtonService, imageLoader) {
+  .controller('LocationsShowController', function($scope, $routeParams, Location, $location, $rootScope, $window, historyService, backButtonService, imageLoader, dialog) {
 
     var location = null;
     Location.get({ id: $routeParams.id }, function(loc) {
@@ -25,25 +25,23 @@ angular.module('tell.controllers')
     };
 
     $scope.leave = function(){
-      navigator.notification.confirm("Ya no vas a ir a " + $scope.location.name, function(result){
+      dialog.confirm("Ya no vas a ir a " + $scope.location.name, function(result){
         if(result === 1){
           $scope.location.$leave({ id: $routeParams.id }, function(){
             $rootScope.attendingLocationId = null;
             $location.path("/feeds");
           });
         }
-      }, "¿Estás seguro?");
+      });
     };
 
     $scope.attend = function() {
       if($rootScope.attendingLocationId) {
         Location.get({ id: $rootScope.attendingLocationId }, function(oldLocation) {
-          navigator.notification.confirm("Ya no vas a ir a " + oldLocation.name, function(result){
-          if(result === 1){
+          dialog.confirm("Ya no vas a ir a " + oldLocation.name, function(result){
             doAttend();
-          }
+          });
         });
-      }, "¿Estás seguro?");
       } else {
         doAttend();
       }

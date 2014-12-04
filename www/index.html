@@ -17,10 +17,11 @@
     </head>
 
     <body>
-      <div id="loaderDiv" loader>
+      <div class="overlay" loader>
         <img src="img/loading.gif" class="ajax-loader"/>
       </div>
-
+      <div class="overlay" dialog>
+      </div>
       <div id="app" ng-view></div>
 
       <script type="text/javascript" src="js/cordovamock.js"></script>
@@ -43,6 +44,7 @@
 
       <!-- services -->
       <script type="text/javascript" src="js/services/back_button_service.js"></script>
+      <script type="text/javascript" src="js/services/dialog.js"></script>
       <script type="text/javascript" src="js/services/history_service.js"></script>
       <script type="text/javascript" src="js/services/image_loader.js"></script>
       <script type="text/javascript" src="js/services/menu_options_service.js"></script>
@@ -71,6 +73,7 @@
       <script type="text/javascript" src="js/controllers/feed_controller.js"></script>
 
       <!-- directives -->
+      <script type="text/javascript" src="js/directives/dialog_directive.js"></script>
       <script type="text/javascript" src="js/directives/sidebar_directive.js"></script>
       <script type="text/javascript" src="js/directives/loader_directive.js"></script>
       <script type="text/javascript" src="js/directives/is_focused_directive.js"></script>
