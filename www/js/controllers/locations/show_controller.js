@@ -26,12 +26,10 @@ angular.module('tell.controllers')
 
     $scope.leave = function(){
       dialog.confirm("Ya no vas a ir a " + $scope.location.name, function(result){
-        if(result === 1){
-          $scope.location.$leave({ id: $routeParams.id }, function(){
-            $rootScope.attendingLocationId = null;
-            $location.path("/feeds");
-          });
-        }
+        $scope.location.$leave({ id: $routeParams.id }, function(){
+          $rootScope.attendingLocationId = null;
+          $location.path("/feeds");
+        });
       });
     };
 
