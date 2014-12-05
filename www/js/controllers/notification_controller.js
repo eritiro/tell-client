@@ -2,7 +2,7 @@
 
 angular.module('tell.controllers').controller('NotificationController', function($scope, $rootScope, $routeParams, $location, Notification, userSession) {
 
-  $scope.notifications = Notification.query();
+  $scope.notifications = userSession.currentUser().notifications;
   $rootScope.notificationsCount = 0;
 
   $scope.$on('notification',function(event, notification){

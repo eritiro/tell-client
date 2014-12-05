@@ -11,10 +11,6 @@ angular.module('tell.controllers')
     $scope.location = userSession.currentUser().location;
     imageLoader.preload($scope.location, "banner", "img/banner-default.jpg");
 
-    Location.attendees({ id: $scope.location.id }, function(attendees) {
-      $scope.attendees = attendees;
-    });
-
     $scope.showInfo = function(){
       $location.path("/locations/" + $scope.location.id);
     };
