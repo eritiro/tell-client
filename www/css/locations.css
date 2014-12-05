@@ -40,12 +40,6 @@ input[type=search]::-webkit-search-cancel-button{
   margin-top: 0;
 }
 
-.list-group-item {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid white;
-
-}
-
 .locations-find .list-group-item {
   min-height: 120px;
 }

@@ -10,9 +10,9 @@ angular.module('tell.controllers').controller('NotificationController', function
     userSession.save();
     $location.search("backto", "/notifications");
     if (notification.type === 'invite') {
-      $location.path("/users/" + notification.from_id);
+      $location.path("/users/" + notification.from.id);
     } else {
-      $location.path("/users/" + notification.from_id + "/chat");
+      $location.path("/users/" + notification.from.id + "/chat");
     }
   };
 

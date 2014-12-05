@@ -36,7 +36,7 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   };
 
   $scope.$on('notification',function(event, notification){
-    if($routeParams.id === notification.from_id.toString() && notification.type === "message") {
+    if($routeParams.id === notification.from.id.toString() && notification.type === "message") {
       $scope.messages.push({ text: notification.text, mine: false});
       $scope.listen++; // Force angular to perform render
     }

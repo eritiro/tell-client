@@ -4,12 +4,9 @@
 <div class="content" ng-swipe-right="swipeRight()">
   <ul class="list-group notifications">
     <li class="list-group-item" ng-repeat="notification in user.notifications" ng-click="go(notification)" read="{{notification.read}}">
-      <img ng-src="{{notification.user.photo}}" />
-      <div class="location-item-data">
-        <h2 ng-if="notification.type==='invite'"><i class="fa fa-glass"></i></h2>
-              <h2 ng-if="notification.type==='message'"><i class="fa fa-weixin"></i></h2>
-        <small>{{ notification.text }}</small>
-      </div>
+      <img ng-src="{{ notification.from.thumb }}" />
+      <div class="name">{{ notification.from.username }}</div>
+      <div class="text">{{ notification.text }}</div>
       <div class="clearfix"></div>
     </li>
   </ul>

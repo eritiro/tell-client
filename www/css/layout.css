@@ -171,3 +171,9 @@ div[tell-tabs] {
 .fixed-ratio-container img[src] {
    display: block;
 }
+
+.list-group-item {
+  background-color: #E0E0E0;
+  border: 1px solid white;
+}
+

@@ -11,7 +11,11 @@ function broadcastNotification(e){
       var notification = e.payload;
       notification.text = e.payload.message;
       notification.read = false;
-      notification.from_id = parseInt(e.payload.from_id, 10);
+      notification.from = {
+        id: parseInt(e.payload.from_id, 10),
+        username: e.payload.from_username,
+        thumb: e.payload.from_thumb
+      };
       console.log("push_handler - broadcasting: " + JSON.stringify(notification));
       $rootScope.$broadcast('notification', notification);
       userSession.notify(notification);
@@ -34,9 +38,9 @@ function onPushMessageReceived(e){
       broadcastNotification(e);
     }
     if(e.payload.type === "invite"){
-      window.location = "#/users/" + e.payload.from_id + "?backto=" + encodeURIComponent("/feeds");
+      window.location = "#/users/" + e.payload.from.id + "?backto=" + encodeURIComponent("/feeds");
     } else {
-      window.location = "#/users/" + e.payload.from_id + "/chat?backto=" + encodeURIComponent("/feeds");
+      window.location = "#/users/" + e.payload.from.id + "/chat?backto=" + encodeURIComponent("/feeds");
     }
   }
 }

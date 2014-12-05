@@ -38,7 +38,7 @@ angular.module('tell.services')
     };
 
     this.notify = function(notification){
-      var newList = user.notifications.filter(function(n) { return n.from_id !== notification.from_id || n.type !== notification.type; });
+      var newList = user.notifications.filter(function(n) { return n.from.id !== notification.from.id || n.type !== notification.type; });
       newList.unshift(notification);
       user.notifications = newList;
     };
