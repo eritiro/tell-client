@@ -6,7 +6,7 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   AuthProvider.registerPath(config.serverUrl + '/users');
   AuthProvider.ignoreAuth(true);
 
-  $httpProvider.defaults.headers.common.Accept = 'application/json';
+  $httpProvider.defaults.headers.common.Accept = 'application/json; api_version=' + config.api_version;
 
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
 

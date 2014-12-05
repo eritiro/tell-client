@@ -2,12 +2,14 @@
 
 var POSTA = {
   serverUrl: 'http://warmapp.startmeapps.com',
-  support: 'info@startmeapps.com'
+  support: 'info@startmeapps.com',
+  api_version: 2
 };
 
 var POMELO = {
   serverUrl: 'http://192.168.1.102:3000',
-  support: 'info@startmeapps.com'
+  support: 'info@startmeapps.com',
+  api_version: 2
 };
 
 var config = POMELO;
