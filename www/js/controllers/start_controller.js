@@ -1,14 +1,7 @@
 'use strict';
 
-var hardcore = false;
-
 angular.module('tell.controllers').controller('StartController', function(userSession, $location, User, $rootScope) {
   var currentUser = userSession.currentUser();
-
-  if(hardcore) {
-    navigator.app.exitApp();
-  }
-  hardcore = true;
 
   if (!currentUser) {
     $location.path("/users/sign_up_selection");
