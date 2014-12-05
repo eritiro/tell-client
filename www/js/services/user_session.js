@@ -3,6 +3,7 @@
 angular.module('tell.services')
   .service('userSession', function($http, $cacheFactory, User){
     var key = 'user.data.v.0';
+    var that = this;
     var user;
 
     function setHeaders(){
@@ -22,7 +23,7 @@ angular.module('tell.services')
 
     this.storeUser = function(newUser) {
       user = newUser;
-      this.save();
+      that.save();
     };
 
     this.logout = function() {
@@ -36,14 +37,20 @@ angular.module('tell.services')
       return user;
     };
 
+    this.notify = function(notification){
+      var newList = user.notifications.filter(function(n) { return n.from_id !== notification.from_id || n.type !== notification.type; });
+      newList.unshift(notification);
+      user.notifications = newList;
+    };
+
     this.load = function(){
       user = angular.fromJson(localStorage.getItem(key));
       if(user){
         setHeaders();
         User.profile({}, function(userData) {
-          user.unread_notifications = userData.unread_notifications;
           user.location = userData.location;
-          user = userData;
+          user.notifications = userData.notifications;
+          that.save();
         });
       }
     };

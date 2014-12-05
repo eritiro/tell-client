@@ -3,7 +3,7 @@
 
 <div class="content" ng-swipe-right="swipeRight()">
   <ul class="list-group notifications">
-    <li class="list-group-item" ng-repeat="notification in notifications" ng-click="go(notification)" read="{{notification.read}}">
+    <li class="list-group-item" ng-repeat="notification in user.notifications" ng-click="go(notification)" read="{{notification.read}}">
       <img ng-src="{{notification.user.photo}}" />
       <div class="location-item-data">
         <h2 ng-if="notification.type==='invite'"><i class="fa fa-glass"></i></h2>

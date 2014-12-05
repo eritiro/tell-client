@@ -4,7 +4,7 @@ var registrationId;
 
 function broadcastNotification(e){
   var injector = angular.element(document.body).injector();
-  injector.invoke(function($rootScope) {
+  injector.invoke(function($rootScope, userSession) {
     $rootScope.$apply(function(){
       $rootScope.notificationsCount = e.payload.msgcnt;
 
@@ -14,6 +14,7 @@ function broadcastNotification(e){
       notification.from_id = parseInt(e.payload.from_id, 10);
       console.log("push_handler - broadcasting: " + JSON.stringify(notification));
       $rootScope.$broadcast('notification', notification);
+      userSession.notify(notification);
     });
   });
 }
