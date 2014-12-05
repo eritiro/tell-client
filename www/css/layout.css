@@ -94,8 +94,8 @@ div[tell-tabs] {
   width: 100%;
   height: 65px;
   z-index: 10;
-	background: #900090; /* Para browsers no copados */
-  background: linear-gradient(to bottom, #900090 0%,#ad1283 50%,#de47ac 100%); /* W3C */
+	background: #800080; /* Para browsers no copados */
+  background: linear-gradient(to bottom, #800080 0%,#ad1283 50%,#de47ac 100%); /* W3C */
   padding: 5px;
 }
 
