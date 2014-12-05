@@ -21,6 +21,7 @@ angular.module('tell', [
   'ngRoute',
   'ngTouch',
   'luegg.directives',
+  'monospaced.elastic',
   'tell.controllers',
   'tell.services',
   'tell.resources',

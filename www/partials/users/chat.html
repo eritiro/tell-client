@@ -6,10 +6,11 @@
   <h1 ng-click="showUser()">{{user.username}}</h1>
 </div>
 <div class="content chat-box" scroll-glue>
+  <div class="dummy"></div>
   <div class="message" ng-repeat="message in messages" ng-class="{ mine: message.mine }">{{ message.text }}</div>
 </div>
 <div class="chat-write" >
-  <textarea ng-model="message" rows="1" is-focused="true" />
+  <textarea ng-model="message" msd-elastic rows="1" is-focused="true" />
   <button type="submit" ng-click="chat()" class="btn btn-success">
     <i class="fa fa-caret-right"></i>
   </button>

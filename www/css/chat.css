@@ -7,7 +7,7 @@
   max-width: 90%;
   color: black;
   background-color: rgba(255, 225, 175, 0.9);
-  border-radius: 5px 5px 5px 0px;
+  border-radius: 6px 6px 6px 0px;
   font-size: 18px;
   word-wrap: normal;
   word-break: break-word;
@@ -17,17 +17,25 @@
 .message.mine {
   float: right;
   background-color: rgba(255, 255, 200, 0.9);
-  border-radius: 5px 5px 0px 5px;
+  border-radius: 6px 6px 0px 6px;
 }
 
 .chat-box {
   padding-bottom: 50px;
   overflow: auto;
+  background-color: #909090;
+  max-height: 100%;
+}
+
+.chat-box .dummy{
+  height: 650px;
 }
 
 .chat-write{
   position: fixed;
   bottom: 0;
+  left: 0px;
+  right: 0px;
   padding: 3px;
   width: 100%;
   background-color: black;

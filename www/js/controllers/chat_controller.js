@@ -2,7 +2,7 @@
 
 angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window) {
   $scope.me = userSession.currentUser();
-
+  $scope.listen = 0;
   var user;
   User.get({ id: $routeParams.id }, function(u) {
     user = u;
@@ -38,6 +38,7 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   $scope.$on('notification',function(event, notification){
     if($routeParams.id === notification.from_id.toString() && notification.type === "message") {
       $scope.messages.push({ text: notification.text, mine: false});
+      $scope.listen++; // Force angular to perform render
     }
   });
 
