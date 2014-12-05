@@ -77,8 +77,10 @@ p.login-message {
   color: white;
 }
 
-.user_accions{
-  text-align: center;
+.user-actions{
+  position: absolute;
+  top: 5px;
+  right: 0px;
 }
 
 .full_app {

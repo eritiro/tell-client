@@ -3,6 +3,14 @@
     <i class="fa fa-angle-left"></i>
   </div>
   <h1>{{user.username}}</h1>
+  <div class="user-actions"  ng-if="ready">
+    <div class="action" ng-click="invite()" ng-if="!user.was_invited" >
+      <i class="fa fa-glass"></i>
+    </div>
+    <div class="action" ng-click="chat()">
+      <i class="fa fa-weixin"></i>
+    </div>
+  </div>
 </div>
 <div tell-sidebar id="sidebar"></div>
 <div class="content">
@@ -19,21 +27,6 @@
       <p ng-if="user.location && user.id === currentUser.id">
         Esta noche vas a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
       </p>
-    </div>
-
-    <div class="user_accions" ng-if="ready && user.id !== currentUser.id">
-      <button type="button" ng-if="!user.was_invited" ng-click="invite()" class="btn btn-success">
-        <i class="fa fa-glass"></i>
-        Invitar trago
-      </button>
-      <button type="button" ng-if="user.was_invited" class="btn btn-warning active">
-        <i class="fa fa-check"></i>
-        ¡Enviado!
-      </button>
-      <button type="button" ng-click="chat()" class="btn btn-success">
-        <i class="fa fa-weixin"></i>
-        Escribir
-      </button>
     </div>
   </div>
 </div>

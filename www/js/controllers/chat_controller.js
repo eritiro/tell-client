@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window) {
+angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService) {
   $scope.me = userSession.currentUser();
   $scope.listen = 0;
   var user;
@@ -43,6 +43,6 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   });
 
   $scope.back = function(){
-    $window.history.back();
+    backButtonService.back();
   };
 });

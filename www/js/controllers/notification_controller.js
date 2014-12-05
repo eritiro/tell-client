@@ -12,6 +12,7 @@ angular.module('tell.controllers').controller('NotificationController', function
   });
 
   $scope.go = function(notification) {
+    $location.search("backto", "/notifications");
     if (notification.type === 'invite') {
       $location.path("/users/" + notification.from_id);
     } else {

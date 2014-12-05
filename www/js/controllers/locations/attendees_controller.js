@@ -20,6 +20,11 @@ angular.module('tell.controllers')
       $location.path("/locations/" + $scope.attendingLocationId);
     };
 
+    $scope.showAttendee = function(id){
+      $location.search("backto", "/locations/attendees");
+      $location.path("/users/" + id);
+    };
+
     $scope.refresh = function() {
       Location.staleAttending($scope.attendingLocationId);
       $route.reload();

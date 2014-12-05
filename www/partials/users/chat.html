@@ -3,7 +3,12 @@
   <div class="action back" ng-click="back()">
     <i class="fa fa-angle-left"></i>
   </div>
-  <h1 ng-click="showUser()">{{user.username}}</h1>
+  <h1>{{user.username}}</h1>
+  <div class="user-actions"  ng-if="ready">
+    <div class="action" ng-click="showUser()">
+      <i class="fa fa-info-circle"></i>
+    </div>
+  </div>
 </div>
 <div class="content chat-box" scroll-glue>
   <div class="dummy"></div>

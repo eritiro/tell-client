@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession, $window) {
+angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession, $window, dialog, backButtonService) {
 
     $scope.currentUser = userSession.currentUser();
 	var user;
@@ -10,8 +10,10 @@ angular.module('tell.controllers').controller('UsersShowController', function($s
 	});
 
   $scope.invite = function() {
-	user.$invite({ id: $scope.user.id });
-    $scope.user.was_invited = true;
+    dialog.confirm("¿Querés invitarle un trago a "+ $scope.user.username + "?", function(result){
+      user.$invite({ id: $scope.user.id });
+      $scope.user.was_invited = true;
+    });
   };
 
   $scope.chat = function() {
@@ -20,6 +22,6 @@ angular.module('tell.controllers').controller('UsersShowController', function($s
 
 
   $scope.back = function(){
-    $window.history.back();
+    backButtonService.back();
   };
 });

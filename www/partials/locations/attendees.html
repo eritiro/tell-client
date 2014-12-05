@@ -7,8 +7,8 @@
     <img ng-src="{{ location.banner }}" ng-click="showInfo()" />
   </div>
   <div ng-if="ready" class="attendees-container">
-    <a ng-repeat="attendee in attendees" href="#/users/{{attendee.id}}">
+    <div ng-repeat="attendee in attendees" ng-click="showAttendee(attendee.id)">
       <img ng-src="{{attendee.picture}}" />
-    </a>
+    </div>
   </div>
 </div>
