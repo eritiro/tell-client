@@ -1,23 +1,22 @@
 'use strict';
 
 angular.module('tell.controllers')
-  .controller('LocationsAttendeesController', function($scope, Location, $location, $rootScope, $route) {
+  .controller('LocationsAttendeesController', function($scope, Location, $location, $rootScope, $route, userSession, imageLoader) {
 
-    if (!$scope.attendingLocationId) {
+    if (!userSession.currentUser().location) {
       $location.path("/locations").search("backto", "/feeds");
       return;
     }
 
-	Location.get({ id: $scope.attendingLocationId }, function(location) {
-		$scope.location = location;
-	});
+    $scope.location = userSession.currentUser().location;
+    imageLoader.preload($scope.location, "banner", "img/banner-default.jpg");
 
-    Location.attendees({ id: $scope.attendingLocationId }, function(attendees) {
+    Location.attendees({ id: $scope.location.id }, function(attendees) {
       $scope.attendees = attendees;
     });
 
     $scope.showInfo = function(){
-      $location.path("/locations/" + $scope.attendingLocationId);
+      $location.path("/locations/" + $scope.location.id);
     };
 
     $scope.showAttendee = function(id){
@@ -26,7 +25,7 @@ angular.module('tell.controllers')
     };
 
     $scope.refresh = function() {
-      Location.staleAttending($scope.attendingLocationId);
+      Location.staleAttending($scope.location.id);
       $route.reload();
     };
 

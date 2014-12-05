@@ -32,10 +32,10 @@
 </div>
 
 <div class="bottom-bar attend-bar" ng-if="ready" >
-  <button class="btn btn-success btn-lg" ng-click="attend()" ng-if="location.id != attendingLocationId">
+  <button class="btn btn-success btn-lg" ng-click="attend()" ng-if="!attending">
     ¡Voy!
   </button>
-  <button class="btn btn-success btn-lg" ng-click="leave()" ng-if="location.id == attendingLocationId">
+  <button class="btn btn-success btn-lg" ng-click="leave()" ng-if="attending">
     No voy a ir
   </button>
 </div>

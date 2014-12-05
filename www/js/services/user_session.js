@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tell.services')
-  .service('userSession', function($http, $cacheFactory){
+  .service('userSession', function($http, $cacheFactory, User){
     var key = 'user.data.v.0';
     var user;
 
@@ -15,10 +15,14 @@ angular.module('tell.services')
       delete $http.defaults.headers.common['User-Token'];
     }
 
-    this.storeUser = function(newUser) {
-      user = newUser;
+    this.save = function(){
       localStorage.setItem(key, angular.toJson(user));
       setHeaders();
+    };
+
+    this.storeUser = function(newUser) {
+      user = newUser;
+      this.save();
     };
 
     this.logout = function() {
@@ -36,6 +40,11 @@ angular.module('tell.services')
       user = angular.fromJson(localStorage.getItem(key));
       if(user){
         setHeaders();
+        User.profile({}, function(userData) {
+          user.unread_notifications = userData.unread_notifications;
+          user.location = userData.location;
+          user = userData;
+        });
       }
     };
   })
