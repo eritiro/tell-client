@@ -84,7 +84,7 @@ p.login-message {
 
 .full_app {
   background-color: #800080;
-	background: linear-gradient(to bottom, #800080 0%,#ad1283 50%,#de47ac 100%); /* W3C */
+  background: linear-gradient(to bottom, #800080 0%, #600060 100%);
   margin-top: 0;
   height: 100%;
 }
