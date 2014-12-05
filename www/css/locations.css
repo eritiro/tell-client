@@ -66,28 +66,6 @@ input[type=search]::-webkit-search-cancel-button{
   font-size: 17pt;
 }
 
-.fixed-ratio-container {
-  position: relative;
-  width: 100%;
-  background: #202020;
-}
-.fixed-ratio-container .dummy{
-  padding-top: 50%; /* 2:1 aspect ratio */
-}
-.fixed-ratio-container img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 0;
-}
-
-.fixed-ratio-container img[src] {
-   display: block;
-}
-
 .location .icon{
   display: inline-block;
   text-align: center;

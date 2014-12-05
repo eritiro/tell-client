@@ -13,20 +13,15 @@
   </div>
 </div>
 <div tell-sidebar id="sidebar"></div>
-<div class="content">
-  <div class="user" ng-if="ready">
+<div class="user content">
+  <div class="fixed-ratio-container ratio-1-1">
+    <div class="dummy"></div>
+    <img ng-src="{{ user.picture }}" />
+  </div>
 
-    <div class="centered-image-container">
-      <img ng-src="{{user.picture}}" />
-    </div>
-
-    <div class="user_info">
-      <p ng-if="user.location && user.id !== currentUser.id">
-        Esta noche va a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
-      </p>
-      <p ng-if="user.location && user.id === currentUser.id">
-        Esta noche vas a <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
-      </p>
-    </div>
+  <div class="user_info">
+    <p ng-if="user.location && user.id !== currentUser.id">
+      {{ where }} <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
+    </p>
   </div>
 </div>

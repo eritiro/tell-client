@@ -2,11 +2,20 @@
 
 angular.module('tell.controllers').controller('UsersShowController', function($scope, $location, User, $routeParams, userSession, $window, dialog, backButtonService) {
 
-    $scope.currentUser = userSession.currentUser();
 	var user;
 	User.get({ id: $routeParams.id }, function(u){
-		user = u;
-		$scope.user = user;
+      user = u;
+      $scope.user = user;
+
+      if(user.id === userSession.currentUser().id){
+        $scope.where = "Esta noche vas a";
+      } else if(user.gender === "male"){
+        $scope.where = "Encontralo en";
+      } else if(user.gender === "female"){
+        $scope.where = "Encontrala en";
+      } else{
+        $scope.where = "Esta noche en";
+      }
 	});
 
   $scope.invite = function() {
