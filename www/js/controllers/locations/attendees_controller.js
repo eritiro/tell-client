@@ -3,13 +3,6 @@
 angular.module('tell.controllers')
   .controller('LocationsAttendeesController', function($scope, Location, $location, $rootScope, $route, userSession, imageLoader) {
 
-    if (!userSession.currentUser().location) {
-      return;
-    }
-
-    $scope.location = userSession.currentUser().location;
-    imageLoader.preload($scope.location, "banner", "img/banner-default.jpg");
-
     $scope.showInfo = function(){
       $location.path("/locations/" + $scope.location.id);
     };
@@ -31,4 +24,10 @@ angular.module('tell.controllers')
     $scope.swipeLeft = function(){
       $location.path("/notifications");
     };
+
+    if (userSession.currentUser().location) {
+      $scope.location = userSession.currentUser().location;
+      imageLoader.preload($scope.location, "banner", "img/banner-default.jpg");
+    }
+
   });

@@ -4,10 +4,10 @@
   </div>
   <h1>{{user.username}}</h1>
   <div class="user-actions"  ng-if="ready">
-    <div class="action" ng-click="invite()" ng-if="!user.was_invited" >
+    <div class="action" ng-click="invite()" ng-if="!user.was_invited && !itsYou" >
       <i class="fa fa-glass"></i>
     </div>
-    <div class="action" ng-click="chat()">
+    <div class="action" ng-click="chat()" ng-if="!itsYou">
       <i class="fa fa-weixin"></i>
     </div>
   </div>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="user_info">
-    <p ng-if="user.location && user.id !== currentUser.id">
+    <p ng-if="user.location">
       {{ where }} <a href="#/locations/{{user.location.id}}">{{user.location.name}}</a>
     </p>
   </div>

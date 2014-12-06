@@ -6,8 +6,8 @@ angular.module('tell.controllers').controller('UsersShowController', function($s
 	User.get({ id: $routeParams.id }, function(u){
       user = u;
       $scope.user = user;
-
       if(user.id === userSession.currentUser().id){
+        $scope.itsYou = true;
         $scope.where = "Esta noche vas a";
       } else if(user.gender === "male"){
         $scope.where = "Encontralo en";
