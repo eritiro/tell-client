@@ -4,33 +4,33 @@ angular.module('tell.services').factory('spinnerInterceptor', function ($q, $roo
 
     var numLoadings = 0;
 
+    function needsSpin(config){
+      return config.url.indexOf('users/profile') === -1;
+    }
+
     return {
         request: function (config) {
-
+          if(needsSpin(config)){
             numLoadings++;
-
-            // Show loader
             $rootScope.$broadcast("loader_show");
-            return config || $q.when(config);
+          }
+          return config || $q.when(config);
         },
         response: function (response) {
-
+          if(needsSpin(response.config)){
             if ((--numLoadings) === 0) {
-                // Hide loader
-                $rootScope.$broadcast("loader_hide");
+              $rootScope.$broadcast("loader_hide");
             }
-
-            return response || $q.when(response);
-
+          }
+          return response || $q.when(response);
         },
         responseError: function (response) {
-
+          if(needsSpin(response.config)){
             if (!(--numLoadings)) {
-                // Hide loader
-                $rootScope.$broadcast("loader_hide");
+              $rootScope.$broadcast("loader_hide");
             }
-
-            return $q.reject(response);
+          }
+          return $q.reject(response);
         }
     };
 })

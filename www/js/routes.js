@@ -11,9 +11,6 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
   $routeProvider.when('/', { template: '<div></div>', controller: 'StartController' });
 
   $routeProvider.when('/users/sign_up_selection', {templateUrl: 'partials/users/sign_up_selection.html', controller: 'UsersController'});
-  $routeProvider.when('/users/email_sign_in', {templateUrl: 'partials/users/email_sign_in.html', controller: 'UsersController'});
-  $routeProvider.when('/users/email_sign_up', {templateUrl: 'partials/users/email_sign_up.html', controller: 'UsersController'});
-  $routeProvider.when('/users/username', {templateUrl: 'partials/users/username.html', controller: 'UsersController'});
 
   $routeProvider.when('/users/:id', {templateUrl: 'partials/users/show.html', controller: 'UsersShowController'});
 
@@ -28,4 +25,16 @@ angular.module('tell').config(function(AuthProvider, $httpProvider, $routeProvid
 	$routeProvider.when('/feeds', {templateUrl: 'partials/feeds.html', controller: 'FeedController'});
 
   $routeProvider.when('/locations/:locationId/comments/new', { templateUrl: 'partials/comment.html', controller: 'CommentsController' });
+}).run(function($http, $templateCache) {
+  var templates = [
+    'partials/locations/attendees.html',
+    'partials/locations/show.html',
+    'partials/locations/find.html',
+    'partials/notifications.html'];
+
+  angular.forEach(templates, function(templateUrl) {
+    $http.get(templateUrl).success(function(data){
+      $templateCache.put(templateUrl, data);
+    });
+  });
 });
