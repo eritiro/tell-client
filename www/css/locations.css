@@ -27,11 +27,6 @@ input[type=search]::-webkit-search-cancel-button{
   color: black;
 }
 
-.locations-find {
-  padding: 0px 5px;
-  margin-top: 5px;
-}
-
 .locations-find .list-group-item .location-item-data {
   margin-left:7em;
 }

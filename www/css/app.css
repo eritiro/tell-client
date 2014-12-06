@@ -37,3 +37,12 @@ h2, .h2 {
 .btn, .btn:hover{
   background-color: black;
 }
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

@@ -191,3 +191,11 @@ div[tell-tabs] {
 .message-sign a{
   color:blue;
 }
+
+.night {
+  background: url("../img/hands-background.png");
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #200030;
+}
