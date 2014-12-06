@@ -37,3 +37,14 @@ img.logo-icon {
 [current=location] .current-tab{
   left: 63px;
 }
+
+.top-bar .action p {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  width: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+}

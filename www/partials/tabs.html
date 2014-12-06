@@ -9,6 +9,7 @@
       <img src="img/disco-ball.png">
     </a>
     <a class="action" href="#/notifications" tabindex="-1">
+      <p ng-if="user.unread_notifications">{{ user.unread_notifications }}</p>
       <i class="fa fa-comments-o notifications-icon"></i>
     </a>
 

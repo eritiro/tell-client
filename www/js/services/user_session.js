@@ -37,10 +37,12 @@ angular.module('tell.services')
       return user;
     };
 
-    this.notify = function(notification){
+    this.notify = function(notification, unread){
       var newList = user.notifications.filter(function(n) { return n.from.id !== notification.from.id || n.type !== notification.type; });
       newList.unshift(notification);
       user.notifications = newList;
+      user.unread_notifications = unread;
+      that.save();
     };
 
     this.load = function(){
@@ -50,6 +52,7 @@ angular.module('tell.services')
         User.profile({}, function(userData) {
           user.location = userData.location;
           user.notifications = userData.notifications;
+          user.unread_notifications = userData.unread_notifications;
           that.save();
         });
       }

@@ -6,8 +6,6 @@ function broadcastNotification(e){
   var injector = angular.element(document.body).injector();
   injector.invoke(function($rootScope, userSession) {
     $rootScope.$apply(function(){
-      $rootScope.notificationsCount = e.payload.msgcnt;
-
       var notification = e.payload;
       notification.text = e.payload.message;
       notification.read = false;
@@ -18,7 +16,7 @@ function broadcastNotification(e){
       };
       console.log("push_handler - broadcasting: " + JSON.stringify(notification));
       $rootScope.$broadcast('notification', notification);
-      userSession.notify(notification);
+      userSession.notify(notification, e.payload.msgcnt);
     });
   });
 }
