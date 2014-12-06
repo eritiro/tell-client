@@ -23,7 +23,13 @@ angular.module('tell.controllers')
 
     function doAttend(){
       $scope.location.$attend({ id: $routeParams.id }, function(){
-        userSession.currentUser().location = $scope.location;
+        var user = userSession.currentUser();
+        user.location = $scope.location;
+        $scope.location.attendees.unshift({
+          id: user.id,
+          username: user.username,
+          gender: user.gender,
+          picture: user.picture });
         userSession.save();
         $location.url("/locations/attendees");
       }, function() {
