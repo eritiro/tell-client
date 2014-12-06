@@ -4,7 +4,6 @@ angular.module('tell.controllers')
   .controller('LocationsAttendeesController', function($scope, Location, $location, $rootScope, $route, userSession, imageLoader) {
 
     if (!userSession.currentUser().location) {
-      $location.path("/locations").search("backto", "/feeds");
       return;
     }
 

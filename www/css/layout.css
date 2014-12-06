@@ -177,3 +177,17 @@ div[tell-tabs] {
   border: 1px solid white;
 }
 
+.message-sign {
+  color: black;
+  padding: 30px;
+  background-color: #A0A0A0;
+  height: 100%;
+}
+
+.message-sign h3{
+  margin-top: 15px;
+}
+
+.message-sign a{
+  color:blue;
+}

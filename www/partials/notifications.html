@@ -2,7 +2,7 @@
 <div tell-sidebar id="sidebar"></div>
 
 <div class="content" ng-swipe-right="swipeRight()">
-  <ul class="list-group notifications">
+  <ul class="list-group notifications" ng-if="user.notifications.length > 0">
     <li class="list-group-item" ng-repeat="notification in user.notifications" ng-click="go(notification)" read="{{notification.read}}">
       <img ng-src="{{ notification.from.thumb }}" />
       <div class="name">{{ notification.from.username }}</div>
@@ -10,4 +10,8 @@
       <div class="clearfix"></div>
     </li>
   </ul>
+  <div class="message-sign" ng-if="user.notifications.length === 0">
+    <h3>Todavía no tenés notificaciones de otros usuarios.</h3>
+    Para charlar con otros usuarios tenés que clickear en la foto de perfil en la pantalla de la izquierda.
+  </div>
 </div>

@@ -111,17 +111,6 @@ input[type=search]::-webkit-search-cancel-button{
   width: 100%;
 }
 
-.location-not-found {
-  color: black;
-  padding: 30px;
-  background-color: #A0A0A0;
-  height: 100%;
-}
-
-.location-not-found a{
-  color:blue;
-}
-
 .attendees-actions {
   position: fixed;
   top: 65px;
@@ -151,4 +140,38 @@ input[type=search]::-webkit-search-cancel-button{
 
 .attend-bar button {
   width: 100%;
+}
+
+.search-pointer {
+  position: fixed;
+  right: 12px;
+  font-size: 38px;
+  color: #600060;
+  -webkit-animation: pointing 5s;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+  top: 65px;
+}
+
+@-webkit-keyframes pointing {
+  79%{
+    top: 180px;
+    opacity: 0;
+  }
+  80%   {
+    top: 180px;
+    opacity: 1;
+  }
+  90%  {
+    top: 65px;
+    opacity: 1;
+  }
+  97:{
+    top: 65px;
+    opacity: 0;
+  }
+  100%  {
+    top: 65px;
+    opacity: 0;
+  }
 }

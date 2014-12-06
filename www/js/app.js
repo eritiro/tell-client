@@ -12,7 +12,7 @@ var POMELO = {
   api_version: 2
 };
 
-var config = POSTA;
+var config = POMELO;
 
 angular.module('tell.directives', ['ui.bootstrap']);
 angular.module('tell.services', []);
