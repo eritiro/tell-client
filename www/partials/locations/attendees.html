@@ -6,8 +6,9 @@
     <div class="dummy"></div>
     <img ng-src="{{ location.banner }}" ng-click="showInfo()" />
   </div>
-  <div ng-if="ready" class="attendees-container">
-    <div ng-repeat="attendee in location.attendees" ng-click="showAttendee(attendee.id)">
+  <div class="attendees-container">
+    <div class="fixed-ratio-container ratio-1-1" ng-repeat="attendee in location.attendees" ng-click="showAttendee(attendee.id)">
+      <div class="dummy"></div>
       <img ng-src="{{attendee.picture}}" />
     </div>
   </div>
