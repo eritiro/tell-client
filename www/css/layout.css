@@ -95,7 +95,7 @@ div[tell-tabs] {
   height: 65px;
   z-index: 10;
   background: #800080; /* Para browsers no copados */
-  background: linear-gradient(to right, #800080 0%, #600060 100%);
+  background: linear-gradient(to right, #700070 0%, #600060 100%);
   padding: 5px;
 }
 
@@ -123,6 +123,7 @@ div[tell-tabs] {
   margin-top: 12px;
   font-size: 26px;
   padding-left: 45px;
+  color: black;
 }
 
 .bottom-bar{
