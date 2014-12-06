@@ -36,9 +36,9 @@ function onPushMessageReceived(e){
       broadcastNotification(e);
     }
     if(e.payload.type === "invite"){
-      window.location = "#/users/" + e.payload.from.id + "?backto=" + encodeURIComponent("/feeds");
+      window.location = "#/users/" + e.payload.from_id + "?backto=" + encodeURIComponent("/feeds");
     } else {
-      window.location = "#/users/" + e.payload.from.id + "/chat?backto=" + encodeURIComponent("/feeds");
+      window.location = "#/users/" + e.payload.from_id + "/chat?backto=" + encodeURIComponent("/feeds");
     }
   }
 }
