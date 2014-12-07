@@ -20,6 +20,13 @@
   border-radius: 6px 6px 0px 6px;
 }
 
+.message.mine.sending {
+  background-image: url('../img/loading.gif');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+
 .chat-box {
   padding-bottom: 50px;
   overflow: auto;

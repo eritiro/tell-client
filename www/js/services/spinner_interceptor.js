@@ -5,7 +5,8 @@ angular.module('tell.services').factory('spinnerInterceptor', function ($q, $roo
     var numLoadings = 0;
 
     function needsSpin(config){
-      return config.url.indexOf('users/profile') === -1;
+      return config.url.indexOf('users/profile') === -1
+        && config.url.indexOf('/messages') === -1;
     }
 
     return {
