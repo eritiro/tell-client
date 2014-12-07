@@ -2,15 +2,19 @@
 <div tell-sidebar id="sidebar"></div>
 <div class="content night" ng-swipe-left="swipeLeft()">
 
-  <div class="feeds-call-to-action" ng-click="find()">
+  <div class="feeds-call-to-action" ng-click="find()" ng-if="!user.location">
     <em>Emiliano</em>,
     ¿A <em>donde</em> vas a salir esta <em>noche</em>?
   </div>
+
   <ul class="list-group feeds">
+    <li class="list-group-item header">
+      news feeds
+    </li>
     <li class="list-group-item" ng-repeat="feed in feeds" ng-click="resolve(feed)" ng-bind-html="feed.content">
     </li>
     <li class="list-group-item">
-      <h3>Actualizamos el listado de locales de <span class="hashtag">#Palermo</span></h3>
+      <h3>Actualizamos el listado de locales de Palermo</h3>
       <div class="clearfix"></div>
     </li>
     <li class="list-group-item">
@@ -21,11 +25,11 @@
       <div class="clearfix"></div>
     </li>
     <li class="list-group-item">
-      <h3>Actualizamos el listado de locales de <span class="hashtag">#Caballito</span></h3>
+      <h3>Actualizamos el listado de locales de Caballito</h3>
       <div class="clearfix"></div>
     </li>
     <li class="list-group-item">
-      <h3>Esta noche con lista, todos gratis <span class="hashtag">@Club Araoz</span></h3>
+      <h3>Esta noche con lista, todos gratis Club Araoz</h3>
       <small>Hasta las 2am, con la app de warmapp</small>
       <div class="clearfix"></div>
     </li>

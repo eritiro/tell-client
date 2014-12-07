@@ -9,6 +9,12 @@
   margin: 10px;
 }
 
+.feeds .header{
+  color: white;
+  background-color: #300060;
+  font-size: 22px;
+}
+
 .feeds em{
   font-size: 1.3em;
   font-style: normal;

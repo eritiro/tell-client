@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module('tell.controllers').controller('FeedController', function($scope, $location, $sce) {
-  var i;
-  $scope.feeds = [];
+angular.module('tell.controllers').controller('FeedController', function($scope, $location, $sce, userSession) {
 
-//  $scope.feeds.push({ link: "/users/13/chat", content: $sce.trustAsHtml("texto texto texto") });
+  $scope.user = userSession.currentUser();
+
+  $scope.feeds = [];
+  //$scope.feeds.push({ link: "/users/13/chat", content: $sce.trustAsHtml("texto texto texto") });
 
   $scope.resolve = function(feed) {
     if (feed.link) {
