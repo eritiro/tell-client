@@ -23,6 +23,9 @@ function broadcastNotification(e){
 
 function onPushMessageReceived(e){
   console.log("push_handler - received message: " + JSON.stringify(e));
+  if(e.payload.type === 'system'){
+    return;
+  }
 
   window.localStorage.setItem('unreadNotifications', e.payload.msgcnt);
 
@@ -37,7 +40,7 @@ function onPushMessageReceived(e){
     }
     if(e.payload.type === "invite"){
       window.location = "#/users/" + e.payload.from_id + "?backto=" + encodeURIComponent("/feeds");
-    } else {
+    } else if(e.payload.type === "message"){
       window.location = "#/users/" + e.payload.from_id + "/chat?backto=" + encodeURIComponent("/feeds");
     }
   }
