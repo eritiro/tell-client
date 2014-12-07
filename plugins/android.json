@@ -9,6 +9,26 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>",
                             "count": 1
                         },
@@ -30,26 +50,6 @@
                         },
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -144,7 +144,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<string name=\"fb_app_name\">Tell</string>",
+                            "xml": "<string name=\"fb_app_name\">Warmapp</string>",
                             "count": 1
                         }
                     ]
@@ -153,11 +153,6 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "343451689135742",
-            "APP_NAME": "Tell",
-            "PACKAGE_NAME": "com.pomelo.tell"
-        },
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "com.pomelo.tell"
         },
@@ -168,6 +163,11 @@
             "PACKAGE_NAME": "com.pomelo.tell"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.pomelo.tell"
+        },
+        "com.phonegap.plugins.facebookconnect": {
+            "APP_ID": "343451689135742",
+            "APP_NAME": "Warmapp",
             "PACKAGE_NAME": "com.pomelo.tell"
         }
     },
