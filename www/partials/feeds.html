@@ -1,5 +1,19 @@
 <div tell-tabs current="feeds"></div>
 <div tell-sidebar id="sidebar"></div>
+
+<script type="text/ng-template" id="users-feed">
+  <div>
+      <img ng-repeat="user in feed.users" class='icon' ng-src='{{ user.icon }}' ng-click='showUser(user.id)' />
+      <p>{{ feed.title }}</p>
+  </div>
+</script>
+<script type="text/ng-template" id="message-feed">
+  <div ng-click="go()">
+      <h3>{{ feed.title }}</h3>
+      <small>{{ feed.detail }}</small>
+  </div>
+</script>
+
 <div class="content night" ng-swipe-left="swipeLeft()">
 
   <div class="feeds-call-to-action" ng-click="find()" ng-if="!user.location">
@@ -11,26 +25,11 @@
     <li class="list-group-item header">
       news feeds
     </li>
-    <li class="list-group-item" ng-repeat="feed in feeds" ng-click="resolve(feed)" ng-bind-html="feed.content">
-    </li>
-    <li class="list-group-item">
-      <h3>Actualizamos el listado de locales de Palermo</h3>
-      <div class="clearfix"></div>
-    </li>
-    <li class="list-group-item">
-      <img class="icon" src="http://warmapp.startmeapps.com/system/users/pictures/000/000/006/icon/tefy.jpg?1417803650">
-      <img class="icon" src="http://warmapp.startmeapps.com/system/users/pictures/000/000/004/icon/208727_10151370585148285_700135972_n.jpg?1417817382">
-      <img class="icon" src="http://warmapp.startmeapps.com/system/users/pictures/000/000/009/icon/flopy.jpeg?1417803655">
-      <p>Bienvenidos a warmapp!</p>
-      <div class="clearfix"></div>
-    </li>
-    <li class="list-group-item">
-      <h3>Actualizamos el listado de locales de Caballito</h3>
-      <div class="clearfix"></div>
-    </li>
-    <li class="list-group-item">
-      <h3>Esta noche con lista, todos gratis Club Araoz</h3>
-      <small>Hasta las 2am, con la app de warmapp</small>
+    <li class="list-group-item" ng-repeat="feed in feeds">
+      <div ng-switch data-on="feed.type">
+        <div ng-switch-when="welcome" users-feed="feed"></div>
+        <div ng-switch-when="message" message-feed="feed"></div>
+      </div>
       <div class="clearfix"></div>
     </li>
   </ul>
