@@ -40,8 +40,8 @@
 
 p.login-message {
   font-size: 0.8em;
-  color: black;
   text-align: center;
+  color: white;
 }
 
 
@@ -90,7 +90,7 @@ p.login-message {
 }
 .full_app h1{
   text-align: center;
-  color: rgba(0, 0, 0, 0.7);
+  color: white;
   font-size: 34pt;
 }
 .full_logo {
