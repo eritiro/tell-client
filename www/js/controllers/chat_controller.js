@@ -25,6 +25,17 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
     var message = new Message({ text: $scope.message, status: 'sent' });
     message.$save(function(){
       message.status = 'arrived';
+      userSession.notify({
+        type: 'message',
+        title: $scope.user.username,
+        text: message.text,
+        read: true,
+        from: {
+          id: $scope.user.id,
+          username: $scope.user.username,
+          thumb: $scope.user.icon
+        }
+      }, $scope.user.unread_notifications);
     }, function(){
       message.status = 'error';
     });
