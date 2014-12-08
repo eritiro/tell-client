@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService) {
+angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService, $timeout) {
   $scope.me = userSession.currentUser();
   $scope.listen = 0;
   var user;
@@ -15,7 +15,12 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
     { }
   );
 
-  $scope.messages = Message.query();
+  Message.query(function(data){
+    $scope.messages = data;
+    $timeout(function(){
+      $(".chat-box").scrollTop(1000000000)
+    });
+  });
 
   $scope.chat = function() {
     if (!$scope.message) {
