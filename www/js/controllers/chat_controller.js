@@ -18,8 +18,8 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   Message.query(function(data){
     $scope.messages = data;
     $timeout(function(){
-      $(".chat-box").scrollTop(1000000000)
-    });
+      $(".chat-box").scrollTop(1000000)
+    } );
   });
 
   $scope.chat = function() {

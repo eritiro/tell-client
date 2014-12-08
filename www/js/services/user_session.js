@@ -54,6 +54,7 @@ angular.module('tell.services')
           user.notifications = userData.notifications;
           user.unread_notifications = userData.unread_notifications;
           user.feeds = userData.feeds;
+          user.picture = userData.picture;
           that.save();
         });
       }
