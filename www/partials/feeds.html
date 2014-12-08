@@ -3,8 +3,10 @@
 
 <script type="text/ng-template" id="users-feed">
   <div>
+    <div class="icons-list">
       <img ng-repeat="user in feed.users" class='icon' ng-src='{{ user.icon }}' ng-click='showUser(user.id)' />
-      <p>{{ feed.title }}</p>
+    </div>
+    <p>{{ feed.title }}</p>
   </div>
 </script>
 <script type="text/ng-template" id="message-feed">
@@ -25,9 +27,9 @@
     <li class="list-group-item header">
       news feeds
     </li>
-    <li class="list-group-item" ng-repeat="feed in feeds">
+    <li class="list-group-item" ng-repeat="feed in user.feeds">
       <div ng-switch data-on="feed.type">
-        <div ng-switch-when="welcome" users-feed="feed"></div>
+        <div ng-switch-when="users" users-feed="feed"></div>
         <div ng-switch-when="message" message-feed="feed"></div>
       </div>
       <div class="clearfix"></div>

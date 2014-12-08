@@ -2,7 +2,7 @@
 
 angular.module('tell.services')
   .service('userSession', function($http, $cacheFactory, User){
-    var key = 'user.data.v.0';
+    var key = 'user.data.v.1';
     var that = this;
     var user;
 
@@ -53,6 +53,7 @@ angular.module('tell.services')
           user.location = userData.location;
           user.notifications = userData.notifications;
           user.unread_notifications = userData.unread_notifications;
+          user.feeds = userData.feeds;
           that.save();
         });
       }

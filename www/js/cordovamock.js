@@ -5,7 +5,7 @@ var cordova = cordova || {
 		facebookConnectPlugin: {
 		  login: function(permissions, success, error) {
               setTimeout(function(){
-		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBANExVyZCNkSZCI7MybLZAV112JHlkzwjOZCGNOXlQBdFreLOZA71c0ZAJCmIJOmpZBova3XpvEr6tukSRtNPmFe0WD53GaulbKJIk40uRWIjd2ZAwDrD5z2aleKoJZB9wLhbHitlSJBITmVddXZB6uLDhi1lNvYayOX65otPLiYHmPY532u5GH4A3bUIc9U2g2orIPZCTHSqkjT" } });
+		    success({ authResponse: { userId: '10152363454658285', accessToken: "CAACEdEose0cBACwQTEJB5Wi2RlExzva7dPpx0LreM5begnKZCuh4rHBZAL3JZBEWvC4J1GvtguHRTbPJ0Vr5JGZCAH31uA5pFHoVsNPi4o6VYe0TmAzs02vqU76sqVeEpaNDTKecLqp4zcfSvMbKyu51S68AzeEP5qR4G0ZA6ZACezIZAbqMGXlOINSDZBgrKPHQdHJAmN4hX0yWIy1Hd5BY" } });
               },10);
 		  }
 		},
