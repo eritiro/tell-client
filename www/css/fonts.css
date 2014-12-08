@@ -13,3 +13,11 @@
   font-weight: 700;
   src: url('../fonts/Roboto-Bold.ttf') format('truetype');
 }
+
+/* impacto */
+@font-face {
+  font-family: 'Impacto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Impact.ttf') format('truetype');
+}

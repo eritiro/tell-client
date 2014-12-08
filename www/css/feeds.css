@@ -12,7 +12,9 @@
 .feeds .header{
   color: white;
   background-color: #500050;
-  font-size: 22px;
+  font-size: 24px;
+  font-family: Impacto;
+  border: none;
 }
 
 .feeds em{
@@ -42,7 +44,8 @@
 }
 
 .feeds h3{
- margin: 0px;
+  margin: 0px;
+  font-size: 22px;
 }
 
 .feeds .hashtag{
