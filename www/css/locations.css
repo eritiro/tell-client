@@ -51,7 +51,7 @@ input[type=search]::-webkit-search-cancel-button{
 }
 
 .location {
-  background-color: #808080;
+  background-color: #D0D0D0;
   font-size: 17pt;
 }
 
@@ -67,7 +67,6 @@ input[type=search]::-webkit-search-cancel-button{
 .location .info{
   width: 70%;
   display: inline-block;
-  color: #F5F5F5;
 }
 
 .location .section {
@@ -88,10 +87,10 @@ input[type=search]::-webkit-search-cancel-button{
   width: 80%;
 }
 
-.location .description{
-  margin: 12px;
+.location .description {
+  background-color: #C4C4C4;
+  padding: 12px;
 }
-
 
 .attendees-container{
   background-color: black;
