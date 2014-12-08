@@ -22,10 +22,11 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
       return;
     }
 
-    $scope.error = false; // TODO error handling
     var message = new Message({ text: $scope.message, status: 'sent' });
     message.$save(function(){
       message.status = 'arrived';
+    }, function(){
+      message.status = 'error';
     });
 
     message.mine = true;
