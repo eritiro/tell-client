@@ -21,7 +21,7 @@ angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']
 
 angular.module('tell', [
   'ngRoute',
-  'ngTouch',
+  'hmTouchEvents',
   'luegg.directives',
   'monospaced.elastic',
   'tell.controllers',
