@@ -5,6 +5,7 @@ angular.module('tell.controllers').controller('FeedController', function($scope,
   $scope.user = userSession.currentUser();
 
   $scope.find = function(){
+    $location.search("backto","/feeds");
     $location.path("/locations/");
   };
 
