@@ -2,11 +2,11 @@
   font-size: 20px;
   background-color: #D0D0D0;
   padding: 25px;
-  margin: 10px;
+  margin: 0px;
 }
 
 .feeds{
-  margin: 10px;
+  margin: 10px 0px;
 }
 
 .feeds .header{
@@ -15,6 +15,10 @@
   font-size: 24px;
   font-family: Impacto;
   border: none;
+}
+
+.feeds li{
+  padding: 10px 10px;
 }
 
 .feeds em{
