@@ -44,6 +44,10 @@ angular.module('tell.controllers')
     $scope.leave = function(){
       dialog.confirm("Ya no vas a ir a " + $scope.location.name, function(result){
         Location.leave({ id: $routeParams.id }, function(){
+
+          $scope.location.attendees = $.grep($scope.location.attendees, function(u){
+            return u.id !== userSession.currentUser().id;
+          });
           userSession.currentUser().location = null;
           userSession.save();
           $location.path("/feeds");
