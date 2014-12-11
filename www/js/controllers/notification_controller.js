@@ -19,7 +19,13 @@ angular.module('tell.controllers').controller('NotificationController', function
   };
 
   $scope.delete = function(notification){
-    dialog.confirm("¿Querés borrar la notificación?", function(result){
+    var translated_type;
+    if (notification.type === 'invite') {
+      translated_type = 'notificación';
+    } else {
+      translated_type = 'charla';
+    }
+    dialog.confirm("¿Querés borrar la " + translated_type + "?", function(result){
       Notification.delete({ id: notification.id });
       var notifications = $scope.user.notifications;
       var index = notifications.indexOf(notification);
