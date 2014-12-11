@@ -4,13 +4,13 @@
 <script type="text/ng-template" id="users-feed">
   <div>
     <div class="icons-list">
-      <img ng-repeat="user in feed.users" class='icon' ng-src='{{ user.icon }}' ng-click='showUser(user.id)' />
+      <img ng-repeat="user in feed.users" class='icon' ng-src='{{ user.icon }}' hm-tap='showUser(user.id)' />
     </div>
     <p>{{ feed.title }}</p>
   </div>
 </script>
 <script type="text/ng-template" id="message-feed">
-  <div ng-click="go()">
+  <div hm-tap="go()">
       <h3>{{ feed.title }}</h3>
       <small>{{ feed.detail }}</small>
   </div>
