@@ -3,7 +3,7 @@
 
 <div class="content night" hm-swiperight="swipeRight()" hm-manager-options='{"touchAction":"pan-y"}'>
   <ul class="list-group notifications" ng-if="user.notifications.length > 0">
-    <li class="list-group-item" ng-repeat="notification in user.notifications" hm-tap="go(notification)" read="{{notification.read}}" hm-press="delete(notification)">
+    <li class="list-group-item" ng-repeat="notification in user.notifications" hm-tap="go(notification)" read="{{notification.read}}" hm-press="deleteNotification(notification)">
       <img ng-src="{{ notification.from.thumb }}" />
       <div class="name">{{ notification.from.username }}</div>
       <div class="text">{{ notification.text }}</div>

@@ -18,7 +18,7 @@ angular.module('tell.controllers').controller('NotificationController', function
     }
   };
 
-  $scope.delete = function(notification){
+  $scope.deleteNotification = function(notification){
     var translated_type;
     if (notification.type === 'invite') {
       translated_type = 'notificación';

@@ -15,7 +15,7 @@
 
 <div class="content night">
   <ul class="list-group locations-find" ng-if="locations.length !== 0" >
-    <li class="list-group-item" ng-repeat="location in locations" ng-click="go(location.id)">
+    <li class="list-group-item" ng-repeat="location in locations" hm-tap="go(location.id)" hm-press="deleteFromHistory(location)">
       <div class="location-item-img">
               <span class="helper"></span>
               <img ng-src="{{ location.thumb }}" />

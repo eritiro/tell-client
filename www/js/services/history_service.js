@@ -17,6 +17,15 @@ angular.module('tell.services').service('historyService', function() {
     save(list);
   };
 
+
+  this.remove = function(location){
+    var list = this.get();
+    list = $.grep(list, function(loc){
+      return loc.id !== location.id;
+    });
+    save(list);
+  };
+
   this.get = function(){
     return angular.fromJson(localStorage.getItem(key)) || [];
   };

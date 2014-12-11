@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('LocationsFindController', function($scope, $routeParams, Location, $location, $window, historyService, backButtonService, imageLoader) {
+angular.module('tell.controllers').controller('LocationsFindController', function($scope, $routeParams, Location, $location, $window, historyService, backButtonService, imageLoader, dialog) {
 
   function loadImages(locations){
     angular.forEach(locations, function(location, key) {
@@ -19,6 +19,13 @@ angular.module('tell.controllers').controller('LocationsFindController', functio
     $location.search("backto", $location.url());
 
     $location.path("/locations/" + id);
+  };
+
+  $scope.deleteFromHistory = function(location){
+    dialog.confirm("¿Querés borrar la entrada del historial?", function(){
+      historyService.remove(location);
+      $scope.search();
+    });
   };
 
   $scope.back = function(){
