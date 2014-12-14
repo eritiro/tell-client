@@ -22,7 +22,8 @@ img.logo-icon {
 
 .top-bar .action img{
   vertical-align: middle;
-  height: 37px;
+  width: 35px;
+  height: 35px;
   display: inline-block;
   margin-bottom: 10px;
 }
