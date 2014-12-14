@@ -9,6 +9,12 @@ angular.module('tell.controllers').controller('FeedController', function($scope,
     $location.path("/locations/");
   };
 
+  $scope.relativeTime = function(dateTime){
+    var str = moment(dateTime).fromNow();
+    str = str.replace(str.charAt(0), str.charAt(0).toUpperCase());
+    return str;
+  };
+
   $scope.swipeLeft = function(){
     $location.path("/locations/attendees");
   };

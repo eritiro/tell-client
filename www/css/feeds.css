@@ -32,6 +32,7 @@
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 5px;
+  background-color: black;
 }
 
 .feeds .thumb{
@@ -52,6 +53,7 @@
   font-size: 22px;
 }
 
-.feeds .hashtag{
-  color: blue;
+.feeds .time{
+  text-align: right;
+  color: #505050;
 }

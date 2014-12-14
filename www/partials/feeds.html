@@ -28,6 +28,9 @@
       NEWS
     </li>
     <li class="list-group-item" ng-repeat="feed in user.feeds">
+      <div class="time">
+        <small>{{ relativeTime(feed.created_at) }}</small>
+      </div>
       <div ng-switch data-on="feed.type">
         <div ng-switch-when="users" users-feed="feed"></div>
         <div ng-switch-when="message" message-feed="feed"></div>
