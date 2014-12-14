@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService, $timeout) {
+angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService, $timeout, dialog) {
   $scope.me = userSession.currentUser();
   $scope.listen = 0;
   var user;
@@ -18,7 +18,7 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   Message.query(function(data){
     $scope.messages = data;
     $timeout(function(){
-      $(".chat-box").scrollTop(1000000)
+      $(".chat-box").scrollTop(1000000);
     } );
   });
 
@@ -50,6 +50,15 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
       $scope.listen++; // Force angular to perform render
     }
   });
+
+  $scope.deleteMessage = function(message){
+    dialog.confirm("¿Querés borrar el mensaje?", function(result){
+      Message.delete({ messageId: message.id });
+      $scope.messages = $.grep($scope.messages, function(m){
+        return m.id !== message.id;
+      });
+    });
+  };
 
   $scope.back = function(){
     backButtonService.back();
