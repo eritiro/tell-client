@@ -1,4 +1,7 @@
-www/bower_components
+bower_components
+www/dependencies
+node_modules
+
 signed
 
 # built application files

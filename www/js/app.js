@@ -14,7 +14,7 @@ var POMELO = {
 
 var config = POSTA;
 
-angular.module('tell.directives', ['ui.bootstrap']);
+angular.module('tell.directives', []);
 angular.module('tell.services', []);
 angular.module('tell.resources', ['ngResource', 'tell.services']);
 angular.module('tell.controllers', ['Devise', 'tell.resources', 'tell.services']);
