@@ -23,12 +23,15 @@ angular.module('tell.controllers')
                   nextStep(user);
                 });
               });
+            }, function(errorData){
+              $scope.login_ready = true;
+              console.log("Warmapp login error " + JSON.stringify(errorData));
             });
           });
         },
         function(errorData) { // FB login error
           $scope.login_ready = true;
-          console.log("Falló login FB " + JSON.stringify(errorData));
+          console.log("Facebook login error " + JSON.stringify(errorData));
         }
       );
     };
