@@ -16,6 +16,7 @@ angular.module('tell.controllers').controller('UsersShowController', function($s
       } else{
         $scope.where = "Esta noche en";
       }
+      $location.search("username", user.username);
 	});
 
   $scope.invite = function() {

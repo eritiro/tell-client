@@ -11,6 +11,7 @@ angular.module('tell.controllers').controller('NotificationController', function
       userSession.save();
     }
     $location.search("backto", "/notifications");
+    $location.search("username", notification.from.username);
     if (notification.type === 'invite') {
       $location.path("/users/" + notification.from.id);
     } else {

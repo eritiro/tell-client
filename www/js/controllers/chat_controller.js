@@ -1,25 +1,21 @@
 'use strict';
 
-angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService, $timeout, dialog) {
+angular.module('tell.controllers').controller('ChatController', function($scope, $location, $routeParams, User, userSession, $resource, $window, backButtonService, $timeout, dialog, Message, messageCache) {
   $scope.me = userSession.currentUser();
   $scope.listen = 0;
-  var user;
-  User.get({ id: $routeParams.id }, function(u) {
-    user = u;
-    $scope.user = user;
-  });
+  $scope.username = $routeParams.username;
 
-  var Message = $resource(
-    config.serverUrl + '/users/:userId/messages/:messageId',
-    { userId: $routeParams.id, messageId:'@id' },
-    { }
-  );
-
-  Message.query(function(data){
-    $scope.messages = data;
+  function scrollDown(){
     $timeout(function(){
       $(".chat-box").scrollTop(1000000);
     } );
+  }
+
+  $scope.messages = messageCache.get($routeParams.id);
+  scrollDown();
+  Message.query({ userId: $routeParams.id }, function(data){
+    $scope.messages = messageCache.set($routeParams.id, data);
+    scrollDown();
   });
 
   $scope.chat = function() {
@@ -28,9 +24,10 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
     }
 
     var message = new Message({ text: $scope.message, status: 'sent' });
-    message.$save(function(message){
+    message.$save({ userId: $routeParams.id }, function(message){
       message.status = 'arrived';
-      userSession.notify(message.notification, $scope.user.unread_notifications);
+      messageCache.set($routeParams.id, $scope.messages);
+      userSession.notify(message.notification);
     }, function(){
       message.status = 'error';
     });
@@ -45,18 +42,16 @@ angular.module('tell.controllers').controller('ChatController', function($scope,
   };
 
   $scope.$on('notification',function(event, notification){
-    if($routeParams.id === notification.from.id.toString() && notification.type === "message") {
-      $scope.messages.push({ text: notification.text, mine: false});
-      $scope.listen++; // Force angular to perform render
-    }
+    $scope.listen++; // Force angular to perform render
   });
 
   $scope.deleteMessage = function(message){
     dialog.confirm("¿Querés borrar el mensaje?", function(result){
-      Message.delete({ messageId: message.id });
+      Message.delete({ userId: $routeParams.id, messageId: message.id });
       $scope.messages = $.grep($scope.messages, function(m){
         return m.id !== message.id;
       });
+      messageCache.set($routeParams.id, $scope.messages);
     });
   };
 

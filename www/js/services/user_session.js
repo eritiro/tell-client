@@ -37,11 +37,11 @@ angular.module('tell.services')
       return user;
     };
 
-    this.notify = function(notification, unread){
+    this.notify = function(notification){
       var newList = user.notifications.filter(function(n) { return n.from.id !== notification.from.id || n.type !== notification.type; });
       newList.unshift(notification);
       user.notifications = newList;
-      user.unread_notifications = unread;
+      user.unread_notifications = user.notifications.filter(function(n){ return !n.read; }).length;
       that.save();
     };
 

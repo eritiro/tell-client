@@ -16,7 +16,7 @@ function broadcastNotification(e){
       };
       console.log("push_handler - broadcasting: " + JSON.stringify(notification));
       $rootScope.$broadcast('notification', notification);
-      userSession.notify(notification, e.payload.msgcnt);
+      userSession.notify(notification);
     });
   });
 }
@@ -41,7 +41,7 @@ function onPushMessageReceived(e){
     if(e.payload.type === "invite"){
       window.location = "#/users/" + e.payload.from_id + "?backto=" + encodeURIComponent("/feeds");
     } else if(e.payload.type === "message"){
-      window.location = "#/users/" + e.payload.from_id + "/chat?backto=" + encodeURIComponent("/feeds");
+      window.location = "#/users/" + e.payload.from_id + "/chat?backto=" + encodeURIComponent("/feeds") + "&username=" + e.payload.from_username;
     }
   }
 }
