@@ -104,3 +104,7 @@ p.login-message {
   margin-right: auto;
   display: block;
 }
+
+.welcome {
+  opacity: 0;
+}

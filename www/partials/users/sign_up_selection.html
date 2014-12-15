@@ -5,9 +5,9 @@
     <img src="img/logo.png" />
   </div>
 
-  <h1>¡Bienvenido!</h1>
+  <h1 class="welcome">¡Bienvenido!</h1>
 
-  <div class='login-options'>
+  <div class='login-options' ng-if='login_ready'>
     <a ng-click="fbLogin()" class="btn btn-success btn-signup fb-login">
       <i class="fa fa-facebook-square"></i>
       Ingresá con Facebook
